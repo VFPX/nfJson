@@ -1,0 +1,41 @@
+{"myForms_kl_collection": { 
+      "collectionitems": [
+          123,
+          "AAA",
+          {},
+          {},
+          { 
+          "collection_kl_collection" :{ 
+                  "collectionitems": [
+                      456,
+                      "BBB",
+                      { 
+                      "collection_kl_collection" :{ 
+                              "collectionitems": [
+                                  789,
+                                  "CCC",
+                                  {},
+                                  { 
+                                  "collection_kv_collection" :{ 
+                                          "collectionitems": [
+                                              {
+                                                  "key":"Product",
+                                                  "value":"VFP"
+                                              },
+                                              {
+                                                  "key":"Executing program Name",
+                                                  "value":"ADDCOLLECTION"
+                                              }
+                                          ]
+                                      }
+                                  }
+                              ]
+                          }
+                      },
+                      {}
+                  ]
+              }
+          }
+      ]
+  }
+}

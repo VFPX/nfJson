@@ -1,0 +1,3183 @@
+*
+* you can add your json samples to this file
+* just put a header line with 
+*
+* <double quote><double quote><double quote> <sample name> <dots>
+*
+* your json string
+*
+*<double quote><double quote><double quote>
+
+""" bi dimensional arrays:
+[[11,12,13],[23,22,23]]
+
+""" Medical System:
+
+{
+      "meta":{
+          "disclaimer":"openFDA is a beta research project and not for clinical use. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.",
+          "last_updated":"2016-02-05",
+          "license":"http://open.fda.gov/license",
+          "results":{
+              "limit":1,
+              "skip":0,
+              "total":4160934
+          }
+      },
+      "results":[
+          {
+              "companynumb":"HQWYE821915MAR04",
+              "fulfillexpeditecriteria":"1",
+              "patient":{
+                  "drug":[
+                      {
+                          "drugadministrationroute":"048",
+                          "drugauthorizationnumb":"50621",
+                          "drugcharacterization":"1",
+                          "drugdosagetext":"ORAL",
+                          "drugenddate":"20031230",
+                          "drugenddateformat":"102",
+                          "drugindication":"PYELONEPHRITIS",
+                          "drugstartdate":"20031227",
+                          "drugstartdateformat":"102",
+                          "drugtreatmentduration":"4",
+                          "drugtreatmentdurationunit":"804",
+                          "medicinalproduct":"OROKEN (CEFIXIME, UNSPEC)"
+                      },
+                      {
+                          "drugcharacterization":"2",
+                          "medicinalproduct":"PYOSTACINE (PRISTINAMYCIN)"
+                      },
+                      {
+                          "drugcharacterization":"2",
+                          "medicinalproduct":"ROCEPHIN",
+                          "openfda":{
+                              "application_number":[
+                                  "ANDA063239"
+                              ],
+                              "brand_name":[
+                                  "ROCEPHIN"
+                              ],
+                              "generic_name":[
+                                  "CEFTRIAXONE SODIUM"
+                              ],
+                              "manufacturer_name":[
+                                  "Genentech, Inc."
+                              ],
+                              "nui":[
+                                  "N0000011161",
+                                  "N0000175488"
+                              ],
+                              "package_ndc":[
+                                  "0004-1964-04",
+                                  "0004-1963-02",
+                                  "0004-1963-01",
+                                  "0004-1964-01"
+                              ],
+                              "pharm_class_cs":[
+                                  "Cephalosporins [Chemical/Ingredient]"
+                              ],
+                              "pharm_class_epc":[
+                                  "Cephalosporin Antibacterial [EPC]"
+                              ],
+                              "product_ndc":[
+                                  "0004-1963",
+                                  "0004-1964"
+                              ],
+                              "product_type":[
+                                  "HUMAN PRESCRIPTION DRUG"
+                              ],
+                              "route":[
+                                  "INTRAMUSCULAR",
+                                  "INTRAVENOUS"
+                              ],
+                              "rxcui":[
+                                  "204871",
+                                  "105212"
+                              ],
+                              "spl_id":[
+                                  "86e3103c-9d8b-4693-b5db-3fd62330c754"
+                              ],
+                              "spl_set_id":[
+                                  "9467f6c9-3e59-45c6-a1be-77200f2d4554"
+                              ],
+                              "substance_name":[
+                                  "CEFTRIAXONE SODIUM"
+                              ],
+                              "unii":[
+                                  "75J73V1629"
+                              ]
+                          }
+                      },
+                      {
+                          "drugcharacterization":"2",
+                          "medicinalproduct":"OFLOXACIN",
+                          "openfda":{
+                              "application_number":[
+                                  "ANDA076407",
+                                  "ANDA076182",
+                                  "NDA019921",
+                                  "ANDA091656",
+                                  "ANDA076128",
+                                  "ANDA078222",
+                                  "ANDA090395",
+                                  "ANDA076527",
+                                  "ANDA076622",
+                                  "ANDA076513",
+                                  "ANDA076616",
+                                  "ANDA202692",
+                                  "ANDA078559",
+                                  "ANDA076615",
+                                  "ANDA076231",
+                                  "ANDA077098"
+                              ],
+                              "brand_name":[
+                                  "OFLOXACIN OTIC",
+                                  "OFLOXACIN OPHTHALMIC",
+                                  "OFLOXACIN",
+                                  "OCUFLOX"
+                              ],
+                              "generic_name":[
+                                  "OFLOXACIN",
+                                  "OFLOXAXIN"
+                              ],
+                              "manufacturer_name":[
+                                  "Akorn, Inc.",
+                                  "Altaire Pharmaceuticals Inc.",
+                                  "Dr. Reddy's Laboratories Limited",
+                                  "Pack Pharmaceuticals, LLC",
+                                  "Hi-Tech Pharmacal Co., Inc.",
+                                  "Allergan, Inc.",
+                                  "Bausch & Lomb Incorporated",
+                                  "Apotex Corp.",
+                                  "Cadila Pharmaceuticals Limited",
+                                  "PharmaForce, Inc.",
+                                  "Falcon Pharmaceuticals, Ltd.",
+                                  "Teva Pharmaceuticals USA Inc"
+                              ],
+                              "nui":[
+                                  "N0000175937",
+                                  "N0000007606"
+                              ],
+                              "package_ndc":[
+                                  "16571-130-50",
+                                  "55111-161-50",
+                                  "61314-012-05",
+                                  "17478-713-11",
+                                  "17478-713-10",
+                                  "55111-160-78",
+                                  "55111-161-78",
+                                  "55111-162-78",
+                                  "55111-160-30",
+                                  "0093-7181-01",
+                                  "65691-0106-2",
+                                  "65691-0106-1",
+                                  "50383-024-10",
+                                  "65691-0105-1",
+                                  "65691-0105-3",
+                                  "65691-0105-2",
+                                  "0093-7182-01",
+                                  "60505-0363-1",
+                                  "24208-434-05",
+                                  "0093-7180-01",
+                                  "61314-015-05",
+                                  "55111-161-01",
+                                  "65691-0104-1",
+                                  "65691-0104-2",
+                                  "65691-0104-3",
+                                  "55111-161-05",
+                                  "50383-025-10",
+                                  "40042-049-10",
+                                  "55111-162-01",
+                                  "50383-025-05",
+                                  "55111-162-05",
+                                  "61314-012-10",
+                                  "16571-130-11",
+                                  "55111-160-01",
+                                  "55111-160-05",
+                                  "50383-024-05",
+                                  "55111-162-30",
+                                  "60505-0363-2",
+                                  "24208-410-10",
+                                  "55111-162-50",
+                                  "24208-434-10",
+                                  "24208-410-05",
+                                  "60505-0560-1",
+                                  "60505-0560-0",
+                                  "61314-015-10",
+                                  "59390-140-05",
+                                  "40042-049-05",
+                                  "55111-161-30",
+                                  "55111-160-50",
+                                  "11980-779-05"
+                              ],
+                              "pharm_class_cs":[
+                                  "Quinolones [Chemical/Ingredient]"
+                              ],
+                              "pharm_class_epc":[
+                                  "Quinolone Antimicrobial [EPC]"
+                              ],
+                              "product_ndc":[
+                                  "55111-160",
+                                  "55111-161",
+                                  "55111-162",
+                                  "16571-130",
+                                  "60505-0560",
+                                  "65691-0105",
+                                  "65691-0104",
+                                  "65691-0106",
+                                  "11980-779",
+                                  "61314-015",
+                                  "50383-025",
+                                  "50383-024",
+                                  "61314-012",
+                                  "0093-7181",
+                                  "60505-0363",
+                                  "40042-049",
+                                  "0093-7180",
+                                  "59390-140",
+                                  "0093-7182",
+                                  "24208-434",
+                                  "17478-713",
+                                  "24208-410"
+                              ],
+                              "product_type":[
+                                  "HUMAN PRESCRIPTION DRUG"
+                              ],
+                              "route":[
+                                  "AURICULAR (OTIC)",
+                                  "ORAL",
+                                  "OPHTHALMIC"
+                              ],
+                              "rxcui":[
+                                  "207202",
+                                  "312075",
+                                  "198048",
+                                  "198049",
+                                  "198050",
+                                  "242446"
+                              ],
+                              "spl_id":[
+                                  "b2235a46-f526-471e-8a9c-62f943ef6f7b",
+                                  "1419e0b7-cb1e-48fd-ab83-edfa70ddd693",
+                                  "4ebe9909-6509-ab0a-931c-e70bd210125f",
+                                  "4d4af447-be12-4ca8-89ce-4393ee8bcc9e",
+                                  "10d0fd2b-81f4-4836-b279-cf2b17813eb5",
+                                  "8ec38b43-795a-45ba-bbd3-8ebd6e1fcdf2",
+                                  "243c0b7c-8011-4a94-8b25-0329de936439",
+                                  "52572d94-d47b-428f-acc7-67147c5b0681",
+                                  "0095d1d6-d83e-4e22-aa61-3b4753f0753b",
+                                  "349789cb-da00-4eeb-88fa-a949263c1618",
+                                  "c3b5609c-3d6a-4c9a-8f81-611d0fa19180",
+                                  "3665d266-c322-45b4-9e56-caa6035b092c",
+                                  "568bf875-beda-4425-b175-decd86dcae12",
+                                  "7bc4742b-6f34-2c2d-95b9-d70f8358e55f",
+                                  "abfa4cd4-5c6d-62cd-3d3a-ff5a393b8301",
+                                  "1f88e5a7-78c8-4f48-81bd-5fd664cee9c8"
+                              ],
+                              "spl_set_id":[
+                                  "8db221b1-32f3-f6ca-e404-71f56a860d08",
+                                  "1d19a6db-6da5-e7de-f929-2d18bdfa2cf5",
+                                  "95b9fc17-9c94-4762-910c-df0bb0b2aa85",
+                                  "7aab4449-3dda-4e2c-8e40-b3244a548bf5",
+                                  "81e8ece1-ab0b-4deb-8f84-79f21419b328",
+                                  "2ec6bd57-96df-47ac-b218-1469801868b7",
+                                  "7882f70e-d228-4c52-9390-0d927c51af1f",
+                                  "93a464f1-6b54-4f4e-8b71-fa781e2964e6",
+                                  "fe564e33-8f5d-4b57-87a9-7afae02eaf97",
+                                  "ad40954d-0b1d-47c5-8bd5-8a1efd9a7153",
+                                  "8b73d354-4631-40e8-b187-e8b0580bd6ea",
+                                  "749177b8-1c9e-4bc2-81fd-27d7e88cf9b8",
+                                  "b199f48d-647c-4041-a3ee-33737c515152",
+                                  "5117d567-2004-c5ed-1391-f8831864696f",
+                                  "c5484f1a-2321-453f-9469-dfcf709e2e2e",
+                                  "33ad989c-f551-4c57-a4e3-b607686206fa"
+                              ],
+                              "substance_name":[
+                                  "OFLOXACIN"
+                              ],
+                              "unii":[
+                                  "A4P49JAZ9H"
+                              ]
+                          }
+                      }
+                  ],
+                  "patientonsetage":"56",
+                  "patientonsetageunit":"801",
+                  "patientsex":"1",
+                  "reaction":[
+                      {
+                          "reactionmeddrapt":"ARTHRALGIA"
+                      },
+                      {
+                          "reactionmeddrapt":"OEDEMA PERIPHERAL"
+                      },
+                      {
+                          "reactionmeddrapt":"PURPURA"
+                      }
+                  ]
+              },
+              "primarysource":null,
+              "receiptdate":"20040315",
+              "receiptdateformat":"102",
+              "receivedate":"20040319",
+              "receivedateformat":"102",
+              "receiver":null,
+              "safetyreportid":"4322505-4",
+              "sender":{
+                  "senderorganization":"FDA-Public Use"
+              },
+              "serious":"1",
+              "seriousnesshospitalization":"1",
+              "seriousnessother":"1",
+              "transmissiondate":"20041129",
+              "transmissiondateformat":"102"
+          }
+      ]
+  }
+  
+""" Donuts :
+
+{
+	"items":
+		{
+			"item":
+				[
+					{
+						"id": "0001",
+						"type": "donut",
+						"name": "Cake",
+						"ppu": 0.55,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" },
+										{ "id": "1002", "type": "Chocolate" },
+										{ "id": "1003", "type": "Blueberry" },
+										{ "id": "1004", "type": "Devil's Food" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5001", "type": "None" },
+								{ "id": "5002", "type": "Glazed" },
+								{ "id": "5005", "type": "Sugar" },
+								{ "id": "5007", "type": "Powdered Sugar" },
+								{ "id": "5006", "type": "Chocolate with Sprinkles" },
+								{ "id": "5003", "type": "Chocolate" },
+								{ "id": "5004", "type": "Maple" }
+							]
+					},
+					{
+						"id": "0002",
+						"type": "donut",
+						"name": "Raised",
+						"ppu": 0.55,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5001", "type": "None" },
+								{ "id": "5002", "type": "Glazed" },
+								{ "id": "5005", "type": "Sugar" },
+								{ "id": "5003", "type": "Chocolate" },
+								{ "id": "5004", "type": "Maple" }
+							]
+					},
+
+					{
+						"id": "0003",
+						"type": "donut",
+						"name": "Old Fashioned",
+						"ppu": 0.55,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" },
+										{ "id": "1002", "type": "Chocolate" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5001", "type": "None" },
+								{ "id": "5002", "type": "Glazed" },
+								{ "id": "5003", "type": "Chocolate" },
+								{ "id": "5004", "type": "Maple" }
+							]
+					},
+					{
+						"id": "0004",
+						"type": "bar",
+						"name": "Bar",
+						"ppu": 0.75,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5003", "type": "Chocolate" },
+								{ "id": "5004", "type": "Maple" }
+							],
+						"fillings":
+							{
+								"filling":
+									[
+										{ "id": "7001", "name": "None", "addcost": 0 },
+										{ "id": "7002", "name": "Custard", "addcost": 0.25 },
+										{ "id": "7003", "name": "Whipped Cream", "addcost": 0.25 }
+									]
+							}
+					},
+
+					{
+						"id": "0005",
+						"type": "twist",
+						"name": "Twist",
+						"ppu": 0.65,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5002", "type": "Glazed" },
+								{ "id": "5005", "type": "Sugar" }
+							]
+					},
+
+					{
+						"id": "0006",
+						"type": "filled",
+						"name": "Filled",
+						"ppu": 0.75,
+						"batters":
+							{
+								"batter":
+									[
+										{ "id": "1001", "type": "Regular" }
+									]
+							},
+						"topping":
+							[
+								{ "id": "5002", "type": "Glazed" },
+								{ "id": "5007", "type": "Powdered Sugar" },
+								{ "id": "5003", "type": "Chocolate" },
+								{ "id": "5004", "type": "Maple" }
+							],
+						"fillings":
+							{
+								"filling":
+									[
+										{ "id": "7002", "name": "Custard", "addcost": 0 },
+										{ "id": "7003", "name": "Whipped Cream", "addcost": 0 },
+										{ "id": "7004", "name": "Strawberry Jelly", "addcost": 0 },
+										{ "id": "7005", "name": "Rasberry Jelly", "addcost": 0 }
+									]
+							}
+					}
+				]
+		}
+}
+
+
+
+""" Iphone :
+
+{
+    "menu": {
+        "header": "xProgress SVG Viewer",
+        "items": [
+            {
+                "id": "Open"
+            },
+            {
+                "id": "OpenNew",
+                "label": "Open New"
+            },
+            null,
+            {
+                "id": "ZoomIn",
+                "label": "Zoom In"
+            },
+            {
+                "id": "ZoomOut",
+                "label": "Zoom Out"
+            },
+            {
+                "id": "OriginalView",
+                "label": "Original View"
+            },
+            null,
+            {
+                "id": "Quality"
+            },
+            {
+                "id": "Pause"
+            },
+            {
+                "id": "Mute"
+            },
+            null,
+            {
+                "id": "Find",
+                "label": "Find..."
+            },
+            {
+                "id": "FindAgain",
+                "label": "Find Again"
+            },
+            {
+                "id": "Copy"
+            },
+            {
+                "id": "CopyAgain",
+                "label": "Copy Again"
+            },
+            {
+                "id": "CopySVG",
+                "label": "Copy SVG"
+            },
+            {
+                "id": "ViewSVG",
+                "label": "View SVG"
+            },
+            {
+                "id": "ViewSource",
+                "label": "View Source"
+            },
+            {
+                "id": "SaveAs",
+                "label": "Save As"
+            },
+            null,
+            {
+                "id": "Help"
+            },
+            {
+                "id": "About",
+                "label": "About xProgress CVG Viewer..."
+            }
+        ]
+    }
+}
+
+""" flicker :
+
+	{
+	    "title": "Talk On Travel Pool",
+	    "link": "http://www.flickr.com/groups/talkontravel/pool/",
+	    "description": "Travel and vacation photos from around the world.",
+	    "modified": "2009-02-02T11:10:27Z",
+	    "generator": "http://www.flickr.com/",
+	    "items": [
+	            {
+	            "title": "View from the hotel",
+	            "link": "http://www.flickr.com/photos/33112458@N08/3081564649/in/pool-998875@N22",
+	            "media": {"m":"http://farm4.static.flickr.com/3037/3081564649_4a6569750c_m.jpg"},
+	            "date_taken": "2008-12-04T04:43:03-08:00",
+	            "description": "<p><a href=\"http://www.flickr.com/people/33112458@N08/\"> Talk On Travel<\/a> has added a photo to the pool:<\/p> <p><a href=\"http:// www.flickr.com/photos/33112458@N08/3081564649/\" title=\"View from the hotel\"> <img src=\"http://farm4.static.flickr.com/3037/3081564649_4a6569750c_m.jpg\" width=\"240\" height=\"180\" alt=\"View from the hotel\" /><\/a><\/p> ",
+	            "published": "2008-12-04T12:43:03Z",
+	            "author": "nobody@flickr.com (Talk On Travel)",
+	            "author_id": "33112458@N08",
+	            "tags": "spain dolphins tenerife canaries lagomera aqualand playadelasamericas junglepark losgigantos loscristines talkontravel"
+	            }
+	    ]
+	}
+
+""" Google Maps Basic Query :
+
+{"responseData": {
+ "results": [
+  {
+   "GsearchResultClass": "GlocalSearch",
+   "listingType": "local",
+   "addressLookupResult": "/maps",
+   "lat": "33.830296",
+   "lng": "-116.545292",
+   "accuracy": "4",
+   "title": "Palm Springs, CA",
+   "titleNoFormatting": "Palm Springs, CA",
+   "ddUrl": "http://www.google.com/maps?source\u003duds\u0026daddr\u003dPalm+Springs%2C+CA%2C+Palm+Springs%2C+California+%28Palm+Springs%2C+CA%29+%4033.830296%2C-116.545292\u0026saddr",
+   "ddUrlToHere": "http://www.google.com/maps?source\u003duds\u0026daddr\u003dPalm+Springs%2C+CA%2C+Palm+Springs%2C+California+%28Palm+Springs%2C+CA%29+%4033.830296%2C-116.545292\u0026iwstate1\u003ddir%3Ato",
+   "ddUrlFromHere": "http://www.google.com/maps?source\u003duds\u0026saddr\u003dPalm+Springs%2C+CA%2C+Palm+Springs%2C+California+%28Palm+Springs%2C+CA%29+%4033.830296%2C-116.545292\u0026iwstate1\u003ddir%3Afrom",
+   "streetAddress": "Palm Springs, CA",
+   "city": "Palm Springs",
+   "region": "California",
+   "country": "US",
+   "staticMapUrl": "http://mt.google.com/mapdata?cc\u003dus\u0026tstyp\u003d5\u0026Point\u003db\u0026Point.latitude_e6\u003d33830296\u0026Point.longitude_e6\u003d-116545292\u0026Point.iconid\u003d15\u0026Point\u003de\u0026w\u003d150\u0026h\u003d100\u0026zl\u003d4",
+   "url": "http://www.google.com/maps?source\u003duds\u0026q\u003dPalm+Springs+CA",
+   "postalCode": "",
+   "maxAge": 604800,
+   "addressLines": [
+    "Palm Springs, CA"
+   ]
+  }
+ ],
+ "cursor": {
+  "moreResultsUrl": "http://www.google.com/local?oe\u003dutf8\u0026ie\u003dutf8\u0026num\u003d4\u0026mrt\u003dyp%2Cloc\u0026sll\u003d37.779160%2C-122.420090\u0026start\u003d0\u0026hl\u003den\u0026q\u003dPalm+Springs+CA"
+ },
+ "viewport": {
+  "center": {
+   "lat": "33.830296",
+   "lng": "-116.545292"
+  },
+  "span": {
+   "lat": "0.29686",
+   "lng": "0.512238"
+  },
+  "sw": {
+   "lat": "33.681866",
+   "lng": "-116.801414"
+  },
+  "ne": {
+   "lat": "33.978725",
+   "lng": "-116.28918"
+  }
+ }
+}
+, "responseDetails": null, "responseStatus": 200}
+
+
+""" Youtube :
+
+	{"apiVersion":"2.0",
+	 "data":{
+	    "updated":"2010-01-07T19:58:42.949Z",
+	    "totalItems":800,
+	    "startIndex":1,
+	    "itemsPerPage":1,
+	    "items":[
+	        {"id":"hYB0mn5zh2c",
+	         "uploaded":"2007-06-05T22:07:03.000Z",
+	         "updated":"2010-01-07T13:26:50.000Z",
+	         "uploader":"GoogleDeveloperDay",
+	         "category":"News",
+	         "title":"Google Developers Day US - Maps API Introduction",
+	         "description":"Google Maps API Introduction ...",
+	         "tags":[
+	            "GDD07","GDD07US","Maps"
+	         ],
+	         "thumbnail":{
+	            "default":"http://i.ytimg.com/vi/hYB0mn5zh2c/default.jpg",
+	            "hqDefault":"http://i.ytimg.com/vi/hYB0mn5zh2c/hqdefault.jpg"
+	         },
+	         "player":{
+	            "default":"http://www.youtube.com/watch?v\u003dhYB0mn5zh2c"
+	         },
+	         "content":{
+	            "1":"rtsp://v5.cache3.c.youtube.com/CiILENy.../0/0/0/video.3gp",
+	            "5":"http://www.youtube.com/v/hYB0mn5zh2c?f...",
+	            "6":"rtsp://v1.cache1.c.youtube.com/CiILENy.../0/0/0/video.3gp"
+	         },
+	         "duration":2840,
+	         "aspectRatio":"widescreen",
+	         "rating":4.63,
+	         "ratingCount":68,
+	         "viewCount":220101,
+	         "favoriteCount":201,
+	         "commentCount":22,
+	         "status":{
+	            "value":"restricted",
+	            "reason":"limitedSyndication"
+	         },
+	         "accessControl":{
+	            "syndicate":"allowed",
+	            "commentVote":"allowed",
+	            "rate":"allowed",
+	            "list":"allowed",
+	            "comment":"allowed",
+	            "embed":"allowed",
+	            "videoRespond":"moderated"
+	         }
+	        }
+	    ]
+	 }
+	}
+
+""" facebook :
+
+	{
+	   "data": [
+	      {
+	         "id": "X999_Y999",
+	         "from": {
+	            "name": "Tom Brady", "id": "X12"
+	         },
+	         "message": "Looking forward to 2010!",
+	         "actions": [
+	            {
+	               "name": "Comment",
+	               "link": "http://www.facebook.com/X999/posts/Y999"
+	            },
+	            {
+	               "name": "Like",
+	               "link": "http://www.facebook.com/X999/posts/Y999"
+	            }
+	         ],
+	         "type": "status",
+	         "created_time": "2010-08-02T21:27:44+0000",
+	         "updated_time": "2010-08-02T21:27:44+0000"
+	      },
+	      {
+	         "id": "X998_Y998",
+	         "from": {
+	            "name": "Peyton Manning", "id": "X18"
+	         },
+	         "message": "Where's my contract?",
+	         "actions": [
+	            {
+	               "name": "Comment",
+	               "link": "http://www.facebook.com/X998/posts/Y998"
+	            },
+	            {
+	               "name": "Like",
+	               "link": "http://www.facebook.com/X998/posts/Y998"
+	            }
+	         ],
+	         "type": "status",
+	         "created_time": "2010-08-02T21:27:44+0000",
+	         "updated_time": "2010-08-02T21:27:44+0000"
+	      }
+	   ]
+	}
+
+
+""" Tweeter 1 :
+
+    {
+
+      "completed_in":0.031,
+
+      "max_id":122078461840982016,
+
+      "max_id_str":"122078461840982016",
+
+      "next_page":"?page=2&max_id=122078461840982016&q=blue%20angels&rpp=5",
+
+      "page":1,
+
+      "query":"blue+angels",
+
+      "refresh_url":"?since_id=122078461840982016&q=blue%20angels",
+
+      "results":[
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 19:36:17 +0000",
+
+          "entities":{
+
+            "urls":[
+
+              {
+
+                "url":"http://t.co/L9JXJ2ee",
+
+                "expanded_url":"http://bit.ly/q9fyz9",
+
+                "display_url":"bit.ly/q9fyz9",
+
+                "indices":[
+
+                  37,
+
+                  57
+
+                ]
+
+              }
+
+            ]
+
+          },
+
+          "from_user":"SFist",
+
+          "from_user_id":14093707,
+
+          "from_user_id_str":"14093707",
+
+          "geo":null,
+
+          "id":122032448266698752,
+
+          "id_str":"122032448266698752",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "recent_retweets":3,
+
+            "result_type":"popular"
+
+          },
+
+          "profile_image_url":"http://a3.twimg.com/profile_images/51584619/SFist07_normal.jpg",
+
+          "source":"&lt;a href=&quot;http://twitter.com/tweetbutton&quot; rel=&quot;nofollow&quot;&gt;Tweet Button&lt;/a&gt;",
+
+          "text":"Reminder: Blue Angels practice today http://t.co/L9JXJ2ee",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 19:41:12 +0000",
+
+          "entities":{
+
+
+
+          },
+
+          "from_user":"masters212",
+
+          "from_user_id":2242041,
+
+          "from_user_id_str":"2242041",
+
+          "geo":null,
+
+          "id":122033683212419072,
+
+          "id_str":"122033683212419072",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "recent_retweets":1,
+
+            "result_type":"popular"
+
+          },
+
+          "profile_image_url":"http://a3.twimg.com/profile_images/488532540/rachel25final_normal.jpg",
+
+          "source":"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "text":"Starting to hear Blue Angels... Not such angels with all of the noise and carbon pollution.",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 19:39:52 +0000",
+
+          "entities":{
+
+
+
+          },
+
+          "from_user":"SFBayBridge",
+
+          "from_user_id":182107587,
+
+          "from_user_id_str":"182107587",
+
+          "geo":null,
+
+          "id":122033350327279617,
+
+          "id_str":"122033350327279617",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "recent_retweets":1,
+
+            "result_type":"popular"
+
+          },
+
+          "profile_image_url":"http://a0.twimg.com/profile_images/1162882917/bbtwitternew_normal.jpg",
+
+          "source":"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "text":"BZZZzzzZzZzzzZZZZZzZz WHAT? I CAN'T HEAR YOU. THERE ARE BLUE ANGELS. ZZZzzZZZ!",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 22:39:08 +0000",
+
+          "entities":{
+
+
+
+          },
+
+          "from_user":"OnDST",
+
+          "from_user_id":265656068,
+
+          "from_user_id_str":"265656068",
+
+          "geo":null,
+
+          "id":122078461840982016,
+
+          "id_str":"122078461840982016",
+
+          "iso_language_code":"nl",
+
+          "metadata":{
+
+            "result_type":"recent"
+
+          },
+
+          "profile_image_url":"http://a3.twimg.com/profile_images/1271597598/OnDST_normal.jpg",
+
+          "source":"&lt;a href=&quot;http://dlvr.it&quot; rel=&quot;nofollow&quot;&gt;dlvr.it&lt;/a&gt;",
+
+          "text":"SF Fleet Week to open with Blue Angels flyovers | Student ...",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 22:38:51 +0000",
+
+          "entities":{
+
+
+
+          },
+
+          "from_user":"gusbumper",
+
+          "from_user_id":15912539,
+
+          "from_user_id_str":"15912539",
+
+          "geo":null,
+
+          "id":122078393641603072,
+
+          "id_str":"122078393641603072",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "result_type":"recent"
+
+          },
+
+          "profile_image_url":"http://a2.twimg.com/profile_images/832286946/pho_normal.jpg",
+
+          "source":"&lt;a href=&quot;http://itunes.apple.com/us/app/twitter/id409789998?mt=12&quot; rel=&quot;nofollow&quot;&gt;Twitter for Mac&lt;/a&gt;",
+
+          "text":"RT @gzahnd: WAKE UP HIPPIES, THE BLUE ANGELS ARE IN TOWN!",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 22:38:31 +0000",
+
+          "entities":{
+
+
+
+          },
+
+          "from_user":"LUVTQUILT",
+
+          "from_user_id":32653550,
+
+          "from_user_id_str":"32653550",
+
+          "geo":null,
+
+          "id":122078309004742656,
+
+          "id_str":"122078309004742656",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "result_type":"recent"
+
+          },
+
+          "profile_image_url":"http://a1.twimg.com/profile_images/1188428056/IMG00007-20100521-1647_1__normal.jpg",
+
+          "source":"&lt;a href=&quot;http://ubersocial.com&quot; rel=&quot;nofollow&quot;&gt;\u00DCberSocial for BlackBerry&lt;/a&gt;",
+
+          "text":"Thursday - Just watched the Blue Angels practice over SF Bay Impressive! What a background.  GGB & Alcatraz. ;) .",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 22:38:22 +0000",
+
+          "entities":{
+
+            "urls":[
+
+              {
+
+                "url":"http://t.co/fyL8Rs5f",
+
+                "expanded_url":"http://dlvr.it/pfFfj",
+
+                "display_url":"dlvr.it/pfFfj",
+
+                "indices":[
+
+                  52,
+
+                  72
+
+                ]
+
+              }
+
+            ]
+
+          },
+
+          "from_user":"johnnyfuncheap",
+
+          "from_user_id":20717004,
+
+          "from_user_id_str":"20717004",
+
+          "geo":null,
+
+          "id":122078271478317056,
+
+          "id_str":"122078271478317056",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "result_type":"recent"
+
+          },
+
+          "profile_image_url":"http://a0.twimg.com/profile_images/1130541908/funcheap_icon_twitter_normal.gif",
+
+          "source":"&lt;a href=&quot;http://dlvr.it&quot; rel=&quot;nofollow&quot;&gt;dlvr.it&lt;/a&gt;",
+
+          "text":"10/8/11: Blue Angels Wine Tasting | Treasure Island http://t.co/fyL8Rs5f",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        },
+
+        {
+
+          "created_at":"Thu, 06 Oct 2011 22:37:28 +0000",
+
+          "entities":{
+
+            "urls":[
+
+              {
+
+                "url":"http://t.co/KfzEqOWM",
+
+                "expanded_url":"http://married2travel.com/2600/san-francisco-day3-golden-gate-park-pier-39-blue-angels/",
+
+                "display_url":"married2travel.com/2600/san-franc\u2026",
+
+                "indices":[
+
+                  47,
+
+                  67
+
+                ]
+
+              }
+
+            ]
+
+          },
+
+          "from_user":"espenorio",
+
+          "from_user_id":52736683,
+
+          "from_user_id_str":"52736683",
+
+          "geo":null,
+
+          "id":122078043664695296,
+
+          "id_str":"122078043664695296",
+
+          "iso_language_code":"en",
+
+          "metadata":{
+
+            "result_type":"recent"
+
+          },
+
+          "profile_image_url":"http://a0.twimg.com/profile_images/1574863913/sheil_normal.png",
+
+          "source":"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "text":"San Francisco 2010 Fleet week photos and video http://t.co/KfzEqOWM",
+
+          "to_user_id":null,
+
+          "to_user_id_str":null
+
+        }
+
+      ],
+
+      "results_per_page":5,
+
+      "since_id":0,
+
+      "since_id_str":"0"
+
+    }
+
+
+
+
+
+""" Tweeter 2 :
+
+{
+    "results": [
+        {
+            "text": "@twitterapi  http://tinyurl.com/ctrefg",
+            "to_user_id": 396524,
+            "to_user": "TwitterAPI",
+            "from_user": "jkoum",
+            "metadata": {
+                "result_type": "popular",
+                "recent_retweets": 109
+            },
+            "id": 1478555574,
+            "from_user_id": 1833773,
+            "iso_language_code": "nl",
+            "source": "<a href=\"http: //twitter.com/\">twitter</a>",
+            "profile_image_url": "http: //s3.amazonaws.com/twitter_production/profile_images/118412707/2522215727_a5f07da155_b_normal.jpg",
+            "created_at": "Wed,08Apr200919: 22: 10+0000"
+        }
+    ],
+    "since_id": 0,
+    "max_id": 1480307926,
+    "refresh_url": "?since_id=1480307926&amp;q=%40twitterapi",
+    "results_per_page": 15,
+    "next_page": "?page=2&amp;max_id=1480307926&amp;q=%40twitterapi",
+    "completed_in": 0.031704,
+    "page": 1,
+    "query": "%40twitterapi"
+}
+
+""" Tweeter 3 :
+
+    {
+
+      "max_id": 27836852555751424,
+
+      "results": [
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 21:16:37 +0000",
+
+          "profile_image_url": "http://a2.twimg.com/sticky/default_profile_images/default_profile_1_normal.png",
+
+          "from_user_id_str": "191709163",
+
+          "id_str": "27836852555751424",
+
+          "from_user": "DanLabTesting",
+
+          "text": "Twitter api: 1234455",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27836852555751424,
+
+          "geo": null,
+
+          "from_user_id": 191709163,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.danlabgames.com/index.php?computer=ipad&quot; rel=&quot;nofollow&quot;&gt;Wacka Monsta&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 21:12:02 +0000",
+
+          "profile_image_url": "http://a0.twimg.com/profile_images/1142619698/DSC_0195_normal.jpg",
+
+          "from_user_id_str": "165544885",
+
+          "id_str": "27835698383945728",
+
+          "from_user": "Deberamatkin",
+
+          "text": "Fetching the number of followers without using any Twitter API http://pr9.in/4q",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27835698383945728,
+
+          "geo": null,
+
+          "from_user_id": 165544885,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.exaspring.com&quot; rel=&quot;nofollow&quot;&gt;ExaSpring Information Services&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:57:35 +0000",
+
+          "profile_image_url": "http://a3.twimg.com/profile_images/1093562803/__F1000040mini_normal.jpg",
+
+          "from_user_id_str": "95281337",
+
+          "id_str": "27832064640290817",
+
+          "from_user": "Lito_tweet",
+
+          "text": "More info can be found here http://support.twitter.com/articles/15364-about-twitter-limits-update-api-dm-and-following",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27832064640290817,
+
+          "geo": null,
+
+          "from_user_id": 95281337,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://yubitter.com/&quot; rel=&quot;nofollow&quot;&gt;yubitter&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:53:18 +0000",
+
+          "profile_image_url": "http://a1.twimg.com/profile_images/1196625301/Twitter_normal.JPG",
+
+          "from_user_id_str": "77719707",
+
+          "id_str": "27830982988005377",
+
+          "from_user": "g_a_x",
+
+          "text": "RT @ramirezviki: RT @g_a_x: &quot;Twitter Status: Twitter API rate excedeed&quot; WTF??? // Que dejes de twittearrrr!!!!!!!!!!!  // JJAJAJAJAJJAAA",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27830982988005377,
+
+          "geo": null,
+
+          "from_user_id": 77719707,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.tweetdeck.com&quot; rel=&quot;nofollow&quot;&gt;TweetDeck&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:51:06 +0000",
+
+          "profile_image_url": "http://a2.twimg.com/profile_images/673715309/danlablogo_normal.png",
+
+          "from_user_id_str": "20913275",
+
+          "id_str": "27830431516729344",
+
+          "from_user": "DanLabGames",
+
+          "text": "Working on Facebook and Twitter API on iPhone.. Silly Piece of code. But it Work",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27830431516729344,
+
+          "geo": null,
+
+          "from_user_id": 20913275,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.danlabgames.com/index.php?computer=ipad&quot; rel=&quot;nofollow&quot;&gt;Wacka Monsta&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:44:42 +0000",
+
+          "profile_image_url": "http://a1.twimg.com/profile_images/1220195008/BeautyIsHerName_normal.JPG",
+
+          "from_user_id_str": "180040602",
+
+          "id_str": "27828818869747713",
+
+          "from_user": "MozBWanKinobi",
+
+          "text": "@Patroose It's slow as shit, that damn Twitter API thing pops up every 5 minutes, and won't post tweets half the time, they need to fix it",
+
+          "to_user_id": 16219315,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27828818869747713,
+
+          "geo": null,
+
+          "to_user": "Patroose",
+
+          "from_user_id": 180040602,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": "16219315"
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:42:13 +0000",
+
+          "profile_image_url": "http://a3.twimg.com/profile_images/1167064690/b460f7b0-d6ac-4d8a-b025-998cadb31acc_normal.png",
+
+          "from_user_id_str": "11861298",
+
+          "id_str": "27828194379833345",
+
+          "from_user": "twittwootwiggy",
+
+          "text": "@USoBritain @elejamie Cheers, if i'm on the list i will prove i'm worth it. http://api.twitter.com/EDLinfidel/wankers#",
+
+          "to_user_id": 105839068,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27828194379833345,
+
+          "geo": null,
+
+          "to_user": "USoBritain",
+
+          "from_user_id": 11861298,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": "105839068"
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:35:29 +0000",
+
+          "profile_image_url": "http://a2.twimg.com/profile_images/1197946386/Seb_lasLe_as_normal.jpg",
+
+          "from_user_id_str": "155070729",
+
+          "id_str": "27826502271762432",
+
+          "from_user": "iSebx",
+
+          "text": "RT @g_a_x &quot;Twitter Status: Twitter API rate excedeed&quot; WTF??? // estaba por postear lo mismo no me dejaba subir una foto",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27826502271762432,
+
+          "geo": null,
+
+          "from_user_id": 155070729,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.tweetdeck.com&quot; rel=&quot;nofollow&quot;&gt;TweetDeck&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:24:26 +0000",
+
+          "profile_image_url": "http://a2.twimg.com/profile_images/859603564/johannes_normal.jpg",
+
+          "from_user_id_str": "104685382",
+
+          "id_str": "27823718839361536",
+
+          "from_user": "seo_depp",
+
+          "text": "rt @davide_rosi2011#analytics New ActionScript 3 Library For The API: We love simplifying access to Google Analy... http://bit.ly/i8k0IA",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27823718839361536,
+
+          "geo": null,
+
+          "from_user_id": 104685382,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitterfeed.com&quot; rel=&quot;nofollow&quot;&gt;twitterfeed&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:21:46 +0000",
+
+          "profile_image_url": "http://a1.twimg.com/profile_images/1196625301/Twitter_normal.JPG",
+
+          "from_user_id_str": "77719707",
+
+          "id_str": "27823049667510272",
+
+          "from_user": "g_a_x",
+
+          "text": "&quot;Twitter Status: Twitter API rate excedeed&quot; WTF???",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27823049667510272,
+
+          "geo": null,
+
+          "from_user_id": 77719707,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://www.tweetdeck.com&quot; rel=&quot;nofollow&quot;&gt;TweetDeck&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 20:05:22 +0000",
+
+          "profile_image_url": "http://a1.twimg.com/profile_images/1102380575/61918c9a-8d5c-4390-b41f-b234398cd5d4_normal.png",
+
+          "from_user_id_str": "7654007",
+
+          "id_str": "27818920278757376",
+
+          "from_user": "ConMend",
+
+          "text": "#TwitterHelp #Help #CallingofTheGeeks Please help me get rid of the Twitter API dialogue box that pops up every bleeding minute!",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27818920278757376,
+
+          "geo": null,
+
+          "from_user_id": 7654007,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 19:55:36 +0000",
+
+          "profile_image_url": "http://a3.twimg.com/profile_images/1167064690/b460f7b0-d6ac-4d8a-b025-998cadb31acc_normal.png",
+
+          "from_user_id_str": "11861298",
+
+          "id_str": "27816463830089728",
+
+          "from_user": "twittwootwiggy",
+
+          "text": "Its easy to get on http://api.twitter.com/#!/EDLinfidel/wankers @Andrea_UrbanFox just ask @EDLinfidel a Hypothetical question referring #EDL",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27816463830089728,
+
+          "geo": null,
+
+          "from_user_id": 11861298,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 19:55:10 +0000",
+
+          "profile_image_url": "http://a0.twimg.com/profile_images/585494683/13038_613894593395_24403188_35452430_7524658_n_normal.jpg",
+
+          "from_user_id_str": "1493373",
+
+          "id_str": "27816354073550848",
+
+          "from_user": "mirandafte",
+
+          "text": "@mirandafte testing some twitter API - ness",
+
+          "to_user_id": 1493373,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27816354073550848,
+
+          "geo": null,
+
+          "to_user": "mirandafte",
+
+          "from_user_id": 1493373,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": "1493373"
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 19:55:07 +0000",
+
+          "profile_image_url": "http://a0.twimg.com/profile_images/1213136572/110105-195452_normal.jpg",
+
+          "from_user_id_str": "134087646",
+
+          "id_str": "27816342371434496",
+
+          "from_user": "rachel8973",
+
+          "text": "Actually @TweetDeck it's not your fault it's the useless @twitter API. But you still smell",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27816342371434496,
+
+          "geo": null,
+
+          "from_user_id": 134087646,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://seesmic.com/app&quot; rel=&quot;nofollow&quot;&gt;Seesmic Web&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        },
+
+        {
+
+          "created_at": "Wed, 19 Jan 2011 19:52:39 +0000",
+
+          "profile_image_url": "http://a3.twimg.com/profile_images/1172946788/eagle-flag-4_normal.jpg",
+
+          "from_user_id_str": "174036699",
+
+          "id_str": "27815721295679488",
+
+          "from_user": "benny_hans",
+
+          "text": "One Reason For Those Twitter API Limits: Search Volume is Soaring http://bit.ly/aksMW2 #twitter #twittertips",
+
+          "to_user_id": null,
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "id": 27815721295679488,
+
+          "geo": null,
+
+          "from_user_id": 174036699,
+
+          "iso_language_code": "en",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "to_user_id_str": null
+
+        }
+
+      ],
+
+      "since_id": 0,
+
+      "refresh_url": "?since_id=27836852555751424&q=Twitter+API",
+
+      "next_page": "?page=2&max_id=27836852555751424&q=Twitter+API",
+
+      "page": 1,
+
+      "results_per_page": 15,
+
+      "completed_in": 0.075744,
+
+      "since_id_str": "0",
+
+      "query": "Twitter+API",
+
+      "max_id_str": "27836852555751424"
+
+    }
+
+""" Tweeter 4 :
+
+    {
+
+      "completed_in": 0.012,
+
+      "max_id": 136536013832069120,
+
+      "max_id_str": "136536013832069120",
+
+      "next_page": "?page=2&max_id=136536013832069120&q=twitterapi&rpp=1",
+
+      "page": 1,
+
+      "query": "twitterapi",
+
+      "refresh_url": "?since_id=136536013832069120&q=twitterapi",
+
+      "results": [
+
+        {
+
+          "created_at": "Tue, 15 Nov 2011 20:08:17 +0000",
+
+          "from_user": "fakekurrik",
+
+          "from_user_id": 370773112,
+
+          "from_user_id_str": "370773112",
+
+          "from_user_name": "fakekurrik",
+
+          "geo": null,
+
+          "id": 136536013832069120,
+
+          "id_str": "136536013832069120",
+
+          "iso_language_code": "en",
+
+          "metadata": {
+
+            "result_type": "recent"
+
+          },
+
+          "profile_image_url": "http://a1.twimg.com/profile_images/1540298033/phatkicks_normal.jpg",
+
+          "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+
+          "text": "@twitterapi, keep on keeping it real",
+
+          "to_user": "twitterapi",
+
+          "to_user_id": 6253282,
+
+          "to_user_id_str": "6253282",
+
+          "to_user_name": "Twitter API"
+
+        }
+
+      ],
+
+      "results_per_page": 1,
+
+      "since_id": 0,
+
+      "since_id_str": "0"
+
+    }
+
+""" Some Product Info :
+
+	 {
+	        "name":"Product",
+	        "properties":
+	        {
+	                "id":
+	                {
+	                        "type":"number",
+	                        "description":"Product identifier",
+	                        "required":true
+	                },
+	                "name":
+	                {
+	                        "description":"Name of the product",
+	                        "type":"string",
+	                        "required":true
+	                },
+	                "price":
+	                {
+	                        "type":"number",
+	                        "minimum":23.56,
+	                        "required":true
+	                },
+	                "tags":
+	                {
+	                        "type":"array",
+	                        "items":
+	                        {
+	                                "type":"string"
+	                        }
+	                }
+	        }
+	}
+
+""" Json Org example 1 :
+
+		{
+		    "glossary": {
+		        "title": "example glossary",
+		        "GlossDiv": {
+		            "title": "S",
+		            "GlossList": {
+		                "GlossEntry": {
+		                    "ID": "SGML",
+		                    "SortAs": "SGML",
+		                    "GlossTerm": "Standard Generalized Markup Language",
+		                    "Acronym": "SGML",
+		                    "Abbrev": "ISO 8879:1986",
+		                    "GlossDef": {
+		                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+		                        "GlossSeeAlso": [
+		                            "GML",
+		                            "XML"
+		                        ]
+		                    },
+		                    "GlossSee": "markup"
+		                }
+		            }
+		        }
+		    }
+		}
+
+""" Menu Definition :
+
+		{"menu": {
+		  "id": "file",
+		  "value": "File",
+		  "popup": {
+		    "menuitem": [
+		      {"value": "New", "onclick": "CreateNewDoc()"},
+		      {"value": "Open", "onclick": "OpenDoc()"},
+		      {"value": "Close", "onclick": "CloseDoc()"}
+		    ]
+		  }
+		}}
+
+""" Sample Konfabulator Widget :
+
+{"widget": {
+    "debug": "on",
+    "window": {
+        "title": "Sample Konfabulator Widget",
+        "name": "main_window",
+        "width": 500,
+        "height": 500
+    },
+    "image": {
+        "src": "Images/Sun.png",
+        "name": "sun1",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+    },
+    "text": {
+        "data": "Click Here",
+        "size": 36,
+        "style": "bold",
+        "name": "text1",
+        "hOffset": 250,
+        "vOffset": 100,
+        "alignment": "center",
+        "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
+    }
+}}
+
+
+""" cofaxCDS :
+
+{"web-app": {
+  "servlet": [
+    {
+      "servlet-name": "cofaxCDS",
+      "servlet-class": "org.cofax.cds.CDSServlet",
+      "init-param": {
+        "configGlossary:installationAt": "Philadelphia, PA",
+        "configGlossary:adminEmail": "ksm@pobox.com",
+        "configGlossary:poweredBy": "Cofax",
+        "configGlossary:poweredByIcon": "/images/cofax.gif",
+        "configGlossary:staticPath": "/content/static",
+        "templateProcessorClass": "org.cofax.WysiwygTemplate",
+        "templateLoaderClass": "org.cofax.FilesTemplateLoader",
+        "templatePath": "templates",
+        "templateOverridePath": "",
+        "defaultListTemplate": "listTemplate.htm",
+        "defaultFileTemplate": "articleTemplate.htm",
+        "useJSP": false,
+        "jspListTemplate": "listTemplate.jsp",
+        "jspFileTemplate": "articleTemplate.jsp",
+        "cachePackageTagsTrack": 200,
+        "cachePackageTagsStore": 200,
+        "cachePackageTagsRefresh": 60,
+        "cacheTemplatesTrack": 100,
+        "cacheTemplatesStore": 50,
+        "cacheTemplatesRefresh": 15,
+        "cachePagesTrack": 200,
+        "cachePagesStore": 100,
+        "cachePagesRefresh": 10,
+        "cachePagesDirtyRead": 10,
+        "searchEngineListTemplate": "forSearchEnginesList.htm",
+        "searchEngineFileTemplate": "forSearchEngines.htm",
+        "searchEngineRobotsDb": "WEB-INF/robots.db",
+        "useDataStore": true,
+        "dataStoreClass": "org.cofax.SqlDataStore",
+        "redirectionClass": "org.cofax.SqlRedirection",
+        "dataStoreName": "cofax",
+        "dataStoreDriver": "com.microsoft.jdbc.sqlserver.SQLServerDriver",
+        "dataStoreUrl": "jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon",
+        "dataStoreUser": "sa",
+        "dataStorePassword": "dataStoreTestQuery",
+        "dataStoreTestQuery": "SET NOCOUNT ON;select test='test';",
+        "dataStoreLogFile": "/usr/local/tomcat/logs/datastore.log",
+        "dataStoreInitConns": 10,
+        "dataStoreMaxConns": 100,
+        "dataStoreConnUsageLimit": 100,
+        "dataStoreLogLevel": "debug",
+        "maxUrlLength": 500}},
+    {
+      "servlet-name": "cofaxEmail",
+      "servlet-class": "org.cofax.cds.EmailServlet",
+      "init-param": {
+      "mailHost": "mail1",
+      "mailHostOverride": "mail2"}},
+    {
+      "servlet-name": "cofaxAdmin",
+      "servlet-class": "org.cofax.cds.AdminServlet"},
+
+    {
+      "servlet-name": "fileServlet",
+      "servlet-class": "org.cofax.cds.FileServlet"},
+    {
+      "servlet-name": "cofaxTools",
+      "servlet-class": "org.cofax.cms.CofaxToolsServlet",
+      "init-param": {
+        "templatePath": "toolstemplates/",
+        "log": 1,
+        "logLocation": "/usr/local/tomcat/logs/CofaxTools.log",
+        "logMaxSize": "",
+        "dataLog": 1,
+        "dataLogLocation": "/usr/local/tomcat/logs/dataLog.log",
+        "dataLogMaxSize": "",
+        "removePageCache": "/content/admin/remove?cache=pages&id=",
+        "removeTemplateCache": "/content/admin/remove?cache=templates&id=",
+        "fileTransferFolder": "/usr/local/tomcat/webapps/content/fileTransferFolder",
+        "lookInContext": 1,
+        "adminGroupID": 4,
+        "betaServer": true}}],
+  "servlet-mapping": {
+    "cofaxCDS": "/",
+    "cofaxEmail": "/cofaxutil/aemail/*",
+    "cofaxAdmin": "/admin/*",
+    "fileServlet": "/static/*",
+    "cofaxTools": "/tools/*"},
+
+  "taglib": {
+    "taglib-uri": "cofax.tld",
+    "taglib-location": "/WEB-INF/tlds/cofax.tld"}}}
+
+""" Internet Sample  1 :
+
+
+    {
+        "Location": {
+            "state": "MA",
+            "city": "Boston"
+        },
+        "User": {
+            "username": "person1"
+        },
+        "Comment": [
+            {
+                "id": "10",
+                "user_id": "194",
+                "created": "2010-04-30 09:20:09",
+                "content": "I love that city."
+            }
+        ],
+        "Rating": [
+            {
+                "id": "103",
+                "user_id": "194",
+                "model_id": "1",
+                "model": "state",
+                "rating": "4",
+                "name": "default",
+                "created": "2010-04-30 09:15:56",
+                "modified": "2010-04-30 09:15:56"
+            }
+        ]
+    }
+]
+
+""" Product group - items :
+
+{
+    "lists": [
+        {
+            "title": "Groceries",
+            "id": "1",
+            "items": [
+                {
+                    "text": "contact solution - COUPON",
+                    "listId": "1",
+                    "id": "4",
+                    "leaf": "true"
+                },
+                {
+                    "text": "Falafel (bulk)",
+                    "listId": "1",
+                    "id": "161",
+                    "leaf": "true"
+                },
+                {
+                    "text": "brita filters",
+                    "listId": "1",
+                    "id": "166",
+                    "leaf": "false"
+                }
+            ]
+        }
+    ]
+}
+
+""" Books List :
+
+{
+    "store": {
+        "book": [
+            {
+                "author": "Nigel Rees",
+                "category": "reference",
+                "price": 8.95,
+                "title": "Sayings of the Century"
+            },
+            {
+                "author": "Evelyn Waugh",
+                "category": "fiction",
+                "price": 12.99,
+                "title": "Sword of Honour"
+            },
+            {
+                "author": "Herman Melville",
+                "category": "fiction",
+                "isbn": "0-553-21311-3",
+                "price": 8.99,
+                "title": "Moby Dick"
+            },
+            {
+                "author": "J. R. R. Tolkien",
+                "category": "fiction",
+                "isbn": "0-395-19395-8",
+                "price": 22.99,
+                "title": "The Lord of the Rings"
+            }
+        ]
+    }
+}
+
+""" Cursor Rows :
+
+{
+    "Rows": [
+        {
+            "company": "Avionics Inc. asdasd",
+            "careof": "John Doe",
+            "entered": "/Date(999993232)/"
+        },
+        {
+            "company": "Avis World Headquarters",
+            "careof": "Steve Herbin",
+            "entered": "/Date(999993232)/"
+        },
+        {
+            "company": "BGP Productions",
+            "careof": "German Vicencio",
+            "entered": "/Date(999993232)/"
+        }
+    ]
+}
+
+""" Amazon S3 :
+
+{
+  "Version": "2008-10-17",
+  "Id": "preventHotLinking",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/*",
+      "Condition": {
+        "StringLike": {
+          "aws:Referer": [
+            "http://yourwebsitename.com/*",
+            "http://www.yourwebsitename.com/*"
+          ]
+        }
+      }
+    }
+  ]
+}
+
+""" dropBox :
+
+{
+    "referral_link": "https://www.dropbox.com/referrals/r1a2n3d4m5s6t7",
+    "display_name": "John P. User",
+    "uid": 12345678,
+    "country": "US",
+    "quota_info": {
+        "shared": 253738410565,
+        "quota": 107374182400000,
+        "normal": 680031877871
+    },
+    "email": "john@example.com"
+}
+
+
+""" select into array :
+
+[ [10643,"ALFKI","1997-08-25T00:00:00",29.46],["ALFKI","1997-10-03T00:00:00",61.02,10702],[69.53,10952,"ALFKI","1998-03-16T00:00:00"]]
+
+""" Medical System example :
+{
+    "imaging": [
+        {
+            "location": "Main Hospital Radiology",
+            "name": "Chest X-Ray",
+            "time": "Today"
+        },
+        {
+            "location": "Main Hospital Radiology",
+            "name": "Chest X-Ray",
+            "time": "Today"
+        },
+        {
+            "location": "Main Hospital Radiology",
+            "name": "Chest X-Ray",
+            "time": "Today"
+        }
+    ],
+    "labs": [
+        {
+            "location": "Main Hospital Lab",
+            "name": "Arterial Blood Gas",
+            "time": "Today"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "BMP",
+            "time": "Today"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "BNP",
+            "time": "3 Weeks"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "BUN",
+            "time": "1 Year"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "Cardiac Enzymes",
+            "time": "Today"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "CBC",
+            "time": "1 Year"
+        },
+        {
+            "location": "Main Hospital Lab",
+            "name": "Creatinine",
+            "time": "1 Year"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "Electrolyte Panel",
+            "time": "1 Year"
+        },
+        {
+            "location": "Main Hospital Lab",
+            "name": "Glucose",
+            "time": "1 Year"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "PT\/INR",
+            "time": "3 Weeks"
+        },
+        {
+            "location": "Coumadin Clinic",
+            "name": "PTT",
+            "time": "3 Weeks"
+        },
+        {
+            "location": "Primary Care Clinic",
+            "name": "TSH",
+            "time": "1 Year"
+        }
+    ],
+    "medications": [
+        {
+            "aceinhibitors": [
+                {
+                    "dose": "1 tab",
+                    "name": "lisinopril",
+                    "pillcount": "#90",
+                    "refills": "Refill 3",
+                    "route": "PO",
+                    "sig": "daily",
+                    "strength": "10 mg Tab"
+                }
+            ],
+            "antianginal": [
+                {
+                    "dose": "1 tab",
+                    "name": "nitroglycerin",
+                    "pillcount": "#30",
+                    "refills": "Refill 1",
+                    "route": "SL",
+                    "sig": "q15min PRN",
+                    "strength": "0.4 mg Sublingual Tab"
+                }
+            ],
+            "anticoagulants": [
+                {
+                    "dose": "1 tab",
+                    "name": "warfarin sodium",
+                    "pillcount": "#90",
+                    "refills": "Refill 3",
+                    "route": "PO",
+                    "sig": "daily",
+                    "strength": "3 mg Tab"
+                }
+            ],
+            "betablocker": [
+                {
+                    "dose": "1 tab",
+                    "name": "metoprolol tartrate",
+                    "pillcount": "#90",
+                    "refills": "Refill 3",
+                    "route": "PO",
+                    "sig": "daily",
+                    "strength": "25 mg Tab"
+                }
+            ],
+            "diuretic": [
+                {
+                    "dose": "1 tab",
+                    "name": "furosemide",
+                    "pillcount": "#90",
+                    "refills": "Refill 3",
+                    "route": "PO",
+                    "sig": "daily",
+                    "strength": "40 mg Tab"
+                }
+            ],
+            "mineral": [
+                {
+                    "dose": "1 tab",
+                    "name": "potassium chloride ER",
+                    "pillcount": "#90",
+                    "refills": "Refill 3",
+                    "route": "PO",
+                    "sig": "daily",
+                    "strength": "10 mEq Tab"
+                }
+            ]
+        }
+    ]
+}
+
+
+""" tropical index :
+
+{
+ "currentVersion": 10.22,
+ "id": 3,
+ "name": "Tropical Cyclone Center Position Forecasts",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPoint",
+ "copyrightText": "",
+ "parentLayer": {
+  "id": 1,
+  "name": "Tropical Cyclone Track and Intensity Forecasts"
+ },
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "dvlbl",
+   "field2": null,
+   "field3": null,
+   "fieldDelimiter": ", ",
+   "defaultSymbol": null,
+   "defaultLabel": null,
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "49e6feb7e7a58530d991be4a971aee9a",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAmFJREFUOI2llE1IVFEUx3/XnqMOVFaYvle4a0ap/OjpQggKqRY2LnLhSiIiny2KFqEUCBK0CKGgTcEEQasCoQ9mCIIWQ1JC+tLow8xIR0xnsEYLv8aPbgvfG576nILO9p7f/f/vuecchf8IJd2hlFIHNCFE6J9hKaUBGDOJSf338jJByDJg4a+wlDK0mEwGvr56TUGxj60F+TRKecoQIpgWtsHue/epaKjH4/WaQBgw09q2rAb6Op6w58hhPF5vGGgSQoy5gWuVjZnEJBNv3lPZUI+lZkgpxwBTCLFOXbFUawF9xOxDO1gJwPfhkbb4p88szSfZVribxeRCr+LJDDid2MoqQPxdPzv3+oncuEX04oNVKrmn9fLqa619Usoy+wIb1gCmh0aJPY6Q7Iyte9/UXZNIVntezc2rd4DjTlgHmIvGXEE7Ere7+HbmY42UUhdCmKv/Wdm0IWjHaE8vhQdKdSAFjwHkVZUQfTSQFv75JZpyasNBwPAFjhFt6UgLy6VlsGqkAAghTCnluFbsV0sftvC2rt0VzNiVzY79/pRT55trgZ6yEwHy+30MhJ4Re/qSpcQs24+W46+rYTD8HLV0H8D4KthSrwBCapFPVYt80Hw+dfP89Azdl66jtjUDhNYqY7WgZvW5ZhVGB9TBSCclrWfJzPKE7VZ1nWdhjZ+1DHp+jIwS7/1A9eULsFJcXGEL0K0aBGIDgwy96OJQ8zkyFCXo3CpuysbC7JwxOzXFr/gE2Vs2U9V4EiAohGhyJrrB4x5vDh5vDrmaCiujecVtj7nBzqSQ2xxvCFvJGwLO+ANkl+oACm+FFgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "M",
+     "label": "Major Hurricane",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "49e6feb7e7a58530d991be4a971aee9a",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAmFJREFUOI2llE1IVFEUx3/XnqMOVFaYvle4a0ap/OjpQggKqRY2LnLhSiIiny2KFqEUCBK0CKGgTcEEQasCoQ9mCIIWQ1JC+tLow8xIR0xnsEYLv8aPbgvfG576nILO9p7f/f/vuecchf8IJd2hlFIHNCFE6J9hKaUBGDOJSf338jJByDJg4a+wlDK0mEwGvr56TUGxj60F+TRKecoQIpgWtsHue/epaKjH4/WaQBgw09q2rAb6Op6w58hhPF5vGGgSQoy5gWuVjZnEJBNv3lPZUI+lZkgpxwBTCLFOXbFUawF9xOxDO1gJwPfhkbb4p88szSfZVribxeRCr+LJDDid2MoqQPxdPzv3+oncuEX04oNVKrmn9fLqa619Usoy+wIb1gCmh0aJPY6Q7Iyte9/UXZNIVntezc2rd4DjTlgHmIvGXEE7Ere7+HbmY42UUhdCmKv/Wdm0IWjHaE8vhQdKdSAFjwHkVZUQfTSQFv75JZpyasNBwPAFjhFt6UgLy6VlsGqkAAghTCnluFbsV0sftvC2rt0VzNiVzY79/pRT55trgZ6yEwHy+30MhJ4Re/qSpcQs24+W46+rYTD8HLV0H8D4KthSrwBCapFPVYt80Hw+dfP89Azdl66jtjUDhNYqY7WgZvW5ZhVGB9TBSCclrWfJzPKE7VZ1nWdhjZ+1DHp+jIwS7/1A9eULsFJcXGEL0K0aBGIDgwy96OJQ8zkyFCXo3CpuysbC7JwxOzXFr/gE2Vs2U9V4EiAohGhyJrrB4x5vDh5vDrmaCiujecVtj7nBzqSQ2xxvCFvJGwLO+ANkl+oACm+FFgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "H",
+     "label": "Hurricane",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "8a1d420b82ac6db58671af96d5f38aa5",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAqlJREFUOI2llE1IVFEYhp9j06gDlaGm91pRUDP+pebNhZQUERE2RgW5SaJF3loEtpEsLAvBRRBECxfTIiKiRRHFuAoiM6jImRwoS1MqRR0H8xfHn0k7Lbx3uNloQd/2nue87/fd9zs2/qNsy32UUmqAKoTw/jMspdQBPTwyqv2cn8cD8TpE/gpLKb0/ZmfdX169JT3LyZr0NCqlPKkL4VkWNsHWO/fZUVGO3eHwA02Af1nbhlV34METtu7bg93haAJOCyEGYoGLlfXwyChD7z5QVFGOoaZLKQcAvxDiD3WboVoGaL3+AOquIgC+f+utC3V8Zm5mlrUb1/NjNtJms690W52YygpA6P0n1uW4aLnpIWnTejZoBYi4OAbbO3haU7+95EJVQEpZYF5gwirA5Nc+Bh83U9J4hYzcbIAgoCQp6aRnu2hpuJF64NrlW8BBK6wBTPcMkry3yAQPCSG8RlC8SaqipBbm0v/+Y6mUUhNC+H//z7YVpGxzAXjMVAkh/MZMfMlbNtPna2NjYb4GROEBgNTiPKZHRk271lIBZsYnGO/uiTo1YQ+gO937eX78PAXHDtdJKT1CiAHDtj4XidB59xEJaSnRy2wWa0E1y6XkXDrFs4sNlNSe65dSBgEmh0eUN423Cb/oJqN+Z9SptecywFdwxE1alpPAvYdMBYcUAOIErqOlzE3PoOTnRtuKwob6DsCrZDoVJdP5W9Mzk2Faa66j1FUDeBcrY0RQNXKuGoPRAKWr+SV5tWdYGW9vMqMac5+FsX7GsHzDvX2E2trZe6HKHC4xYQPQjBm4Bzu7+Nrymt3VZ4mz2TzWVyWWsh6ZmtanxsaYCA2RsHoVxZUnYCE4p60HY8FBuyMRuyORJFWBhdW8GusdiwVbD3lj7fGSsHF4ScBavwAEng2YMSFnTgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "S",
+     "label": "Tropical Storm",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "27b45b40b587111d9ca58aa74af566d2",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAShJREFUKJFtkqGOwlAQRc8kxW2CffANRWz4hcrWVVTgkYRU1oB4ybqamkWTtL78xdJkXf+gYV0RVYhZQ1+6ZK+bN3fenZk7Hi9Q1SWwBjoRaV7z3oS4Bg5AOHkDuABbEelcwZQ8DANt29L3Pb7vY4wJgSuwnCocgPB2u1EUBdZa10KSJOR5vlDVWkQi79lzOAwDRVHwbT/54B3DG3cenKuaPVCWZTgqrAHatsVa68gAc2ZsWLGrKtI0RVUjD+gA+r4HcOQRc2ZM8p0nIo2q4vs+AHcejjTG/631YowJkyThXNVsWDFnxp0HX/yQZRlBEJxEpBkLtsA1z/PFHthVlfsxyzLiOG6Ao1N4mrJU1bosyzBNUzdTEAQn4PjHuBEiEj2NjMZlvJ7HL7bQf7cPRFVkAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 9,
+      "height": 9,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "D",
+     "label": "Tropical Depression",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "251e80ce771724706aabe3c1020fee3f",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUCAYAAAC9BQwsAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAP5JREFUOI3tkbFKw2AYRc9Xo5JqoWvi5BM4RBAHH8TRJaub4GSddHK3s29gBkeXooNF8AUEK7EOLoLE1t9eB9sQxDbVwck7/ffC4Tvwe/wy3ughqQEEw5qY2WkpKCl6d26vc30DwKzvx4BNczGe8TzuLq643T5h/fwASbGZNcvAB4D52gIAc1U/38rAH+cf/GswkBQVBzNrTwRdr08/y46/7k+de6r1+qFfW9z9Fmxt7NAao7H5crYF5GAA8Ja9TjD/jKRuUbU5cC5eilYIL4/GQs9pFw30mINm1pa0v7y2GgBh0WKYEAiQEkFSvIiZNUoUQ6tU0lGf+h/NLC32Dyy4UZiQLwmGAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 10,
+      "height": 15,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "L",
+     "label": "Remnant Low",
+     "description": ""
+    }
+   ]
+  },
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": -2.0037507842788246E7,
+  "ymin": -3.024097145838617E7,
+  "xmax": 2.0037507842788246E7,
+  "ymax": 3.0240971458386205E7,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857
+  }
+ },
+ "timeInfo": {
+  "startTimeField": "starttime",
+  "endTimeField": "endtime",
+  "trackIdField": null,
+  "timeExtent": [
+   978307200000,
+   978307200000
+  ],
+  "timeReference": {
+   "timeZone": "UTC",
+   "respectsDaylightSaving": false
+  },
+  "timeInterval": 1,
+  "timeIntervalUnits": "esriTimeUnitsHours",
+  "exportOptions": {
+   "useTime": true,
+   "timeDataCumulative": false,
+   "timeOffset": null,
+   "timeOffsetUnits": null
+  },
+  "hasLiveData": true
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "stormname",
+ "typeIdField": null,
+ "fields": [
+  {
+   "name": "ogc_fid",
+   "type": "esriFieldTypeOID",
+   "alias": "ogc_fid",
+   "domain": null
+  },
+  {
+   "name": "wkb_geometry",
+   "type": "esriFieldTypeGeometry",
+   "alias": "wkb_geometry",
+   "domain": null
+  },
+  {
+   "name": "stormname",
+   "type": "esriFieldTypeString",
+   "alias": "stormname",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormtype",
+   "type": "esriFieldTypeString",
+   "alias": "stormtype",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "advdate",
+   "type": "esriFieldTypeString",
+   "alias": "advdate",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "advisnum",
+   "type": "esriFieldTypeString",
+   "alias": "advisnum",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormnum",
+   "type": "esriFieldTypeDouble",
+   "alias": "stormnum",
+   "domain": null
+  },
+  {
+   "name": "fcstprd",
+   "type": "esriFieldTypeDouble",
+   "alias": "fcstprd",
+   "domain": null
+  },
+  {
+   "name": "basin",
+   "type": "esriFieldTypeString",
+   "alias": "basin",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "lat",
+   "type": "esriFieldTypeDouble",
+   "alias": "lat",
+   "domain": null
+  },
+  {
+   "name": "lon",
+   "type": "esriFieldTypeDouble",
+   "alias": "lon",
+   "domain": null
+  },
+  {
+   "name": "tau",
+   "type": "esriFieldTypeDouble",
+   "alias": "tau",
+   "domain": null
+  },
+  {
+   "name": "maxwind",
+   "type": "esriFieldTypeDouble",
+   "alias": "maxwind",
+   "domain": null
+  },
+  {
+   "name": "gust",
+   "type": "esriFieldTypeDouble",
+   "alias": "gust",
+   "domain": null
+  },
+  {
+   "name": "mslp",
+   "type": "esriFieldTypeDouble",
+   "alias": "mslp",
+   "domain": null
+  },
+  {
+   "name": "tcdvlp",
+   "type": "esriFieldTypeString",
+   "alias": "tcdvlp",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "dvlbl",
+   "type": "esriFieldTypeString",
+   "alias": "dvlbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "ssnum",
+   "type": "esriFieldTypeDouble",
+   "alias": "ssnum",
+   "domain": null
+  },
+  {
+   "name": "tcdir",
+   "type": "esriFieldTypeDouble",
+   "alias": "tcdir",
+   "domain": null
+  },
+  {
+   "name": "tcspd",
+   "type": "esriFieldTypeDouble",
+   "alias": "tcspd",
+   "domain": null
+  },
+  {
+   "name": "datelbl",
+   "type": "esriFieldTypeString",
+   "alias": "datelbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "fldatelbl",
+   "type": "esriFieldTypeString",
+   "alias": "fldatelbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "timezone",
+   "type": "esriFieldTypeString",
+   "alias": "timezone",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormsrc",
+   "type": "esriFieldTypeString",
+   "alias": "stormsrc",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "url",
+   "type": "esriFieldTypeString",
+   "alias": "url",
+   "length": 512,
+   "domain": null
+  },
+  {
+   "name": "latest",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "latest",
+   "domain": null
+  },
+  {
+   "name": "validtime",
+   "type": "esriFieldTypeDate",
+   "alias": "validtime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "starttime",
+   "type": "esriFieldTypeDate",
+   "alias": "starttime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "endtime",
+   "type": "esriFieldTypeDate",
+   "alias": "endtime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "reftime",
+   "type": "esriFieldTypeDate",
+   "alias": "reftime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "projmins",
+   "type": "esriFieldTypeInteger",
+   "alias": "projmins",
+   "domain": null
+  },
+  {
+   "name": "desigreftime",
+   "type": "esriFieldTypeDate",
+   "alias": "desigreftime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "desigprojmins",
+   "type": "esriFieldTypeInteger",
+   "alias": "desigprojmins",
+   "domain": null
+  },
+  {
+   "name": "advvalidtime",
+   "type": "esriFieldTypeString",
+   "alias": "advvalidtime",
+   "length": 255,
+   "domain": null
+  }
+ ],
+ "relationships": [],
+ "canModifyLayer": false,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 1000,
+ "supportsStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, AMF",
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "useStandardizedQueries": true
+}
+""" jSON BENCHMARK :
+
+{"web-app": {
+  "servlet": [
+    {
+      "servlet-name": "cofaxCDS",
+      "servlet-class": "org.cofax.cds.CDSServlet",
+      "init-param": {
+        "configGlossary:installationAt": "Philadelphia, PA",
+        "configGlossary:adminEmail": "ksm@pobox.com",
+        "configGlossary:poweredBy": "Cofax",
+        "configGlossary:poweredByIcon": "/images/cofax.gif",
+        "configGlossary:staticPath": "/content/static",
+        "templateProcessorClass": "org.cofax.WysiwygTemplate",
+        "templateLoaderClass": "org.cofax.FilesTemplateLoader",
+        "templatePath": "templates",
+        "templateOverridePath": "",
+        "defaultListTemplate": "listTemplate.htm",
+        "defaultFileTemplate": "articleTemplate.htm",
+        "useJSP": false,
+        "jspListTemplate": "listTemplate.jsp",
+        "jspFileTemplate": "articleTemplate.jsp",
+        "cachePackageTagsTrack": 200,
+        "cachePackageTagsStore": 200,
+        "cachePackageTagsRefresh": 60,
+        "cacheTemplatesTrack": 100,
+        "cacheTemplatesStore": 50,
+        "cacheTemplatesRefresh": 15,
+        "cachePagesTrack": 200,
+        "cachePagesStore": 100,
+        "cachePagesRefresh": 10,
+        "cachePagesDirtyRead": 10,
+        "searchEngineListTemplate": "forSearchEnginesList.htm",
+        "searchEngineFileTemplate": "forSearchEngines.htm",
+        "searchEngineRobotsDb": "WEB-INF/robots.db",
+        "useDataStore": true,
+        "dataStoreClass": "org.cofax.SqlDataStore",
+        "redirectionClass": "org.cofax.SqlRedirection",
+        "dataStoreName": "cofax",
+        "dataStoreDriver": "com.microsoft.jdbc.sqlserver.SQLServerDriver",
+        "dataStoreUrl": "jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon",
+        "dataStoreUser": "sa",
+        "dataStorePassword": "dataStoreTestQuery",
+        "dataStoreTestQuery": "SET NOCOUNT ON;select test='test';",
+        "dataStoreLogFile": "/usr/local/tomcat/logs/datastore.log",
+        "dataStoreInitConns": 10,
+        "dataStoreMaxConns": 100,
+        "dataStoreConnUsageLimit": 100,
+        "dataStoreLogLevel": "debug",
+        "maxUrlLength": 500}},
+    {
+      "servlet-name": "cofaxEmail",
+      "servlet-class": "org.cofax.cds.EmailServlet",
+      "init-param": {
+      "mailHost": "mail1",
+      "mailHostOverride": "mail2"}},
+    {
+      "servlet-name": "cofaxAdmin",
+      "servlet-class": "org.cofax.cds.AdminServlet"},
+
+    {
+      "servlet-name": "fileServlet",
+      "servlet-class": "org.cofax.cds.FileServlet"},
+    {
+      "servlet-name": "cofaxTools",
+      "servlet-class": "org.cofax.cms.CofaxToolsServlet",
+      "init-param": {
+        "templatePath": "toolstemplates/",
+        "log": 1,
+        "logLocation": "/usr/local/tomcat/logs/CofaxTools.log",
+        "logMaxSize": "",
+        "dataLog": 1,
+        "dataLogLocation": "/usr/local/tomcat/logs/dataLog.log",
+        "dataLogMaxSize": "",
+        "removePageCache": "/content/admin/remove?cache=pages&id=",
+        "removeTemplateCache": "/content/admin/remove?cache=templates&id=",
+        "fileTransferFolder": "/usr/local/tomcat/webapps/content/fileTransferFolder",
+        "lookInContext": 1,
+        "adminGroupID": 4,
+        "betaServer": true}}],
+  "servlet-mapping": {
+    "cofaxCDS": "/",
+    "cofaxEmail": "/cofaxutil/aemail/*",
+    "cofaxAdmin": "/admin/*",
+    "fileServlet": "/static/*",
+    "cofaxTools": "/tools/*"},
+
+  "taglib": {
+    "taglib-uri": "cofax.tld",
+    "taglib-location": "/WEB-INF/tlds/cofax.tld"}}}
+
+
+""" RAS MESSAGE :
+{
+  "meta" : {
+    "settingStore" : 123486875,
+    "requestCounter" : 6,
+    "tabId" : 4
+  },
+  "device" : {
+    "id" : "w1",
+    "cursorLocation" : [ 214, 544 ],
+    "focusControl" : "w34"
+  },
+  "widgets" : [
+    {
+      "widgetId" : "w23",
+      "type" : "synchronize",
+      "payload" : {
+        "prop1" : "value1",
+        "prop3"	: "value2"
+      }
+    },
+    {
+      "widgetId" : "w33",
+      "type" : "listen",
+      "payload" : {
+        "selection" : true,
+        "focus" : false
+      }
+    },
+    {
+      "widgetId" : "w24",
+      "type" : "construct",
+      "payload" : {
+        "parent": "w33",
+        "widgetType" : "org.eclipse.swt.Text",
+        "style" : [ "BORDER", "FLAT" ],
+        "parameter" : [ "eins", 2, true ]
+      }
+    },
+    {
+      "widgetId" : "w25",
+      "type" : "fireEvent",
+      "payload" : {
+        "event" : "focus-in"
+      }
+    },
+    {
+      "widgetId" : "w26",
+      "type" : "destroy",
+      "payload" : null
+    },
+    {
+      "widgetId" : "w27",
+      "type" : "execute",
+      "payload" : {
+        "method" : "someName",
+        "parameter" : [ "value1" , "value2" ]
+      }
+    },
+    {
+      "widgetId" : "w44",
+      "type" : "executeScript",
+      "payload" : {
+        "scriptType" : "text/javascript",
+        "script" : "var wm = org.eclipse.swt.WidgetManager.getInstance();"
+      }
+    }
+  ]
+}
+
+
+""" vfp Collection *:
+
+{
+"myForms_kl_collection": { 
+      "collectionitems": [
+          123,
+          "AAA",
+          { 
+          "collection_kl_collection" :{ 
+                  "collectionitems": [
+                      456,
+                      "BBB",
+                      { 
+                      "collection_kl_collection" :{ 
+                              "collectionitems": [
+                                  789,
+                                  "CCC",
+                                  { 
+                                  "collection_kv_collection" :{ 
+                                          "collectionitems": [
+                                              {
+                                                  "key":"Product",
+                                                  "value":"VFP"
+                                              },
+                                              {
+                                                  "key":"Executing program Name",
+                                                  "value":"COLLECTIONTEST"
+                                              }
+                                          ]
+                                      }
+                                  }
+                              ]
+                          }
+                      }
+                  ]
+              }
+          }
+      ]
+	}  
+}
+
+""" Map Quest :
+
+{
+"results": [
+{
+"locations": [
+{
+"latLng": {
+"lng": -149.83208,
+"lat": 61.2175
+},
+"adminArea4": "Anchorage Municipality",
+"adminArea5Type": "City",
+"adminArea4Type": "County",
+"adminArea5": "Anchorage",
+"street": "2601 E 5th Ave",
+"adminArea1": "US",
+"adminArea3": "AK",
+"type": "s",
+"displayLatLng": {
+"lng": -149.83207,
+"lat": 61.21827
+},
+"linkId": 0,
+"postalCode": "99501-3039",
+"sideOfStreet": "L",
+"dragPoint": false,
+"adminArea1Type": "Country",
+"geocodeQuality": "POINT",
+"geocodeQualityCode": "P1AAA",
+"mapUrl": "http://www.mapquestapi.com/staticmap/v4/getmap?key=Fmjtd|luur29u2n0,rw=o5-9082lu&type=map&size=225,160&pois=purple-1,61.2175,-149.83208,0,0|¢er=61.2175,-149.83208&zoom=15&rand=209177659",
+"adminArea3Type": "State"
+}
+],
+"providedLocation": {
+"postalCode": "99501-3039",
+"street": "2601 EAST 5TH AVENUE",
+"state": "AK",
+"city": "ANCHORAGE"
+}
+}
+],
+"options": {
+"ignoreLatLngInput": false,
+"maxResults": -1,
+"thumbMaps": true
+},
+"info": {
+"copyright": {
+"text": "© 2014 MapQuest, Inc.",
+"imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+"imageAltText": "© 2014 MapQuest, Inc."
+},
+"statuscode": 0,
+"messages": []
+}
+}
+
+
+""" Bing :
+
+{
+   "authenticationResultCode":"ValidCredentials",
+   "brandLogoUri":"http:\/\/dev.virtualearth.net\/Branding\/logo_powered_by.png",
+   "copyright":"Copyright © 2011 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+   "resourceSets":[
+      {
+         "estimatedTotal":1,
+         "resources":[
+            {
+               "__type":"Location:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "bbox":[
+                  47.6561164855957,
+                  -122.41252899169922,
+                  47.697746276855469,
+                  -122.36044311523438
+               ],
+               "name":"Ballard, WA",
+               "point":{
+                  "type":"Point",
+                  "coordinates":[
+                     47.675968170166016,
+                     -122.38591003417969
+                  ]
+               },
+               "address":{
+                  "adminDistrict":"WA",
+                  "adminDistrict2":"King Co.",
+                  "countryRegion":"United States",
+                  "formattedAddress":"Ballard, WA",
+                  "locality":"Seattle",
+                  "neighborhood":"Ballard"
+               },
+               "confidence":"High",
+               "entityType":"Neighborhood",
+               "geocodePoints":[
+                  {
+                     "type":"Point",
+                     "coordinates":[
+                        47.675968170166016,
+                        -122.38591003417969
+                     ],
+                     "calculationMethod":"Rooftop",
+                     "usageTypes":[
+                        "Display"
+                     ]
+                  }
+               ],
+               "matchCodes":[
+                  "Good"
+               ]
+            }
+         ]
+      }
+   ],
+   "statusCode":200,
+   "statusDescription":"OK",
+   "traceId":"0fa6626c9aae482e968c45e465862f93"
+}
+
+
+""" JSONAPI:
+
+{
+  "links": {
+    "self": "http://example.com/articles",
+    "next": "http://example.com/articles?page[offset]=2",
+    "last": "http://example.com/articles?page[offset]=10"
+  },
+  "data": [{
+    "type": "articles",
+    "id": "1",
+    "attributes": {
+      "title": "JSON API paints my bikeshed!"
+    },
+    "relationships": {
+      "author": {
+        "links": {
+          "self": "http://example.com/articles/1/relationships/author",
+          "related": "http://example.com/articles/1/author"
+        },
+        "data": { "type": "people", "id": "9" }
+      },
+      "comments": {
+        "links": {
+          "self": "http://example.com/articles/1/relationships/comments",
+          "related": "http://example.com/articles/1/comments"
+        },
+        "data": [
+          { "type": "comments", "id": "5" },
+          { "type": "comments", "id": "12" }
+        ]
+      }
+    },
+    "links": {
+      "self": "http://example.com/articles/1"
+    }
+  }],
+  "included": [{
+    "type": "people",
+    "id": "9",
+    "attributes": {
+      "first-name": "Dan",
+      "last-name": "Gebhardt",
+      "twitter": "dgeb"
+    },
+    "links": {
+      "self": "http://example.com/people/9"
+    }
+  }, {
+    "type": "comments",
+    "id": "5",
+    "attributes": {
+      "body": "First!"
+    },
+    "relationships": {
+      "author": {
+        "data": { "type": "people", "id": "2" }
+      }
+    },
+    "links": {
+      "self": "http://example.com/comments/5"
+    }
+  }, {
+    "type": "comments",
+    "id": "12",
+    "attributes": {
+      "body": "I like XML better"
+    },
+    "relationships": {
+      "author": {
+        "data": { "type": "people", "id": "9" }
+      }
+    },
+    "links": {
+      "self": "http://example.com/comments/12"
+    }
+  }]
+}
+
+"""

@@ -1,0 +1,383 @@
+{
+ "currentVersion": 10.22,
+ "id": 3,
+ "name": "Tropical Cyclone Center Position Forecasts",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPoint",
+ "copyrightText": "",
+ "parentLayer": {
+  "id": 1,
+  "name": "Tropical Cyclone Track and Intensity Forecasts"
+ },
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "dvlbl",
+   "field2": null,
+   "field3": null,
+   "fieldDelimiter": ", ",
+   "defaultSymbol": null,
+   "defaultLabel": null,
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "49e6feb7e7a58530d991be4a971aee9a",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAmFJREFUOI2llE1IVFEUx3/XnqMOVFaYvle4a0ap/OjpQggKqRY2LnLhSiIiny2KFqEUCBK0CKGgTcEEQasCoQ9mCIIWQ1JC+tLow8xIR0xnsEYLv8aPbgvfG576nILO9p7f/f/vuecchf8IJd2hlFIHNCFE6J9hKaUBGDOJSf338jJByDJg4a+wlDK0mEwGvr56TUGxj60F+TRKecoQIpgWtsHue/epaKjH4/WaQBgw09q2rAb6Op6w58hhPF5vGGgSQoy5gWuVjZnEJBNv3lPZUI+lZkgpxwBTCLFOXbFUawF9xOxDO1gJwPfhkbb4p88szSfZVribxeRCr+LJDDid2MoqQPxdPzv3+oncuEX04oNVKrmn9fLqa619Usoy+wIb1gCmh0aJPY6Q7Iyte9/UXZNIVntezc2rd4DjTlgHmIvGXEE7Ere7+HbmY42UUhdCmKv/Wdm0IWjHaE8vhQdKdSAFjwHkVZUQfTSQFv75JZpyasNBwPAFjhFt6UgLy6VlsGqkAAghTCnluFbsV0sftvC2rt0VzNiVzY79/pRT55trgZ6yEwHy+30MhJ4Re/qSpcQs24+W46+rYTD8HLV0H8D4KthSrwBCapFPVYt80Hw+dfP89Azdl66jtjUDhNYqY7WgZvW5ZhVGB9TBSCclrWfJzPKE7VZ1nWdhjZ+1DHp+jIwS7/1A9eULsFJcXGEL0K0aBGIDgwy96OJQ8zkyFCXo3CpuysbC7JwxOzXFr/gE2Vs2U9V4EiAohGhyJrrB4x5vDh5vDrmaCiujecVtj7nBzqSQ2xxvCFvJGwLO+ANkl+oACm+FFgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "M",
+     "label": "Major Hurricane",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "49e6feb7e7a58530d991be4a971aee9a",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAmFJREFUOI2llE1IVFEUx3/XnqMOVFaYvle4a0ap/OjpQggKqRY2LnLhSiIiny2KFqEUCBK0CKGgTcEEQasCoQ9mCIIWQ1JC+tLow8xIR0xnsEYLv8aPbgvfG576nILO9p7f/f/vuecchf8IJd2hlFIHNCFE6J9hKaUBGDOJSf338jJByDJg4a+wlDK0mEwGvr56TUGxj60F+TRKecoQIpgWtsHue/epaKjH4/WaQBgw09q2rAb6Op6w58hhPF5vGGgSQoy5gWuVjZnEJBNv3lPZUI+lZkgpxwBTCLFOXbFUawF9xOxDO1gJwPfhkbb4p88szSfZVribxeRCr+LJDDid2MoqQPxdPzv3+oncuEX04oNVKrmn9fLqa619Usoy+wIb1gCmh0aJPY6Q7Iyte9/UXZNIVntezc2rd4DjTlgHmIvGXEE7Ere7+HbmY42UUhdCmKv/Wdm0IWjHaE8vhQdKdSAFjwHkVZUQfTSQFv75JZpyasNBwPAFjhFt6UgLy6VlsGqkAAghTCnluFbsV0sftvC2rt0VzNiVzY79/pRT55trgZ6yEwHy+30MhJ4Re/qSpcQs24+W46+rYTD8HLV0H8D4KthSrwBCapFPVYt80Hw+dfP89Azdl66jtjUDhNYqY7WgZvW5ZhVGB9TBSCclrWfJzPKE7VZ1nWdhjZ+1DHp+jIwS7/1A9eULsFJcXGEL0K0aBGIDgwy96OJQ8zkyFCXo3CpuysbC7JwxOzXFr/gE2Vs2U9V4EiAohGhyJrrB4x5vDh5vDrmaCiujecVtj7nBzqSQ2xxvCFvJGwLO+ANkl+oACm+FFgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "H",
+     "label": "Hurricane",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "8a1d420b82ac6db58671af96d5f38aa5",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAqlJREFUOI2llE1IVFEYhp9j06gDlaGm91pRUDP+pebNhZQUERE2RgW5SaJF3loEtpEsLAvBRRBECxfTIiKiRRHFuAoiM6jImRwoS1MqRR0H8xfHn0k7Lbx3uNloQd/2nue87/fd9zs2/qNsy32UUmqAKoTw/jMspdQBPTwyqv2cn8cD8TpE/gpLKb0/ZmfdX169JT3LyZr0NCqlPKkL4VkWNsHWO/fZUVGO3eHwA02Af1nbhlV34METtu7bg93haAJOCyEGYoGLlfXwyChD7z5QVFGOoaZLKQcAvxDiD3WboVoGaL3+AOquIgC+f+utC3V8Zm5mlrUb1/NjNtJms690W52YygpA6P0n1uW4aLnpIWnTejZoBYi4OAbbO3haU7+95EJVQEpZYF5gwirA5Nc+Bh83U9J4hYzcbIAgoCQp6aRnu2hpuJF64NrlW8BBK6wBTPcMkry3yAQPCSG8RlC8SaqipBbm0v/+Y6mUUhNC+H//z7YVpGxzAXjMVAkh/MZMfMlbNtPna2NjYb4GROEBgNTiPKZHRk271lIBZsYnGO/uiTo1YQ+gO937eX78PAXHDtdJKT1CiAHDtj4XidB59xEJaSnRy2wWa0E1y6XkXDrFs4sNlNSe65dSBgEmh0eUN423Cb/oJqN+Z9SptecywFdwxE1alpPAvYdMBYcUAOIErqOlzE3PoOTnRtuKwob6DsCrZDoVJdP5W9Mzk2Faa66j1FUDeBcrY0RQNXKuGoPRAKWr+SV5tWdYGW9vMqMac5+FsX7GsHzDvX2E2trZe6HKHC4xYQPQjBm4Bzu7+Nrymt3VZ4mz2TzWVyWWsh6ZmtanxsaYCA2RsHoVxZUnYCE4p60HY8FBuyMRuyORJFWBhdW8GusdiwVbD3lj7fGSsHF4ScBavwAEng2YMSFnTgAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 11,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "S",
+     "label": "Tropical Storm",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "27b45b40b587111d9ca58aa74af566d2",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAShJREFUKJFtkqGOwlAQRc8kxW2CffANRWz4hcrWVVTgkYRU1oB4ybqamkWTtL78xdJkXf+gYV0RVYhZQ1+6ZK+bN3fenZk7Hi9Q1SWwBjoRaV7z3oS4Bg5AOHkDuABbEelcwZQ8DANt29L3Pb7vY4wJgSuwnCocgPB2u1EUBdZa10KSJOR5vlDVWkQi79lzOAwDRVHwbT/54B3DG3cenKuaPVCWZTgqrAHatsVa68gAc2ZsWLGrKtI0RVUjD+gA+r4HcOQRc2ZM8p0nIo2q4vs+AHcejjTG/631YowJkyThXNVsWDFnxp0HX/yQZRlBEJxEpBkLtsA1z/PFHthVlfsxyzLiOG6Ao1N4mrJU1bosyzBNUzdTEAQn4PjHuBEiEj2NjMZlvJ7HL7bQf7cPRFVkAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 9,
+      "height": 9,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "D",
+     "label": "Tropical Depression",
+     "description": ""
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "251e80ce771724706aabe3c1020fee3f",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUCAYAAAC9BQwsAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAP5JREFUOI3tkbFKw2AYRc9Xo5JqoWvi5BM4RBAHH8TRJaub4GSddHK3s29gBkeXooNF8AUEK7EOLoLE1t9eB9sQxDbVwck7/ffC4Tvwe/wy3ughqQEEw5qY2WkpKCl6d26vc30DwKzvx4BNczGe8TzuLq643T5h/fwASbGZNcvAB4D52gIAc1U/38rAH+cf/GswkBQVBzNrTwRdr08/y46/7k+de6r1+qFfW9z9Fmxt7NAao7H5crYF5GAA8Ja9TjD/jKRuUbU5cC5eilYIL4/GQs9pFw30mINm1pa0v7y2GgBh0WKYEAiQEkFSvIiZNUoUQ6tU0lGf+h/NLC32Dyy4UZiQLwmGAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 10,
+      "height": 15,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "value": "L",
+     "label": "Remnant Low",
+     "description": ""
+    }
+   ]
+  },
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": -2.0037507842788246E7,
+  "ymin": -3.024097145838617E7,
+  "xmax": 2.0037507842788246E7,
+  "ymax": 3.0240971458386205E7,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857
+  }
+ },
+ "timeInfo": {
+  "startTimeField": "starttime",
+  "endTimeField": "endtime",
+  "trackIdField": null,
+  "timeExtent": [
+   978307200000,
+   978307200000
+  ],
+  "timeReference": {
+   "timeZone": "UTC",
+   "respectsDaylightSaving": false
+  },
+  "timeInterval": 1,
+  "timeIntervalUnits": "esriTimeUnitsHours",
+  "exportOptions": {
+   "useTime": true,
+   "timeDataCumulative": false,
+   "timeOffset": null,
+   "timeOffsetUnits": null
+  },
+  "hasLiveData": true
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "stormname",
+ "typeIdField": null,
+ "fields": [
+  {
+   "name": "ogc_fid",
+   "type": "esriFieldTypeOID",
+   "alias": "ogc_fid",
+   "domain": null
+  },
+  {
+   "name": "wkb_geometry",
+   "type": "esriFieldTypeGeometry",
+   "alias": "wkb_geometry",
+   "domain": null
+  },
+  {
+   "name": "stormname",
+   "type": "esriFieldTypeString",
+   "alias": "stormname",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormtype",
+   "type": "esriFieldTypeString",
+   "alias": "stormtype",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "advdate",
+   "type": "esriFieldTypeString",
+   "alias": "advdate",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "advisnum",
+   "type": "esriFieldTypeString",
+   "alias": "advisnum",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormnum",
+   "type": "esriFieldTypeDouble",
+   "alias": "stormnum",
+   "domain": null
+  },
+  {
+   "name": "fcstprd",
+   "type": "esriFieldTypeDouble",
+   "alias": "fcstprd",
+   "domain": null
+  },
+  {
+   "name": "basin",
+   "type": "esriFieldTypeString",
+   "alias": "basin",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "lat",
+   "type": "esriFieldTypeDouble",
+   "alias": "lat",
+   "domain": null
+  },
+  {
+   "name": "lon",
+   "type": "esriFieldTypeDouble",
+   "alias": "lon",
+   "domain": null
+  },
+  {
+   "name": "tau",
+   "type": "esriFieldTypeDouble",
+   "alias": "tau",
+   "domain": null
+  },
+  {
+   "name": "maxwind",
+   "type": "esriFieldTypeDouble",
+   "alias": "maxwind",
+   "domain": null
+  },
+  {
+   "name": "gust",
+   "type": "esriFieldTypeDouble",
+   "alias": "gust",
+   "domain": null
+  },
+  {
+   "name": "mslp",
+   "type": "esriFieldTypeDouble",
+   "alias": "mslp",
+   "domain": null
+  },
+  {
+   "name": "tcdvlp",
+   "type": "esriFieldTypeString",
+   "alias": "tcdvlp",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "dvlbl",
+   "type": "esriFieldTypeString",
+   "alias": "dvlbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "ssnum",
+   "type": "esriFieldTypeDouble",
+   "alias": "ssnum",
+   "domain": null
+  },
+  {
+   "name": "tcdir",
+   "type": "esriFieldTypeDouble",
+   "alias": "tcdir",
+   "domain": null
+  },
+  {
+   "name": "tcspd",
+   "type": "esriFieldTypeDouble",
+   "alias": "tcspd",
+   "domain": null
+  },
+  {
+   "name": "datelbl",
+   "type": "esriFieldTypeString",
+   "alias": "datelbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "fldatelbl",
+   "type": "esriFieldTypeString",
+   "alias": "fldatelbl",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "timezone",
+   "type": "esriFieldTypeString",
+   "alias": "timezone",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "stormsrc",
+   "type": "esriFieldTypeString",
+   "alias": "stormsrc",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "url",
+   "type": "esriFieldTypeString",
+   "alias": "url",
+   "length": 512,
+   "domain": null
+  },
+  {
+   "name": "latest",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "latest",
+   "domain": null
+  },
+  {
+   "name": "validtime",
+   "type": "esriFieldTypeDate",
+   "alias": "validtime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "starttime",
+   "type": "esriFieldTypeDate",
+   "alias": "starttime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "endtime",
+   "type": "esriFieldTypeDate",
+   "alias": "endtime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "reftime",
+   "type": "esriFieldTypeDate",
+   "alias": "reftime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "projmins",
+   "type": "esriFieldTypeInteger",
+   "alias": "projmins",
+   "domain": null
+  },
+  {
+   "name": "desigreftime",
+   "type": "esriFieldTypeDate",
+   "alias": "desigreftime",
+   "length": 36,
+   "domain": null
+  },
+  {
+   "name": "desigprojmins",
+   "type": "esriFieldTypeInteger",
+   "alias": "desigprojmins",
+   "domain": null
+  },
+  {
+   "name": "advvalidtime",
+   "type": "esriFieldTypeString",
+   "alias": "advvalidtime",
+   "length": 255,
+   "domain": null
+  }
+ ],
+ "relationships": [],
+ "canModifyLayer": false,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 1000,
+ "supportsStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, AMF",
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "useStandardizedQueries": true
+}

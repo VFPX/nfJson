@@ -1,0 +1,176 @@
+{
+ "kind": "youtube#searchListResponse",
+ "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/VuNRg62vHNxW6mcRbxVMeVTsda8\"",
+ "regionCode": "VE",
+ "pageInfo": {
+  "totalResults": 5,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/HP8VuD8fxeF39vskUYPKedXuiQM\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "F_ikTQ0kRFI"
+   },
+   "snippet": {
+    "publishedAt": "2014-03-19T03:04:11.000Z",
+    "channelId": "UCQxJseaR37j0hd8cNx4BbNg",
+    "title": "IntellisenseX, Jim Nelson: OFUG, VFP, Foxpro",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/F_ikTQ0kRFI/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/F_ikTQ0kRFI/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/F_ikTQ0kRFI/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "",
+    "liveBroadcastContent": "none"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/nYC3bzyNP_SX5JtKiq-T4VMd4Qs\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "BBC3Ly6Im10"
+   },
+   "snippet": {
+    "publishedAt": "2014-04-16T03:31:44.000Z",
+    "channelId": "UCQxJseaR37j0hd8cNx4BbNg",
+    "title": "No-Fox: OFUG,VFP,Foxpro",
+    "description": "No-Fox presentation by Marco Plaza.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/BBC3Ly6Im10/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/BBC3Ly6Im10/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/BBC3Ly6Im10/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "",
+    "liveBroadcastContent": "none"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/-Z2Z8_2qCeATuZUAsSWsh_2HBbw\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "GwEnkajNC_g"
+   },
+   "snippet": {
+    "publishedAt": "2014-01-22T04:02:24.000Z",
+    "channelId": "UCQxJseaR37j0hd8cNx4BbNg",
+    "title": "VFPX Round Up, Rick Schummer: OFUG, Visual Foxpro",
+    "description": "Rich Schummer presents highlights of VFPx.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/GwEnkajNC_g/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/GwEnkajNC_g/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/GwEnkajNC_g/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "",
+    "liveBroadcastContent": "none"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/wJGMkd9a_Cvmx1wBEsLi1JwLIO4\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "5zXi5aOUgcw"
+   },
+   "snippet": {
+    "publishedAt": "2014-02-19T03:42:42.000Z",
+    "channelId": "UCQxJseaR37j0hd8cNx4BbNg",
+    "title": "Customer Service - OFUG, VFP",
+    "description": "Customer Service, presentation by Jody Meyer. OFUG, Visual Foxpro.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/5zXi5aOUgcw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/5zXi5aOUgcw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/5zXi5aOUgcw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "",
+    "liveBroadcastContent": "none"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"DsOZ7qVJA4mxdTxZeNzis6uE6ck/OGTN3IgI8M2LcGKCX8R_AgKcBJE\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "czQhb9W1ckA"
+   },
+   "snippet": {
+    "publishedAt": "2014-05-02T01:48:17.000Z",
+    "channelId": "UCQxJseaR37j0hd8cNx4BbNg",
+    "title": "Grouping in Thor's Size/Position",
+    "description": "A grouping enhancement I added to Thor's Size/Position tool.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/czQhb9W1ckA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/czQhb9W1ckA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/czQhb9W1ckA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "",
+    "liveBroadcastContent": "none"
+   }
+  }
+ ]
+}

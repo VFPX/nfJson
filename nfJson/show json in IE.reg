@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00;
+; Tell IE 7,8,9,10,11 to open JSON documents in the browser on Windows XP and later.
+; 25336920-03F9-11cf-8FD0-00AA00686F13 is the CLSID for the "Browse in place" .
+;
+[HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/json]
+"CLSID"="{25336920-03F9-11cf-8FD0-00AA00686F13}"
+"Encoding"=hex:08,00,00,00

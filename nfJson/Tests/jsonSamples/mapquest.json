@@ -1,0 +1,57 @@
+{
+    "info": {
+        "copyright": {
+            "imagealttext": "© 2014 MapQuest, Inc.",
+            "imageurl": "http://api.mqcdn.com/res/mqlogo.gif",
+            "text": "© 2014 MapQuest, Inc."
+        },
+        "statuscode": 0,
+        "_messages": [
+            ""
+        ]
+    },
+    "options": {
+        "ignorelatlnginput": false,
+        "maxresults": -1,
+        "thumbmaps": true
+    },
+    "results": [
+        {
+            "locations": [
+                {
+                    "adminarea1": "US",
+                    "adminarea1type": "Country",
+                    "adminarea3": "AK",
+                    "adminarea3type": "State",
+                    "adminarea4": "Anchorage Municipality",
+                    "adminarea4type": "County",
+                    "adminarea5": "Anchorage",
+                    "adminarea5type": "City",
+                    "displaylatlng": {
+                        "lat": 61.21827,
+                        "lng": -149.83207
+                    },
+                    "dragpoint": false,
+                    "geocodequality": "POINT",
+                    "geocodequalitycode": "P1AAA",
+                    "latlng": {
+                        "lat": 61.2175,
+                        "lng": -149.83208
+                    },
+                    "linkid": 0,
+                    "mapurl": "http://www.mapquestapi.com/staticmap/v4/getmap?key=Fmjtd|luur29u2n0,rw=o5-9082lu&type=map&size=225,160&pois=purple-1,61.2175,-149.83208,0,0|¢er=61.2175,-149.83208&zoom=15&rand=209177659",
+                    "postalcode": "99501-3039",
+                    "sideofstreet": "L",
+                    "street": "2601 E 5th Ave",
+                    "type": "s"
+                }
+            ],
+            "providedlocation": {
+                "city": "ANCHORAGE",
+                "postalcode": "99501-3039",
+                "state": "AK",
+                "street": "2601 EAST 5TH AVENUE"
+            }
+        }
+    ]
+}

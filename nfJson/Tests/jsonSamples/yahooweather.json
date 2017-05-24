@@ -1,0 +1,110 @@
+{
+ "query": {
+  "count": 1,
+  "created": "2016-02-20T19:34:51Z",
+  "lang": "es-ES",
+  "results": {
+   "channel": {
+    "title": "Yahoo! Weather - Nome, AK",
+    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Nome__AK/*http://weather.yahoo.com/forecast/USAK0170_f.html",
+    "description": "Yahoo! Weather for Nome, AK",
+    "language": "en-us",
+    "lastBuildDate": "Sat, 20 Feb 2016 9:53 am AKST",
+    "ttl": "60",
+    "location": {
+     "city": "Nome",
+     "country": "United States",
+     "region": "AK"
+    },
+    "units": {
+     "distance": "mi",
+     "pressure": "in",
+     "speed": "mph",
+     "temperature": "F"
+    },
+    "wind": {
+     "chill": "-9",
+     "direction": "310",
+     "speed": "5"
+    },
+    "atmosphere": {
+     "humidity": "60",
+     "pressure": "29.45",
+     "rising": "1",
+     "visibility": "10"
+    },
+    "astronomy": {
+     "sunrise": "9:41 am",
+     "sunset": "6:49 pm"
+    },
+    "image": {
+     "title": "Yahoo! Weather",
+     "width": "142",
+     "height": "18",
+     "link": "http://weather.yahoo.com",
+     "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+    },
+    "item": {
+     "title": "Conditions for Nome, AK at 9:53 am AKST",
+     "lat": "64.5",
+     "long": "-165.41",
+     "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Nome__AK/*http://weather.yahoo.com/forecast/USAK0170_f.html",
+     "pubDate": "Sat, 20 Feb 2016 9:53 am AKST",
+     "condition": {
+      "code": "34",
+      "date": "Sat, 20 Feb 2016 9:53 am AKST",
+      "temp": "1",
+      "text": "Fair"
+     },
+     "description": "\n<img src=\"http://l.yimg.com/a/i/us/we/52/34.gif\"/><br />\n<b>Current Conditions:</b><br />\nFair, 1 F<BR />\n<BR /><b>Forecast:</b><BR />\nSat - Sunny. High: 8 Low: 1<br />\nSun - AM Snow Showers. High: 20 Low: 11<br />\nMon - Mostly Cloudy. High: 24 Low: 15<br />\nTue - Partly Cloudy. High: 23 Low: 20<br />\nWed - Cloudy. High: 26 Low: 23<br />\n<br />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Nome__AK/*http://weather.yahoo.com/forecast/USAK0170_f.html\">Full Forecast at Yahoo! Weather</a><BR/><BR/>\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)<br/>\n",
+     "forecast": [
+      {
+       "code": "32",
+       "date": "20 Feb 2016",
+       "day": "Sat",
+       "high": "8",
+       "low": "1",
+       "text": "Sunny"
+      },
+      {
+       "code": "14",
+       "date": "21 Feb 2016",
+       "day": "Sun",
+       "high": "20",
+       "low": "11",
+       "text": "AM Snow Showers"
+      },
+      {
+       "code": "28",
+       "date": "22 Feb 2016",
+       "day": "Mon",
+       "high": "24",
+       "low": "15",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "30",
+       "date": "23 Feb 2016",
+       "day": "Tue",
+       "high": "23",
+       "low": "20",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "26",
+       "date": "24 Feb 2016",
+       "day": "Wed",
+       "high": "26",
+       "low": "23",
+       "text": "Cloudy"
+      }
+     ],
+     "guid": {
+      "isPermaLink": "false",
+      "content": "USAK0170_2016_02_24_7_00_AKST"
+     }
+    }
+   }
+  }
+ }
+}
