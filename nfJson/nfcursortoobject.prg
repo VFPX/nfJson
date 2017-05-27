@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza vfp2nofox@gmail.com / @vfp2Nofox
+* Created by Marco Plaza @vfp2Nofox
 * ver 1.000 - 20/02/2016 
 *-------------------------------------------------------------------
 parameters  copytoarray,includestruct

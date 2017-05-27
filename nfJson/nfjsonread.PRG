@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza vfp2nofox@gmail.com / @vfp2Nofox
+* Created by Marco Plaza @vfp2Nofox
 * ver 2.000 - 26/03/2016
 * ver 2.090 - 22/07/2016 :
 *	improved error management
