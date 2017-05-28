@@ -1,9 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza @vfp2Nofox
-* ver 2.000 - 26/03/2016
-* ver 2.090 - 22/07/2016 :
-*	improved error management
-*	nfjsonread will return .null. for invalid json
+* Created by Marco Plaza , 2013-2017 @nfTools
 *-------------------------------------------------------------------
 lparameters cjsonstr,revivecollection
 
@@ -19,20 +15,18 @@ else
 	calledfrom = ''
 endif
 
+
 try
 
+	cerror = ''
 	if not left(ltrim(cjsonstr),1)  $ '{['  and file(m.cjsonstr)
 		cjsonstr = filetostr(m.cjsonstr)
 	endif
 
-	sts = set('strictdate')
+	ost = set('strictdate')
 	set strictdate to 0
-
 	ojson = nfjsonread2(m.cjsonstr,m.revivecollection)
-	
-	set strictdate to (m.sts)
-
-	cerror = ''
+	set strictdate to (m.ost)
 
 catch to oerr1
 	cerror = 'nfJson '+m.calledfrom+crlf+m.oerr1.message
@@ -41,6 +35,7 @@ endtry
 
 if !empty(m.cerror)
 	error m.cerror
+	return .null.
 endif
 
 return iif(vartype(m.ojson)='O',m.ojson,.null.)
@@ -78,7 +73,7 @@ try
 	case  aj(1)='{'
 		x = 1
 		ostack.pushobject()
-		procstring(m.ojson)
+		procstring(m.ojson )
 
 	case aj(1) = '['
 		x = 0
@@ -111,7 +106,6 @@ catch to oerr
 	otherwise
 
 		cerror = ' program error # '+transform(m.oerr.errorno)+crlf+m.oerr.message+' at line: '+transform(oerr.lineno)+crlf+' Parsing: '+right(m.strp,80)
-		
 
 	endcase
 
@@ -124,7 +118,7 @@ endif
 return m.ojson
 
 *--------------------------------------------------------------------------------
-procedure procstring(obj,evalue)
+procedure procstring(obj,evalue )
 *--------------------------------------------------------------------------------
 #define cvalid 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_'
 #define creem  '_______________________________________________________________'
@@ -200,7 +194,7 @@ do while m.objectopen
 		if m.expecting == '[' and m.aj(m.x) # '['
 			error 'expecting [ got '+aj(m.x)
 		else
-			procvalue(m.obj)
+			procvalue(m.obj )
 		endif
 
 
@@ -246,37 +240,40 @@ endif
 
 
 *-----------------------------------------
-function unescunicode( value )
+function unescunicode( cstr )
 *-----------------------------------------
 
+private all
 
-noc=1
+ust = ''
 
-do while .t.
+for x = 1 to alines(xstr,m.cstr,18,'\u','\\u')
 
-	posunicode = at('\u',m.value,m.noc)
+	if right(xstr(m.x),3) # '\\u' and right(xstr(m.x),2) = '\u'
 
-	if m.posunicode = 0
-		return
-	endif
+		ust = m.ust + rtrim(xstr(M.x),0,'\u')
 
-	if substr(m.value,m.posunicode-1,1) = '\' and substr(m.value,m.posunicode-2,1) # '\'
-		noc=m.noc+1
-		loop
-	endif
+		dec = val( "0x"+left(xstr(m.x+1),4))
+		ansi = strconv( bintoc( m.dec  , "2RS" ) ,6 )
 
-	nunic = evaluate('0x'+ substr(m.value,m.posunicode+2,4) )
+		if m.ansi = '?'
+			ust = m.ust + '&#'+transform(m.dec)
+		else
+			ust = m.ust + m.ansi
+		endif
 
-	if between(m.nunic,0,255)
-		unicodec = chr(m.nunic)
+		xstr(m.x+1) = substr(xstr(m.x+1),5)
+
 	else
-		unicodec = '&#'+transform(m.nunic)+';'
+
+		ust = m.ust + xstr(m.x)
+
 	endif
 
-	value = stuff(m.value,m.posunicode,6,m.unicodec)
+endfor
 
+cstr = m.ust
 
-enddo
 
 *-----------------------------------
 function unescapecontrolc( value )
@@ -341,7 +338,7 @@ expectingpropertyname = .f.
 
 
 *-------------------------------------------------------------
-procedure procvalue(obj)
+procedure procvalue(obj )
 *-------------------------------------------------------------
 
 do case
@@ -456,10 +453,11 @@ otherwise
 		unescapecontrolc(@value)  && 2
 		value = strtran(m.value,'\\','\')  && 3
 
-** check for Json DateTime: && 2017-03-10T17:43:55  * proper formatted dates with invalid values will parse as empty date - eg: {"today":"2017-99-01T15:99:00"}
+** check for Json DateTime: && 2017-03-10T17:43:55
+* proper formatted dates with invalid values will parse as character - eg: {"today":"2017-99-01T15:99:00"}
 
-		if len(m.value) = 19 and alines(jd,m.value,24,'-','T',':','0','1','2','3','4','5','6','7','8','9') = 19 and jd(5)='-' and jd(8) = '-' and jd(11) = 'T' and jd(14) = ':' and jd(17) = ':' and occurs('-',m.value) = 2 and occurs(':',m.value) = 2 and occurs('T',m.value) = 1
-			value = evaluate("{^"+m.value+"}")
+		if isjsondt( m.value )
+			value = jsondatetodt( m.value )
 		endif
 
 	else
@@ -478,9 +476,7 @@ otherwise
 				local tvaln,im
 				im = 'tvaln = '+m.value
 				&im
-				if tvaln = evaluate(m.value)
-					value = m.tvaln
-				endif
+				value = m.tvaln
 				badnumber = .f.
 			catch
 				badnumber = .t.
@@ -692,6 +688,26 @@ else
 	return m.oconv
 endif
 
+
+*----------------------------------
+function isjsondt( cstr )
+*----------------------------------
+return iif( len(m.cstr) = 19 ;
+	and len(chrtran(m.cstr,'01234567890:T-','')) = 0 ;
+	and substr(m.cstr,5,1) = '-' ;
+	and substr(m.cstr,8,1) = '-' ;
+	and substr(m.cstr,11,1) = 'T' ;
+	and substr(m.cstr,14,1) = ':' ;
+	and substr(m.cstr,17,1) = ':' ;
+	and occurs('T',m.cstr) = 1 ;
+	and occurs('-',m.cstr) = 2 ;
+	and occurs(':',m.cstr) = 2 ,.t.,.f. )
+
+
+*-----------------------------------
+procedure jsondatetodt( cjsondate )
+*-----------------------------------
+return evl(eval('{^'+m.cjsondate+'}'),m.cjsondate)
 
 
 ******************************************

@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza @vfp2Nofox
+* Created by Marco Plaza @nfTools
 * ver 1.100 - 24/02/2016 
 * enabled collection processing
 * ver 1.101 - 24/02/2016 
@@ -19,7 +19,6 @@ parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag
 #define crlf chr(13)+Chr(10)
 
 private all
-
 amembersFlag = evl(m.amembersFlag,'U')
 
 esarray = type('oVfp',1) = 'A'
@@ -27,6 +26,7 @@ esobjeto = vartype(m.ovfp) = 'O'
 
 if !m.esarray and !m.esobjeto
 	Error 'must supply a vfp object/array'
+	return
 endif
 
 _nivel = iif( cast(m.formattedOutput as l ) , 1, -1)
@@ -54,7 +54,7 @@ otherwise
 endcase
 
 
-return ltrim(cjson)
+return ltrim(m.cjson)
 
 *----------------------------------------
 function collTagName(thiscoll)
@@ -75,21 +75,21 @@ este = ''
 
 xtabs = nivel(2)
 
-bc = iif(type('m.obt.class')='C',m.obt.class,'?')
+bc = iif(type('m.obt.baseclass')='C',m.obt.baseclass,'?')
 
 iscollection =  bc = 'Collection' 
 
 if m.iscollection
 
 
-	este = este+'{ '+xtabs
+	este = m.este+'{ '+m.xtabs
 	xtabs = nivel(2)
-	este = este+'"collectionitems": ['+xtabs
+	este = m.este+'"collectionitems": ['+m.xtabs
 
 	procCollection(obt,m.noNullArrayItem,m.amembersFlag)
 
 	xtabs = nivel(-2)
-	este  = este+xtabs+']'
+	este  = m.este+m.xtabs+']'
 
 else
 
@@ -124,13 +124,13 @@ else
 
 		case m.esarray
 
-			procarray(obt,m.var,m.nonullarrayitem)
+			procarray(m.obt,m.var,m.nonullarrayitem)
 
 		case m.esobjeto
 
 			thiso=m.obt.&var
 
-			bc = iif(type('m.thiso.class')='C',m.thiso.class,'?')
+			bc = iif(type('m.thiso.baseclass')='C',m.thiso.baseclass,'?')
 
 			if bc = 'Collection' 
 
@@ -147,7 +147,7 @@ else
 		otherwise
 
 
-			este = este+concatval(m.obt.&var)
+			este = m.este+concatval(m.obt.&var)
 
 		endcase
 
@@ -157,7 +157,7 @@ else
 endif
 
 	xtabs = nivel(-2)
-	este  = este+m.xtabs
+	este  = m.este+m.xtabs
 
 
 return m.este
@@ -177,9 +177,9 @@ xtabs=nivel(2)
 este = m.este+'['+m.xtabs
 nelem = 1
 
-do while nelem <= m.titems
+do while m.nelem <= m.titems
 
-	este = este+iif(m.nelem>1,','+m.xtabs,'')
+	este = m.este+iif(m.nelem>1,','+m.xtabs,'')
 
 	if m.bidim
 		xtabs = nivel(2)
@@ -206,7 +206,7 @@ do while nelem <= m.titems
 		else
 
 
-			bc = iif(type('m.elem.class')='C',m.elem.class,'?')
+			bc = iif(type('m.elem.baseclass')='C',m.elem.baseclass,'?')
 
 			if bc = 'Collection' 
 
@@ -214,7 +214,7 @@ do while nelem <= m.titems
 				
    				este =  m.este+procobject(m.elem ,.t.,m.nonullarrayitem,m.amembersFlag)
 
-				este = este + '}'+m.xTabs+'}'
+				este = m.este + '}'+m.xTabs+'}'
 				
 			else
 
@@ -338,19 +338,19 @@ With obt
 
 	For x1 = 1 To .Count
 
-		If conllave
+		If m.conllave
 			elem = Createobject('empty')
-			addproperty(elem,'Key', .GetKey(x1) )
-			addproperty(elem,'Value',.Item(x1))
+			addproperty(elem,'Key', .GetKey(m.x1) )
+			addproperty(elem,'Value',.Item(m.x1))
 		Else
-			elem = .Item(x1)
+			elem = .Item(m.x1)
 		Endif
 
-		este = este+Iif(x1>1,','+xtabs,'')
+		este = m.este+Iif(m.x1>1,','+m.xtabs,'')
 
-		If Vartype(elem) # 'O'
+		If Vartype(m.elem) # 'O'
 		
-			este = este+Concatval(m.elem)
+			este = m.este+Concatval(m.elem)
 
 		else
 
@@ -363,13 +363,13 @@ With obt
 				m.este = m.este+'{'
 			endif
 
-			este = este+procObject(m.elem, m.isCollection , m.noNullArrayItem, m.aMembersFlag )
+			este = m.este+procObject(m.elem, m.isCollection , m.noNullArrayItem, m.aMembersFlag )
 		
-			este = este+'}'
+			este = m.este+'}'
 		
 			if m.isCollection
 				xTabs = nivel(-2)
-				este = este+m.xTabs+'}'
+				este = m.este+m.xTabs+'}'
 			endif
 
 		Endif

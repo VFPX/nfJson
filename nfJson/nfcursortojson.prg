@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza  @vfp2Nofox
+* Created by Marco Plaza @nfTools
 * ver 1.000 - 20/02/2016 
 *-------------------------------------------------------------------
 parameters returnArray,arrayofValues,includestruct,formattedOutput
