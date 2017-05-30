@@ -428,7 +428,7 @@ otherwise
 
 	do case
 
-	case empty(value) and  not ( m.isstring and m.closechar = '"'  )
+	case empty(m.value) and  not ( m.isstring and m.closechar = '"'  )
 		error 'Expecting value got '+m.closechar
 
 	case  m.isstring
@@ -449,8 +449,8 @@ otherwise
 	if m.isstring
 
 * don't change this lines sequence!:
-		unescunicode(@value)  && 1
-		unescapecontrolc(@value)  && 2
+		unescunicode(@m.value)  && 1
+		unescapecontrolc(@m.value)  && 2
 		value = strtran(m.value,'\\','\')  && 3
 
 ** check for Json DateTime: && 2017-03-10T17:43:55
@@ -468,7 +468,7 @@ otherwise
 		case m.value == 'null'
 			value = .null.
 		case m.value == 'true' or m.value == 'false'
-			value = value='true'
+			value = m.value='true'
 
 		case empty(chrtran(m.value,'-1234567890.Ee',''))
 
