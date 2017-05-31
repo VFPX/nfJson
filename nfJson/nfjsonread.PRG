@@ -357,7 +357,7 @@ case aj(m.x) = '{'
 
 	else
 
-		anuevoel(m.obj,m.arrayname,createobject('empty'),m.bidim,@colpos,@rowpos)
+		anuevoel(m.obj,m.arrayname,createobject('empty'),m.bidim,@m.colpos,@m.rowpos)
 		expectingpropertyname = .f.
 		expecting = ',]'
 		expectingvalue = .t.
@@ -505,7 +505,7 @@ otherwise
 
 	else
 
-		anuevoel(obj,m.arrayname,m.value,m.bidim,@colpos,@rowpos)
+		anuevoel(obj,m.arrayname,m.value,m.bidim,@m.colpos,@m.rowpos)
 		expecting = ']'
 		expectingvalue = .t.
 		expectingpropertyname = .f.
@@ -704,10 +704,15 @@ return iif( len(m.cstr) = 19 ;
 	and occurs(':',m.cstr) = 2 ,.t.,.f. )
 
 
-*-----------------------------------
-procedure jsondatetodt( cjsondate )
-*-----------------------------------
-return evl(eval('{^'+m.cjsondate+'}'),m.cjsondate)
+*---------------------------------------------------
+procedure jsondatetodt( cjsondate , allowEmpty )
+*---------------------------------------------------
+if m.cJsonDate = '0000-00-00T00:00:00'
+	return iif(m.allowEmpty,{},.null.)
+else
+	return evl(eval('{^'+m.cjsondate+'}'),m.cjsondate)
+endif
+
 
 
 ******************************************

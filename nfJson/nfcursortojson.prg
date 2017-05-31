@@ -8,12 +8,12 @@ LOCAL o
 o = nfCursorToObject( m.arrayOfValues,m.includestruct )
 
 
-IF m.returnArray
+IF m.returnArray 
 	DIMENSION rows(1)
-	ACOPY(o.rows,'rows')
-	Return nfJsonCreate(@rows,m.formattedOutput)
+	ACOPY(m.o.rows,'rows')
+	Return nfJsonCreate(@m.rows,m.formattedOutput,.t.)
 ELSE
-	Return nfJsonCreate(m.o,m.formattedOutput)
+	Return nfJsonCreate(m.o,m.formattedOutput,.t.)
 ENDIF
 
 

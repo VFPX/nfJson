@@ -67,6 +67,11 @@ function arraytokvtable( aa )
 
 nitem = 1
 for each thisval in aa
+
+	if vartype(m.thisval) = 'O'
+		thisval = nfjsoncreate( m.thisval)
+	endif
+
 	insert into (m.cn) ;
 		( key, value , type ) ;
 		values ;

@@ -25,7 +25,7 @@ else
 	count to n
 
 	dimension arows(1)
-	arows(1) = '{}'
+	arows(1) = .null.
 
 	if m.n > 0
 
@@ -45,10 +45,7 @@ else
 endif
 
 addproperty(ovfp,'recordcount', m.recordCount)
-
-IF m.recordcount > 0
-	addarray(ovfp,'rows',@arows)
-ENDIF
+addarray(ovfp,'rows',@m.arows)
 
 
 if m.includestruct
@@ -60,7 +57,7 @@ if m.includestruct
 		store 0 to astruct(n,17),astruct(n,18)
 	endfor
 
-	addarray(m.ovfp,'aStruct',@astruct)
+	addarray(m.ovfp,'aStruct',@m.astruct)
 
 
 endif
