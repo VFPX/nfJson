@@ -20,7 +20,59 @@ Project Manager: Marco Plaza
 
 * **nfCursorToObject(**_lCopyToArray, lIncludeStruct_**)**
 
+* **BETA PREVIEW: nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
+
+	Similar to SqlServer 2016 openJson function. Allows you to convert Json to cursor. Pass jsonString , optional array path using  $. as object root and cursor structure as string with following structure for each column: `-<fieldName> <castExpression> [<$.propertyPath>]` Object types must use JSON as cast type ( see example ). Please check nfOpenJsonTest and [https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql) for clear understanding. 
+
+
+		 text to mssample2 noshow
+		[
+		  {
+		    "Order": {
+		      "Number":"SO43659",
+		      "Date":"2011-05-31T00:00:00"
+		    },
+		    "AccountNumber":"AW29825",
+		    "Item": {
+		      "Price":2024.9940,
+		      "Quantity":1
+		    }
+		  },
+		  {
+		    "Order": {
+		      "Number":"SO43661",
+		      "Date":"2011-06-01T00:00:00"
+		    },
+		    "AccountNumber":"AW73565",
+		    "Item": {
+		      "Price":2024.9940,
+		      "Quantity":3
+		    }
+		  }
+		]
+		ENDTEXT
+		
+		
+		nfOpenJson( m.mssample2,'$.array',';
+		 - Number   v(200) $.Order.Number  ;
+		 - Date     t      $.Order.Date    ;
+		 - Customer v(200) $.AccountNumber  ;
+		 - itemPrice n(6,2) $.Item.Price ;
+		 - itemQuantity i   $.Item.Quantity ;
+		 - Order  JSON')
+		
+		browse
+		
+		nfOpenJson( m.msSample2 )
+		browse
+		
+		nfOpenJson( m.msSample2,'$.array')
+		browse
+
+
 ## Tests & Sample files
+
+* **nfOpenJsonTest:** samples taken from [https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql)
 
 *  **nfJsonPerfTest.prg:** just run it and choose one of the embedded json samples from the list to check performance on your pc. ( Allows you to parse Json from clipboard too. )
 

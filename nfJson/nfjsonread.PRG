@@ -60,7 +60,7 @@ try
 	nl = alines(aj,m.cjson,20,'{','}','"',',',':','[',']','\\')
 
 	for xx = 1 to alen(aj)
-		if left(ltrim(aj(m.xx)),1) $ '{}",:[]'  or left(ltrim(m.aj(m.xx)),4) $ 'true/false/null'
+		if left(ltrim(aj(m.xx)),1) $ '{}",:[]'  or lower(left(ltrim(m.aj(m.xx)),4)) $ 'true/false/null'
 			aj(m.xx) = ltrim(aj(m.xx))
 		endif
 	endfor
@@ -378,13 +378,12 @@ case  aj(x) = '['
 		colpos = 0
 		bidim = .f.
 
-		#define emptyarrayflag '_EMPTY_ARRAY_FLAG_'
 
 		try
-			addproperty(obj,(m.arrayname+'(1)'),emptyarrayflag)
+			addproperty(obj,(m.arrayname+'(1)'),.NULL.)
 		catch
 			m.arrayname = m.arrayname+'_vfpSafe_'
-			addproperty(obj,(m.arrayname+'(1)'),emptyarrayflag)
+			addproperty(obj,(m.arrayname+'(1)'),.NULL.)
 		endtry
 
 
@@ -465,9 +464,9 @@ otherwise
 		value = alltrim(m.value)
 
 		do case
-		case m.value == 'null'
+		case lower(m.value) == 'null'
 			value = .null.
-		case m.value == 'true' or m.value == 'false'
+		case lower(m.value) == 'true' or lower(m.value) == 'false'
 			value = m.value='true'
 
 		case empty(chrtran(m.value,'-1234567890.Ee',''))
@@ -611,6 +610,9 @@ for x = 1 to m.nprop
 		tv = m.o.&estavar
 
 		m.keyvalcoll = right( m.estavar , 14 ) = '_KV_COLLECTION'
+		
+		if not ( alen(m.tv.collectionItems) = 1 and isnull( m.tv.collectionItems ) )
+		
 
 		for t = 1 to alen(m.tv.collectionitems)
 
@@ -620,9 +622,6 @@ for x = 1 to m.nprop
 				esteval = m.tv.collectionitems(m.t)
 			endif
 
-			if vartype(m.esteval) = 'C' and m.esteval = emptyarrayflag
-				loop
-			endif
 
 			if vartype(m.esteval) = 'O' or type('esteVal',1) = 'A'
 				esteval = revivecollection(m.esteval)
@@ -635,6 +634,8 @@ for x = 1 to m.nprop
 			endif
 
 		endfor
+
+endif
 
 	case type('m.o.'+m.estavar,1) = 'A'
 

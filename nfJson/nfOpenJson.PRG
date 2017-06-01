@@ -4,9 +4,63 @@
 * refer to https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
 * ver 0.9 2017/05/29
 *---------------------------------------------
-parameters cjsonstr,cpropertypath,returnvalue
+parameters cjson, carraypath, cstruct
+
+carraypath = evl(m.carraypath,'.array')
+carraypath = '.'+ltrim(m.carraypath,1,'.','$')
 
 private all
+
+oj = ''
+
+if pcount() < 2
+	cres = json2kvcursor( m.cjson )
+else
+	cres = json2kvcursor( m.cjson, m.carraypath )
+endif
+
+if pcount() < 3
+	return m.cres
+endif
+
+
+=alines( cc, cstruct,7,'-')
+
+isql = ' SELECT '
+
+for each line in cc
+
+	oproperty  = strextract(M.line,[$.],[ ],1,2)
+	castexp    = getwordnum(M.line,2,' ')
+	fieldalias = getwordnum(M.line,1,' ')
+
+	isql = isql+' '+textmerge("ncast('<< evl(m.oProperty,m.fieldAlias) >> as <<m.castExp>>') as <<m.fieldAlias>>")+','
+
+endfor
+
+isql = rtrim(M.isql,1,',')+' from (cres) where vtooj() into cursor result'
+
+&isql
+
+
+*-------------------------------
+function vtooj()
+*-------------------------------
+oj = nfjsonread( value )
+
+*------------------------------------
+function ncast( path )
+*-------------------------------------
+if 'as json' $ lower(m.path)
+	return cast( nfjsoncreate(eval('oj.'+getwordnum(m.path,1))) as m )
+else
+	return evaluate(' cast( oj.'+m.path+')')
+endif
+
+*------------------------------------------------------
+function json2kvcursor(cjsonstr,cpropertypath)
+*------------------------------------------------------
+
 
 kk = nfjsonread(m.cjsonstr)
 
@@ -17,6 +71,7 @@ endif
 try
 	if pcount() > 1
 
+		cpropertypath = ltrim(m.cpropertypath,1,'$')
 		pname = substr(m.cpropertypath,rat('.',m.cpropertypath)+1)
 
 		if	type('m.kk'+m.cpropertypath,1) = 'A'
@@ -37,13 +92,10 @@ do case
 case isnull(m.lretval)
 	return .null.
 
-case m.returnvalue
-	return m.lretval
-
 otherwise
 
 	cn = sys(2015)
-	
+
 	create cursor ( m.cn ) ( key c(40), value m null, type c(1) )
 	do case
 	case type('m.lretval',1) = 'A'
