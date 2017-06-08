@@ -1,6 +1,6 @@
 *-------------------------------------------------------------------
 * Created by Marco Plaza / @nfTools
-* ver 1.000 - 20/02/2016 
+* ver 1.010 - 07/06/2017
 *-------------------------------------------------------------------
 parameters  copytoarray,includestruct
 
@@ -18,6 +18,11 @@ if copytoarray
 
 	copy to array arows
 	recordcount = _tally
+
+	if _tally = 0
+		dimension arows(1) 
+		arows(1)  = .null.
+	endif
 
 else
 
