@@ -714,6 +714,7 @@ if m.cJsonDate = '0000-00-00T00:00:00'
 
 else
 
+	cret = eval('{^'+rtrim(m.cjsondate,1,"T00:00:00")+'}')
 	
 	if !empty(m.cret) 
 		return m.cret
