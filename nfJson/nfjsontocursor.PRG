@@ -1,8 +1,10 @@
 *-------------------------------------------------------------------
 * Created by Marco Plaza / @nfTools
 * ver 1.000 - 20/02/2016
+* ver 1.100 - 05/08/2017
 *-------------------------------------------------------------------
 Parameters  cJson, cName, forceImportFromArray
+
 
 
 cName = Evl(m.cName,Sys(2015))
@@ -10,6 +12,7 @@ cName = Evl(m.cName,Sys(2015))
 Private All
 
 oCursor = nfJsonRead(m.cJson)
+
 
 do case
  CASE VARTYPE(oCursor) # 'O'

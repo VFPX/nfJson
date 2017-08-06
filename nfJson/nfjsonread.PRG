@@ -25,7 +25,7 @@ try
 
 	ost = set('strictdate')
 	set strictdate to 0
-	ojson = nfjsonread2(m.cjsonstr,m.revivecollection)
+	ojson = nfjsonread2(m.cjsonstr, m.revivecollection)
 	set strictdate to (m.ost)
 
 catch to oerr1
@@ -73,7 +73,7 @@ try
 	case  aj(1)='{'
 		x = 1
 		ostack.pushobject()
-		procstring(m.ojson )
+		procstring(m.ojson)
 
 	case aj(1) = '['
 		x = 0
@@ -118,7 +118,7 @@ endif
 return m.ojson
 
 *--------------------------------------------------------------------------------
-procedure procstring(obj,evalue )
+procedure procstring(obj,evalue)
 *--------------------------------------------------------------------------------
 #define cvalid 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_'
 #define creem  '_______________________________________________________________'
@@ -194,7 +194,7 @@ do while m.objectopen
 		if m.expecting == '[' and m.aj(m.x) # '['
 			error 'expecting [ got '+aj(m.x)
 		else
-			procvalue(m.obj )
+			procvalue(m.obj)
 		endif
 
 
@@ -204,9 +204,9 @@ do while m.objectopen
 enddo
 
 
-*----------------------------------------------------------
+*-----------------------------------------------------------------------------
 function anuevoel(obj,arrayname,valasig,bidim,colpos,rowpos)
-*----------------------------------------------------------
+*-----------------------------------------------------------------------------
 
 
 if m.bidim
@@ -274,7 +274,6 @@ endfor
 
 cstr = m.ust
 
-
 *-----------------------------------
 function unescapecontrolc( value )
 *-----------------------------------
@@ -338,7 +337,7 @@ expectingpropertyname = .f.
 
 
 *-------------------------------------------------------------
-procedure procvalue(obj )
+procedure procvalue(obj)
 *-------------------------------------------------------------
 
 do case
@@ -705,16 +704,24 @@ return iif( len(m.cstr) = 19 ;
 	and occurs(':',m.cstr) = 2 ,.t.,.f. )
 
 
-*---------------------------------------------------
-procedure jsondatetodt( cjsondate , allowEmpty )
-*---------------------------------------------------
+*-----------------------------------------------------
+procedure jsondatetodt( cjsondate )
+*-----------------------------------------------------
+
 if m.cJsonDate = '0000-00-00T00:00:00'
-	return iif(m.allowEmpty,{},.null.)
+
+	return {}
+
 else
-	return evl(eval('{^'+m.cjsondate+'}'),m.cjsondate)
+
+	
+	if !empty(m.cret) 
+		return m.cret
+	else
+		error 'Invalid date '+cJsonDate
+	endif
+
 endif
-
-
 
 ******************************************
 define class stack as collection
