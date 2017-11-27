@@ -692,6 +692,9 @@ endif
 *----------------------------------
 function isjsondt( cstr )
 *----------------------------------
+
+cstr = rtrim(m.cstr,1,'Z')
+
 return iif( len(m.cstr) = 19 ;
 	and len(chrtran(m.cstr,'01234567890:T-','')) = 0 ;
 	and substr(m.cstr,5,1) = '-' ;
@@ -707,6 +710,8 @@ return iif( len(m.cstr) = 19 ;
 *-----------------------------------------------------
 procedure jsondatetodt( cjsondate )
 *-----------------------------------------------------
+
+cJsonDate = rtrim(m.cJsonDate,1,'Z')
 
 if m.cJsonDate = '0000-00-00T00:00:00'
 

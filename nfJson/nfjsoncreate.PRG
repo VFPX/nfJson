@@ -276,7 +276,7 @@ else
 	case m.tvar = 'L'
 		vc = iif(m.valor,'true','false')
 	case m.tvar $ 'DT'
-		vc = ["]+ttoc(m.valor,3)+["]
+		vc = ["]+ttoc(m.valor,3)+[Z"]
 	case mustEncode(m.valor)
 		vc = ["]+escapeandencode(m.valor)+["]
 	case m.tvar $ 'CVM'

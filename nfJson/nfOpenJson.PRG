@@ -34,7 +34,15 @@ for each line in cc
 	castexp    = getwordnum(M.line,2,' ')
 	fieldalias = getwordnum(M.line,1,' ')
 
-	isql = isql+' '+textmerge("ncast('<< evl(m.oProperty,m.fieldAlias) >> as <<m.castExp>>') as <<m.fieldAlias>>")+','
+	cexp =  textmerge("ncast('<< evl(m.oProperty,m.fieldAlias) >> as <<m.castExp>>')")
+
+	if m.castexp = 'JSON'
+		m.cexp = 'cast( '+m.cexp+' as m )'
+	endif
+
+	m.cexp = m.cexp + ' as '+ m.fieldalias
+
+	isql = isql+' '+m.cexp+','
 
 endfor
 
@@ -52,9 +60,21 @@ oj = nfjsonread( value )
 function ncast( path )
 *-------------------------------------
 if 'as json' $ lower(m.path)
-	return cast( nfjsoncreate(eval('oj.'+getwordnum(m.path,1))) as m )
+
+	vname = 'oj.'+getwordnum(m.path,1)
+
+	if type(m.vname,1) = 'A'
+		ic = 'acopy('+m.vname+',tarray)'
+		&ic
+		return nfjsoncreate(@tarray)
+	else
+		return nfjsoncreate(eval(m.vname))
+	endif
+
 else
-	return evaluate(' cast( oj.'+m.path+')')
+
+	return evaluate(' cast( oj.'+m.path+')') 
+
 endif
 
 *------------------------------------------------------
