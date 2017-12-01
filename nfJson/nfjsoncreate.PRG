@@ -31,6 +31,9 @@ endif
 
 _nivel = iif( cast(m.formattedOutput as l ) , 1, -1)
 
+lcPoint = set('Point')
+SET POINT TO '.'
+
 do case
 case esarray
 
@@ -53,6 +56,7 @@ otherwise
 
 endcase
 
+SET POINT TO (m.lcPoint)
 
 return ltrim(m.cjson)
 
