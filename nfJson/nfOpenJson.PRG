@@ -2,7 +2,9 @@
 * Marco Plaza, 2017 @nfTools
 * usage sample see nfOpenJsonTest.prg
 * refer to https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
-* ver 0.91 2019/04/03
+*
+* ver 0.91 2019/04/03 - 
+*
 *---------------------------------------------
 parameters cjson, carraypath, cstruct
 
