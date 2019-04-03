@@ -2,7 +2,7 @@
 * Marco Plaza, 2017 @nfTools
 * usage sample see nfOpenJsonTest.prg
 * refer to https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
-* ver 0.9 2017/05/29
+* ver 0.91 2019/04/03
 *---------------------------------------------
 parameters cjson, carraypath, cstruct
 
@@ -163,6 +163,8 @@ for each pname in op
 
 
 	if type('m.oX.&pName',1) = 'A'
+
+		DIMENSION acc(1)
 
 		acopy(m.ox.&pname,acc)
 		thisval = nfjsoncreate( @m.acc )
