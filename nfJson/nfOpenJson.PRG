@@ -164,6 +164,8 @@ for each pname in op
 
 	if type('m.oX.&pName',1) = 'A'
 
+		DIMENSION acc(1)
+
 		acopy(m.ox.&pname,acc)
 		thisval = nfjsoncreate( @m.acc )
 
