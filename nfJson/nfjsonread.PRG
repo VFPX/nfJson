@@ -1,136 +1,136 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza , 2013-2017 @nfTools
+* Created by Marco Plaza , 2013-2019 @nfTools
 *-------------------------------------------------------------------
-lparameters cjsonstr,revivecollection
+Lparameters cjsonstr,revivecollection
 
-#define crlf chr(13)+chr(10)
+#Define crlf Chr(13)+Chr(10)
 
-private all
+Private All
 
-stacklevels=astackinfo(aerrs)
+stacklevels=Astackinfo(aerrs)
 
-if m.stacklevels > 1
-	calledfrom = ' ( called From '+aerrs(m.stacklevels-1,4)+' line '+transform(aerrs(m.stacklevels-1,5))+')'
-else
+If m.stacklevels > 1
+	calledfrom = ' ( called From '+aerrs(m.stacklevels-1,4)+' line '+Transform(aerrs(m.stacklevels-1,5))+')'
+Else
 	calledfrom = ''
-endif
+Endif
 
 
-try
+Try
 
 	cerror = ''
-	if not left(ltrim(cjsonstr),1)  $ '{['  and file(m.cjsonstr)
-		cjsonstr = filetostr(m.cjsonstr)
-	endif
+	If Not Left(Ltrim(cjsonstr),1)  $ '{['  And File(m.cjsonstr)
+		cjsonstr = Filetostr(m.cjsonstr)
+	Endif
 
-	ost = set('strictdate')
-	set strictdate to 0
+	ost = Set('strictdate')
+	Set StrictDate To 0
 	ojson = nfjsonread2(m.cjsonstr, m.revivecollection)
-	set strictdate to (m.ost)
+	Set StrictDate To (m.ost)
 
-catch to oerr1
-	cerror = 'nfJson '+m.calledfrom+crlf+m.oerr1.message
+Catch To oerr1
+	cerror = 'nfJson '+m.calledfrom+crlf+m.oerr1.Message
 
-endtry
+Endtry
 
-if !empty(m.cerror)
-	error m.cerror
-	return .null.
-endif
+If !Empty(m.cerror)
+	Error m.cerror
+	Return .Null.
+Endif
 
-return iif(vartype(m.ojson)='O',m.ojson,.null.)
+Return Iif(Vartype(m.ojson)='O',m.ojson,.Null.)
 
 
 *-------------------------------------------------------------------------
-function nfjsonread2(cjsonstr,revivecollection)
+Function nfjsonread2(cjsonstr,revivecollection)
 *-------------------------------------------------------------------------
 
 
-try
+Try
 
 	x = 1
 	cerror = ''
 
 * process json:
 
-	cjson = rtrim(chrtran(m.cjsonstr,chr(13)+chr(9)+chr(10),''))
-	pchar = left(ltrim(m.cjson),1)
+	cjson = Rtrim(Chrtran(m.cjsonstr,Chr(13)+Chr(9)+Chr(10),''))
+	pchar = Left(Ltrim(m.cjson),1)
 
 
-	nl = alines(aj,m.cjson,20,'{','}','"',',',':','[',']','\\')
+	nl = Alines(aj,m.cjson,20,'{','}','"',',',':','[',']','\\')
 
-	for xx = 1 to alen(aj)
-		if left(ltrim(aj(m.xx)),1) $ '{}",:[]'  or lower(left(ltrim(m.aj(m.xx)),4)) $ 'true/false/null'
-			aj(m.xx) = ltrim(aj(m.xx))
-		endif
-	endfor
+	For xx = 1 To Alen(aj)
+		If Left(Ltrim(aj(m.xx)),1) $ '{}",:[]'  Or Lower(Left(Ltrim(m.aj(m.xx)),4)) $ 'true/false/null'
+			aj(m.xx) = Ltrim(aj(m.xx))
+		Endif
+	Endfor
 
-	ostack = createobject('stack')
+	ostack = Createobject('stack')
 
-	ojson = createobject('empty')
+	ojson = Createobject('empty')
 
-	do case
-	case  aj(1)='{'
+	Do Case
+	Case  aj(1)='{'
 		x = 1
 		ostack.pushobject()
 		procstring(m.ojson)
 
-	case aj(1) = '['
+	Case aj(1) = '['
 		x = 0
-		procstring(m.ojson,.t.)
+		procstring(m.ojson,.T.)
 
-	otherwise
-		error ' expecting [{  got '+m.pchar
+	Otherwise
+		Error ' expecting [{  got '+m.pchar
 
-	endcase
+	Endcase
 
 
-	if m.revivecollection
+	If m.revivecollection
 		ojson = revivecollection(m.ojson)
-	endif
+	Endif
 
 
-catch to oerr
+Catch To oerr
 
 	strp = ''
 
-	for y = 1 to m.x
+	For Y = 1 To m.x
 		strp = m.strp+aj(m.y)
-	endfor
+	Endfor
 
-	do case
-	case oerr.errorno = 1098
+	Do Case
+	Case oerr.ErrorNo = 1098
 
-		cerror = ' Invalid Json: '+ m.oerr.message+crlf+' Parsing: '+right(m.strp,80)
+		cerror = ' Invalid Json: '+ m.oerr.Message+crlf+' Parsing: '+Right(m.strp,80)
 
-	otherwise
+	Otherwise
 
-		cerror = ' program error # '+transform(m.oerr.errorno)+crlf+m.oerr.message+' at line: '+transform(oerr.lineno)+crlf+' Parsing: '+right(m.strp,80)
+		cerror = ' program error # '+Transform(m.oerr.ErrorNo)+crlf+m.oerr.Message+' at line: '+Transform(oerr.Lineno)+crlf+' Parsing: '+Right(m.strp,80)
 
-	endcase
+	Endcase
 
-endtry
+Endtry
 
-if !empty(m.cerror)
-	error m.cerror
-endif
+If !Empty(m.cerror)
+	Error m.cerror
+Endif
 
-return m.ojson
+Return m.ojson
 
 *--------------------------------------------------------------------------------
-procedure procstring(obj,evalue)
+Procedure procstring(obj,evalue)
 *--------------------------------------------------------------------------------
-#define cvalid 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_'
-#define creem  '_______________________________________________________________'
+#Define cvalid 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_'
+#Define creem  '_______________________________________________________________'
 
-private rowpos,colpos,bidim,ncols,arrayname,expecting,arraylevel,vari
-private expectingpropertyname,expectingvalue,objectopen
+Private rowpos,colpos,bidim,ncols,arrayname,expecting,arraylevel,vari
+Private expectingpropertyname,expectingvalue,objectopen
 
 expectingpropertyname = !m.evalue
 expectingvalue = m.evalue
-expecting = iif(expectingpropertyname,'"}','')
-objectopen = .t.
-bidim = .f.
+expecting = Iif(expectingpropertyname,'"}','')
+objectopen = .T.
+bidim = .F.
 colpos = 0
 rowpos = 0
 arraylevel = 0
@@ -138,628 +138,629 @@ arrayname = ''
 vari = ''
 ncols = 0
 
-do while m.objectopen
+Do While m.objectopen
 
 	x = m.x+1
 
-	do case
+	Do Case
 
-	case m.x > m.nl
+	Case m.x > m.nl
 
 		m.x = m.nl
 
-		if ostack.count > 0
-			error 'expecting '+m.expecting
-		endif
+		If ostack.Count > 0
+			Error 'expecting '+m.expecting
+		Endif
 
-		return
+		Return
 
-	case aj(m.x) = '}' and '}' $ m.expecting
+	Case aj(m.x) = '}' And '}' $ m.expecting
 		closeobject()
 
-	case aj(x) = ']' and ']' $ m.expecting
+	Case aj(x) = ']' And ']' $ m.expecting
 		closearray()
 
-	case  m.expecting = ':'
-		if aj(m.x) = ':'
+	Case  m.expecting = ':'
+		If aj(m.x) = ':'
 			expecting = ''
-			loop
-		else
-			error 'expecting : got '+aj(m.x)
-		endif
+			Loop
+		Else
+			Error 'expecting : got '+aj(m.x)
+		Endif
 
-	case ',' $ m.expecting
+	Case ',' $ m.expecting
 
-		do case
-		case aj(x) = ','
-			expecting = iif( '[' $ m.expecting , '[' , '' )
-		case not aj(m.x) $ m.expecting
-			error 'expecting '+m.expecting+' got '+aj(m.x)
-		otherwise
-			expecting = strtran(m.expecting,',','')
-		endcase
+		Do Case
+		Case aj(x) = ','
+			expecting = Iif( '[' $ m.expecting , '[' , '' )
+		Case Not aj(m.x) $ m.expecting
+			Error 'expecting '+m.expecting+' got '+aj(m.x)
+		Otherwise
+			expecting = Strtran(m.expecting,',','')
+		Endcase
 
 
-	case m.expectingpropertyname
+	Case m.expectingpropertyname
 
-		if aj(m.x) = '"'
+		If aj(m.x) = '"'
 			propertyname(m.obj)
-		else
-			error 'expecting "'+m.expecting+' got '+aj(m.x)
-		endif
+		Else
+			Error 'expecting "'+m.expecting+' got '+aj(m.x)
+		Endif
 
 
-	case m.expectingvalue
+	Case m.expectingvalue
 
-		if m.expecting == '[' and m.aj(m.x) # '['
-			error 'expecting [ got '+aj(m.x)
-		else
+		If m.expecting == '[' And m.aj(m.x) # '['
+			Error 'expecting [ got '+aj(m.x)
+		Else
 			procvalue(m.obj)
-		endif
+		Endif
 
 
-	endcase
+	Endcase
 
 
-enddo
+Enddo
 
 
 *-----------------------------------------------------------------------------
-function anuevoel(obj,arrayname,valasig,bidim,colpos,rowpos)
+Function anuevoel(obj,arrayname,valasig,bidim,colpos,rowpos)
 *-----------------------------------------------------------------------------
 
 
-if m.bidim
+If m.bidim
 
 	colpos = m.colpos+1
 
-	if colpos > m.ncols
+	If colpos > m.ncols
 		ncols = m.colpos
-	endif
+	Endif
 
-	dimension obj.&arrayname(m.rowpos,m.ncols)
+	Dimension obj.&arrayname(m.rowpos,m.ncols)
 
 	obj.&arrayname(m.rowpos,m.colpos) = m.valasig
 
-	if vartype(m.valasig) = 'O'
+	If Vartype(m.valasig) = 'O'
 		procstring(obj.&arrayname(m.rowpos,m.colpos))
-	endif
+	Endif
 
-else
+Else
 
 	rowpos = m.rowpos+1
-	dimension obj.&arrayname(m.rowpos)
+	Dimension obj.&arrayname(m.rowpos)
 
 	obj.&arrayname(m.rowpos) = m.valasig
 
-	if vartype(m.valasig) = 'O'
+	If Vartype(m.valasig) = 'O'
 		procstring(obj.&arrayname(m.rowpos))
-	endif
+	Endif
 
-endif
+Endif
 
 
 *-----------------------------------------
-function unescunicode( cstr )
+Function unescunicode( cstr )
 *-----------------------------------------
 
-private all
+Private All
 
 ust = ''
 
-for x = 1 to alines(xstr,m.cstr,18,'\u','\\u')
+For x = 1 To Alines(xstr,m.cstr,18,'\u','\\u')
 
-	if right(xstr(m.x),3) # '\\u' and right(xstr(m.x),2) = '\u'
+	If Right(xstr(m.x),3) # '\\u' And Right(xstr(m.x),2) = '\u'
 
-		ust = m.ust + rtrim(xstr(M.x),0,'\u')
+		ust = m.ust + Rtrim(xstr(M.x),0,'\u')
 
-		dec = val( "0x"+left(xstr(m.x+1),4))
-		ansi = strconv( bintoc( m.dec  , "2RS" ) ,6 )
+		dec = Val( "0x"+Left(xstr(m.x+1),4))
 
-		if m.ansi = '?'
-			ust = m.ust + '&#'+transform(m.dec)
-		else
+		Ansi = left(Strconv( BinToC( m.dec  , "R" ) ,6 ),1)
+
+		If  m.ansi # '?'
 			ust = m.ust + m.ansi
-		endif
+		Else
+			ust = m.ust + '&#'+Transform(m.dec)+';'
+		Endif
 
-		xstr(m.x+1) = substr(xstr(m.x+1),5)
+		xstr(m.x+1) = Substr(xstr(m.x+1),5)
 
-	else
+	Else
 
 		ust = m.ust + xstr(m.x)
 
-	endif
+	Endif
 
-endfor
+Endfor
 
 cstr = m.ust
 
 *-----------------------------------
-function unescapecontrolc( value )
+Function unescapecontrolc( Value )
 *-----------------------------------
 
-if at('\', m.value) = 0
-	return
-endif
+If At('\', m.value) = 0
+	Return
+Endif
 
 * unescape special characters:
 
-private aa,elem,unesc
+Private aa,elem,unesc
 
 
-declare aa(1)
-=alines(m.aa,m.value,18,'\\','\b','\f','\n','\r','\t','\"','\/')
+Declare aa(1)
+=Alines(m.aa,m.value,18,'\\','\b','\f','\n','\r','\t','\"','\/')
 
 unesc =''
 
-#define sustb 'bnrt/"'
-#define sustr chr(127)+chr(10)+chr(13)+chr(9)+chr(47)+chr(34)
+#Define sustb 'bnrt/"'
+#Define sustr Chr(127)+Chr(10)+Chr(13)+Chr(9)+Chr(47)+Chr(34)
 
-for each elem in m.aa
+For Each elem In m.aa
 
-	if ! m.elem == '\\' and left(right(m.elem,2),1) = '\'
-		elem = left(m.elem,len(m.elem)-2)+chrtran(right(m.elem,1),sustb,sustr)
-	endif
+	If ! m.elem == '\\' And Left(Right(m.elem,2),1) = '\'
+		elem = Left(m.elem,Len(m.elem)-2)+Chrtran(Right(m.elem,1),sustb,sustr)
+	Endif
 
 	unesc = m.unesc+m.elem
 
-endfor
+Endfor
 
-value = m.unesc
+Value = m.unesc
 
 *--------------------------------------------
-procedure propertyname(obj)
+Procedure propertyname(obj)
 *--------------------------------------------
 
 x = m.x+1
 vari = aj(m.x)
 
-do while right(aj(m.x),1) # '"' and m.x < alen(m.aj)
+Do While Right(aj(m.x),1) # '"' And m.x < Alen(m.aj)
 	x=m.x+1
 	vari = m.vari + aj(m.x)
-enddo
+Enddo
 
-if right(m.aj(m.x),1) # '"'
-	error ' expecting "  got  '+ m.aj(m.x)
-endif
+If Right(m.aj(m.x),1) # '"'
+	Error ' expecting "  got  '+ m.aj(m.x)
+Endif
 
-vari = rtrim(m.vari,1,'"')
-vari = iif(isalpha(m.vari),'','_')+m.vari
-vari = chrtran( vari, chrtran( vari, cvalid,'' ) , creem )
+vari = Rtrim(m.vari,1,'"')
+vari = Iif(Isalpha(m.vari),'','_')+m.vari
+vari = Chrtran( vari, Chrtran( vari, cvalid,'' ) , creem )
 
-if vari == 'tabindex'
+If vari == 'tabindex'
 	vari = '_tabindex'
-endif
+Endif
 
 expecting = ':'
-expectingvalue = .t.
-expectingpropertyname = .f.
+expectingvalue = .T.
+expectingpropertyname = .F.
 
 
 *-------------------------------------------------------------
-procedure procvalue(obj)
+Procedure procvalue(obj)
 *-------------------------------------------------------------
 
-do case
-case aj(m.x) = '{'
+Do Case
+Case aj(m.x) = '{'
 
 	ostack.pushobject()
 
-	if m.arraylevel = 0
+	If m.arraylevel = 0
 
-		addproperty(obj,m.vari,createobject('empty'))
+		AddProperty(obj,m.vari,Createobject('empty'))
 
 		procstring(obj.&vari)
-		expectingpropertyname = .t.
+		expectingpropertyname = .T.
 		expecting = ',}'
-		expectingvalue = .f.
+		expectingvalue = .F.
 
-	else
+	Else
 
-		anuevoel(m.obj,m.arrayname,createobject('empty'),m.bidim,@m.colpos,@m.rowpos)
-		expectingpropertyname = .f.
+		anuevoel(m.obj,m.arrayname,Createobject('empty'),m.bidim,@m.colpos,@m.rowpos)
+		expectingpropertyname = .F.
 		expecting = ',]'
-		expectingvalue = .t.
+		expectingvalue = .T.
 
-	endif
+	Endif
 
 
-case  aj(x) = '['
+Case  aj(x) = '['
 
 	ostack.pusharray()
 
-	do case
+	Do Case
 
-	case m.arraylevel = 0
+	Case m.arraylevel = 0
 
-		arrayname = evl(m.vari,'array')
+		arrayname = Evl(m.vari,'array')
 		rowpos = 0
 		colpos = 0
-		bidim = .f.
+		bidim = .F.
 
 
-		try
-			addproperty(obj,(m.arrayname+'(1)'),.NULL.)
-		catch
+		Try
+			AddProperty(obj,(m.arrayname+'(1)'),.Null.)
+		Catch
 			m.arrayname = m.arrayname+'_vfpSafe_'
-			addproperty(obj,(m.arrayname+'(1)'),.NULL.)
-		endtry
+			AddProperty(obj,(m.arrayname+'(1)'),.Null.)
+		Endtry
 
 
-	case m.arraylevel = 1 and !m.bidim
+	Case m.arraylevel = 1 And !m.bidim
 
 		rowpos = 1
 		colpos = 0
 		ncols = 1
 
-		dime obj.&arrayname(1,2)
-		bidim = .t.
+		Dime obj.&arrayname(1,2)
+		bidim = .T.
 
-	endcase
+	Endcase
 
 	arraylevel = m.arraylevel+1
 
 	vari=''
 
-	expecting = iif(!m.bidim,'[]{',']')
-	expectingvalue = .t.
-	expectingpropertyname = .f.
+	expecting = Iif(!m.bidim,'[]{',']')
+	expectingvalue = .T.
+	expectingpropertyname = .F.
 
-otherwise
+Otherwise
 
 	isstring = aj(m.x)='"'
-	x = m.x + iif(m.isstring,1,0)
+	x = m.x + Iif(m.isstring,1,0)
 
-	value = ''
+	Value = ''
 
-	do while m.x <= alen(m.aj)
-		value = m.value + aj(m.x)
-		if  ( ( m.isstring and right(aj(m.x),1) = '"' ) or (!m.isstring and right(aj(m.x),1) $ '}],') ) and left(right(aj(m.x),2),1) # '\'
-			exit
-		endif
+	Do While m.x <= Alen(m.aj)
+		Value = m.value + aj(m.x)
+		If  ( ( m.isstring And Right(aj(m.x),1) = '"' ) Or (!m.isstring And Right(aj(m.x),1) $ '}],') ) And Left(Right(aj(m.x),2),1) # '\'
+			Exit
+		Endif
 		x = m.x+1
-	enddo
+	Enddo
 
-	closechar = right(aj(m.x),1)
+	closechar = Right(aj(m.x),1)
 
-	value = left(m.value,len(m.value)-1)
+	Value = Left(m.value,Len(m.value)-1)
 
-	do case
+	Do Case
 
-	case empty(m.value) and  not ( m.isstring and m.closechar = '"'  )
-		error 'Expecting value got '+m.closechar
+	Case Empty(m.value) And  Not ( m.isstring And m.closechar = '"'  )
+		Error 'Expecting value got '+m.closechar
 
-	case  m.isstring
-		if m.closechar # '"'
-			error 'expecting " got '+m.closechar
-		endif
+	Case  m.isstring
+		If m.closechar # '"'
+			Error 'expecting " got '+m.closechar
+		Endif
 
-	case ostack.isobject() and not m.closechar $ ',}'
-		error 'expecting ,} got '+m.closechar
+	Case ostack.isobject() And Not m.closechar $ ',}'
+		Error 'expecting ,} got '+m.closechar
 
-	case ostack.isarray() and  not m.closechar $ ',]'
-		error 'expecting ,] got '+m.closechar
+	Case ostack.isarray() And  Not m.closechar $ ',]'
+		Error 'expecting ,] got '+m.closechar
 
-	endcase
+	Endcase
 
 
 
-	if m.isstring
+	If m.isstring
 
 * don't change this lines sequence!:
 		unescunicode(@m.value)  && 1
 		unescapecontrolc(@m.value)  && 2
-		value = strtran(m.value,'\\','\')  && 3
+		Value = Strtran(m.value,'\\','\')  && 3
 
 ** check for Json DateTime: && 2017-03-10T17:43:55
 * proper formatted dates with invalid values will parse as character - eg: {"today":"2017-99-01T15:99:00"}
 
-		if isjsondt( m.value )
-			value = jsondatetodt( m.value )
-		endif
+		If isjsondt( m.value )
+			Value = jsondatetodt( m.value )
+		Endif
 
-	else
+	Else
 
-		value = alltrim(m.value)
+		Value = Alltrim(m.value)
 
-		do case
-		case lower(m.value) == 'null'
-			value = .null.
-		case lower(m.value) == 'true' or lower(m.value) == 'false'
-			value = m.value='true'
+		Do Case
+		Case Lower(m.value) == 'null'
+			Value = .Null.
+		Case Lower(m.value) == 'true' Or Lower(m.value) == 'false'
+			Value = m.value='true'
 
-		case empty(chrtran(m.value,'-1234567890.Ee',''))
+		Case Empty(Chrtran(m.value,'-1234567890.Ee',''))
 
-			try
-				local tvaln,im
+			Try
+				Local tvaln,im
 				im = 'tvaln = '+m.value
 				&im
-				value = m.tvaln
-				badnumber = .f.
-			catch
-				badnumber = .t.
-			endtry
+				Value = m.tvaln
+				badnumber = .F.
+			Catch
+				badnumber = .T.
+			Endtry
 
-			if badnumber
-				error 'bad number format:  got '+aj(m.x)
-			endif
+			If badnumber
+				Error 'bad number format:  got '+aj(m.x)
+			Endif
 
-		otherwise
-			error 'expecting "|number|null|true|false|  got '+aj(m.x)
-		endcase
-
-
-	endif
+		Otherwise
+			Error 'expecting "|number|null|true|false|  got '+aj(m.x)
+		Endcase
 
 
-	if m.arraylevel = 0
+	Endif
 
 
-		addproperty(obj,m.vari,m.value)
+	If m.arraylevel = 0
+
+
+		AddProperty(obj,m.vari,m.value)
 
 		expecting = '}'
-		expectingvalue = .f.
-		expectingpropertyname = .t.
+		expectingvalue = .F.
+		expectingpropertyname = .T.
 
-	else
+	Else
 
 		anuevoel(obj,m.arrayname,m.value,m.bidim,@m.colpos,@m.rowpos)
 		expecting = ']'
-		expectingvalue = .t.
-		expectingpropertyname = .f.
+		expectingvalue = .T.
+		expectingpropertyname = .F.
 
-	endif
+	Endif
 
-	expecting = iif(m.isstring,',','')+m.expecting
+	expecting = Iif(m.isstring,',','')+m.expecting
 
 
-	do case
-	case m.closechar = ']'
+	Do Case
+	Case m.closechar = ']'
 		closearray()
-	case m.closechar = '}'
+	Case m.closechar = '}'
 		closeobject()
-	endcase
+	Endcase
 
-endcase
+Endcase
 
 
 *------------------------------
-function closearray()
+Function closearray()
 *------------------------------
 
-if ostack.pop() # 'A'
-	error 'unexpected ] '
-endif
+If ostack.Pop() # 'A'
+	Error 'unexpected ] '
+Endif
 
-if m.arraylevel = 0
-	error 'unexpected ] '
-endif
+If m.arraylevel = 0
+	Error 'unexpected ] '
+Endif
 
 arraylevel = m.arraylevel-1
 
-if m.arraylevel = 0
+If m.arraylevel = 0
 
 	arrayname = ''
 	rowpos = 0
 	colpos = 0
 
-	expecting = iif(ostack.isobject(),',}','')
-	expectingpropertyname = .t.
-	expectingvalue = .f.
+	expecting = Iif(ostack.isobject(),',}','')
+	expectingpropertyname = .T.
+	expectingvalue = .F.
 
-else
+Else
 
-	if  m.bidim
+	If  m.bidim
 		rowpos = m.rowpos+1
 		colpos = 0
 		expecting = ',]['
-	else
+	Else
 		expecting = ',]'
-	endif
+	Endif
 
-	expectingvalue = .t.
-	expectingpropertyname = .f.
+	expectingvalue = .T.
+	expectingpropertyname = .F.
 
-endif
+Endif
 
 
 
 *-------------------------------------
-procedure closeobject
+Procedure closeobject
 *-------------------------------------
 
-if ostack.pop() # 'O'
-	error 'unexpected }'
-endif
+If ostack.Pop() # 'O'
+	Error 'unexpected }'
+Endif
 
-if m.arraylevel = 0
+If m.arraylevel = 0
 	expecting = ',}'
-	expectingvalue = .f.
-	expectingpropertyname = .t.
-	objectopen = .f.
-else
+	expectingvalue = .F.
+	expectingpropertyname = .T.
+	objectopen = .F.
+Else
 	expecting = ',]'
-	expectingvalue = .t.
-	expectingpropertyname = .f.
-endif
+	expectingvalue = .T.
+	expectingpropertyname = .F.
+Endif
 
 
 *----------------------------------------------
-function revivecollection( o )
+Function revivecollection( o )
 *----------------------------------------------
 
-private all
+Private All
 
-oconv = createobject('empty')
+oconv = Createobject('empty')
 
-nprop = amembers(elem,m.o,0,'U')
+nprop = Amembers(elem,m.o,0,'U')
 
-for x = 1 to m.nprop
+For x = 1 To m.nprop
 
 	estavar = m.elem(x)
 
-	esarray = .f.
-	escoleccion = type('m.o.'+m.estavar) = 'O' and right( m.estavar , 14 ) $ '_KV_COLLECTION,_KL_COLLECTION' and type( 'm.o.'+m.estavar+'.collectionitems',1) = 'A'
+	esarray = .F.
+	escoleccion = Type('m.o.'+m.estavar) = 'O' And Right( m.estavar , 14 ) $ '_KV_COLLECTION,_KL_COLLECTION' And Type( 'm.o.'+m.estavar+'.collectionitems',1) = 'A'
 
-	do case
-	case m.escoleccion
+	Do Case
+	Case m.escoleccion
 
-		estaprop = createobject('collection')
+		estaprop = Createobject('collection')
 
 		tv = m.o.&estavar
 
-		m.keyvalcoll = right( m.estavar , 14 ) = '_KV_COLLECTION'
-		
-		if not ( alen(m.tv.collectionItems) = 1 and isnull( m.tv.collectionItems ) )
-		
+		m.keyvalcoll = Right( m.estavar , 14 ) = '_KV_COLLECTION'
 
-		for t = 1 to alen(m.tv.collectionitems)
-
-			if m.keyvalcoll
-				esteval = m.tv.collectionitems(m.t).value
-			else
-				esteval = m.tv.collectionitems(m.t)
-			endif
+		If Not ( Alen(m.tv.collectionItems) = 1 And Isnull( m.tv.collectionItems ) )
 
 
-			if vartype(m.esteval) = 'O' or type('esteVal',1) = 'A'
-				esteval = revivecollection(m.esteval)
-			endif
+			For T = 1 To Alen(m.tv.collectionItems)
 
-			if m.keyvalcoll
-				estaprop.add(esteval,m.tv.collectionitems(m.t).key)
-			else
-				estaprop.add(m.esteval)
-			endif
+				If m.keyvalcoll
+					esteval = m.tv.collectionItems(m.t).Value
+				Else
+					esteval = m.tv.collectionItems(m.t)
+				Endif
 
-		endfor
 
-endif
+				If Vartype(m.esteval) = 'O' Or Type('esteVal',1) = 'A'
+					esteval = revivecollection(m.esteval)
+				Endif
 
-	case type('m.o.'+m.estavar,1) = 'A'
+				If m.keyvalcoll
+					estaprop.Add(esteval,m.tv.collectionItems(m.t).Key)
+				Else
+					estaprop.Add(m.esteval)
+				Endif
 
-		esarray = .t.
+			Endfor
 
-		for t = 1 to alen(m.o.&estavar)
+		Endif
 
-			dimension &estavar(m.t)
+	Case Type('m.o.'+m.estavar,1) = 'A'
 
-			if type('m.o.&estaVar(m.T)') = 'O'
+		esarray = .T.
+
+		For T = 1 To Alen(m.o.&estavar)
+
+			Dimension &estavar(m.t)
+
+			If Type('m.o.&estaVar(m.T)') = 'O'
 				&estavar(m.t) = revivecollection(m.o.&estavar(m.t))
-			else
+			Else
 				&estavar(m.t) = m.o.&estavar(m.t)
-			endif
+			Endif
 
-		endfor
+		Endfor
 
-	case type('m.o.'+estavar) = 'O'
+	Case Type('m.o.'+estavar) = 'O'
 		estaprop = revivecollection(m.o.&estavar)
 
-	otherwise
+	Otherwise
 		estaprop = m.o.&estavar
 
-	endcase
+	Endcase
 
 
-	estavar = strtran( m.estavar,'_KV_COLLECTION', '' )
-	estavar = strtran( m.estavar, '_KL_COLLECTION', '' )
+	estavar = Strtran( m.estavar,'_KV_COLLECTION', '' )
+	estavar = Strtran( m.estavar, '_KL_COLLECTION', '' )
 
-	do case
-	case m.escoleccion
-		addproperty(m.oconv,m.estavar,m.estaprop)
-	case  m.esarray
-		addproperty(m.oconv,m.estavar+'(1)')
-		acopy(&estavar,m.oconv.&estavar)
-	otherwise
-		addproperty(m.oconv,m.estavar,m.estaprop)
-	endcase
+	Do Case
+	Case m.escoleccion
+		AddProperty(m.oconv,m.estavar,m.estaprop)
+	Case  m.esarray
+		AddProperty(m.oconv,m.estavar+'(1)')
+		Acopy(&estavar,m.oconv.&estavar)
+	Otherwise
+		AddProperty(m.oconv,m.estavar,m.estaprop)
+	Endcase
 
-endfor
+Endfor
 
-try
-	retcollection = m.oconv.collection.baseclass = 'Collection'
-catch
-	retcollection = .f.
-endtry
+Try
+	retcollection = m.oconv.Collection.BaseClass = 'Collection'
+Catch
+	retcollection = .F.
+Endtry
 
-if m.retcollection
-	return m.oconv.collection
-else
-	return m.oconv
-endif
+If m.retcollection
+	Return m.oconv.Collection
+Else
+	Return m.oconv
+Endif
 
 
 *----------------------------------
-function isjsondt( cstr )
+Function isjsondt( cstr )
 *----------------------------------
 
-cstr = rtrim(m.cstr,1,'Z')
+cstr = Rtrim(m.cstr,1,'Z')
 
-return iif( len(m.cstr) = 19 ;
-	and len(chrtran(m.cstr,'01234567890:T-','')) = 0 ;
-	and substr(m.cstr,5,1) = '-' ;
-	and substr(m.cstr,8,1) = '-' ;
-	and substr(m.cstr,11,1) = 'T' ;
-	and substr(m.cstr,14,1) = ':' ;
-	and substr(m.cstr,17,1) = ':' ;
-	and occurs('T',m.cstr) = 1 ;
-	and occurs('-',m.cstr) = 2 ;
-	and occurs(':',m.cstr) = 2 ,.t.,.f. )
+Return Iif( Len(m.cstr) = 19 ;
+	and Len(Chrtran(m.cstr,'01234567890:T-','')) = 0 ;
+	and Substr(m.cstr,5,1) = '-' ;
+	and Substr(m.cstr,8,1) = '-' ;
+	and Substr(m.cstr,11,1) = 'T' ;
+	and Substr(m.cstr,14,1) = ':' ;
+	and Substr(m.cstr,17,1) = ':' ;
+	and Occurs('T',m.cstr) = 1 ;
+	and Occurs('-',m.cstr) = 2 ;
+	and Occurs(':',m.cstr) = 2 ,.T.,.F. )
 
 
 *-----------------------------------------------------
-procedure jsondatetodt( cjsondate )
+Procedure jsondatetodt( cjsondate )
 *-----------------------------------------------------
 
-cJsonDate = rtrim(m.cJsonDate,1,'Z')
+cjsondate = Rtrim(m.cjsondate,1,'Z')
 
-if m.cJsonDate = '0000-00-00T00:00:00'
+If m.cjsondate = '0000-00-00T00:00:00'
 
-	return {}
+	Return {}
 
-else
+Else
 
-	cret = eval('{^'+rtrim(m.cjsondate,1,"T00:00:00")+'}')
-	
-	if !empty(m.cret) 
-		return m.cret
-	else
-		error 'Invalid date '+cJsonDate
-	endif
+	cret = Eval('{^'+Rtrim(m.cjsondate,1,"T00:00:00")+'}')
 
-endif
+	If !Empty(m.cret)
+		Return m.cret
+	Else
+		Error 'Invalid date '+cjsondate
+	Endif
+
+Endif
 
 ******************************************
-define class stack as collection
+Define Class Stack As Collection
 ******************************************
 
 *---------------------------
-	function pushobject()
+	Function pushobject()
 *---------------------------
-	this.add('O')
+	This.Add('O')
 
 *---------------------------
-	function pusharray()
+	Function pusharray()
 *---------------------------
-	this.add('A')
+	This.Add('A')
 
 *--------------------------------------
-	function isobject()
+	Function isobject()
 *--------------------------------------
-	return this.count > 0 and this.item( this.count ) = 'O'
+	Return This.Count > 0 And This.Item( This.Count ) = 'O'
 
 *--------------------------------------
-	function isarray()
+	Function isarray()
 *--------------------------------------
-	return this.count > 0 and this.item( this.count ) = 'A'
+	Return This.Count > 0 And This.Item( This.Count ) = 'A'
 
 *----------------------------
-	function pop()
+	Function Pop()
 *----------------------------
-	cret = this.item( this.count )
-	this.remove( this.count )
-	return m.cret
+	cret = This.Item( This.Count )
+	This.Remove( This.Count )
+	Return m.cret
 
 ******************************************
-enddefine
+Enddefine
 ******************************************
