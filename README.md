@@ -16,9 +16,12 @@ Project Manager: Marco Plaza
 
 * **nfCursorToJson4vfp()**  _&& converts current open table/cursor to Json suitable for later use of nfJsonToCursor()_
 
-* **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)** __&&  converts current open table/cursor to Json 
+* **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)**    converts current open table/cursor to Json 
 
 * **nfCursorToObject(**_lCopyToArray, lIncludeStruct_**)**
+
+* **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions  
+ 
 
 * **BETA PREVIEW: nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
 
@@ -53,13 +56,14 @@ Project Manager: Marco Plaza
 		ENDTEXT
 		
 		
-		nfOpenJson( m.mssample2,'$.array',';
-		 - Number   v(200) $.Order.Number  ;
-		 - Date     t      $.Order.Date    ;
-		 - Customer v(200) $.AccountNumber  ;
+		nfOpenJson( m.mssample2,'$.array', ' ;
+		 - Number    v(200) $.Order.Number  ;
+		 - Date      t      $.Order.Date    ;
+		 - Customer  v(200) $.AccountNumber  ;
 		 - itemPrice n(6,2) $.Item.Price ;
 		 - itemQuantity i   $.Item.Quantity ;
-		 - Order  JSON')
+		 - Order  JSON ;
+		 ' )
 		
 		browse
 		
@@ -93,7 +97,10 @@ Project Manager: Marco Plaza
 	* yahooweather.json
 
 ## Release Notes
+2019/06/14
 
+* JsonFormat function by Carlos Alloati
+ 
 2017/08/05
 
 * no matter wich strictdate setting you have set, a JsonDateTime "0000-00-00T00:00:00" will return an empty date.
