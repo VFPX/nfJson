@@ -14,13 +14,13 @@ Project Manager: Marco Plaza
 
 * **nfJsonToCursor(**cJson, _cCursorName ,  lForceImportFromArray_**)** ( creates cursor back from Json created using nfCursorToJson4vfp )
 
-* **nfCursorToJson4vfp()**  _&& converts current open table/cursor to Json suitable for later use of nfJsonToCursor()_
+* cJsonString = **nfCursorToJson4vfp()**  _&& converts current open table/cursor to Json suitable for later use of nfJsonToCursor()_
 
-* **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)**    converts current open table/cursor to Json 
+* cJsonString = **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)**    converts current open table/cursor to Json 
 
-* **nfCursorToObject(**_lCopyToArray, lIncludeStruct_**)**
+* oJson = **nfCursorToObject(**_lCopyToArray, lIncludeStruct_**)**
 
-* **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions  
+* cJsonString = **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions  
  
 
 * **BETA PREVIEW: nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
