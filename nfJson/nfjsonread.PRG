@@ -350,7 +350,7 @@ Case aj(m.x) = '{'
 
 		AddProperty(obj,m.vari,Createobject('empty'))
 
-		procstring(obj.&vari)
+		procstring(m.obj.&vari)
 		expectingpropertyname = .T.
 		expecting = ',}'
 		expectingvalue = .F.
