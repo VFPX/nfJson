@@ -21,10 +21,7 @@ Catch
 
 Endtry
 
-
-
 Clear
-
 
 *************************************************************************
 * will read and parse all json files found in jsonSamples\
@@ -33,7 +30,6 @@ Clear
 *************************************************************************
 
 Public myObjectFromJson
-
 
 myObjectFromJson = Createobject('empty')
 
@@ -54,7 +50,6 @@ For x = 1 To m.nFiles
 
 Endfor
 
-
 ******************************************************
 * create json String back from myObjectFromJson
 * raw / formatted
@@ -70,8 +65,6 @@ ENDIF
 Strtofile( m.jsonFormatted , 'temp\test_Formatted_'+Sys(2015)+'.Json' )
 Strtofile( m.jsonRaw , 'temp\test_Raw_'+Sys(2015)+'.Json' )
 
-
-
 Modify File temp\*.json Nowait
 
 =Sys(1500,"_MWI_CASCADE","_MSM_WINDO")
@@ -86,12 +79,10 @@ Store ''  To oFromRaw,oFromFormatted
 oFromRaw = nfJsonRead( m.jsonRaw )
 oFromFormatted = nfJsonRead( m.jsonFormatted )
 
-
 messagebox( 'Please inspect myObjectFromJson , oFromRaw, oFromFormatted in your debugger ',0)
 
-
 ***************************************************
-* convert cursor to Json using 
+* convert cursor to Json using
 * different output options:
 ***************************************************
 
@@ -99,7 +90,6 @@ Select Top 2 ;
 	employeeId,firstName,lastName,birthDate,city ;
 	from (Sys(2004)+'\samples\northwind\employees') ;
 	order By 1 Into Cursor temp
-
 
 TEXT to demoCursor textmerge
 
@@ -111,11 +101,9 @@ TEXT to demoCursor textmerge
 
  << nfCursorToJson(.t.) >>
 
-
 -Cursor as Object with array of objects ( default) :
 
 << nfCursorToJson() >>
-
 
 -Cursor as Object with array of values:
 
@@ -128,8 +116,7 @@ TEXT to demoCursor textmerge
 ENDTEXT
 
 Strtofile( demoCursor, 'temp\Cursor tests Output.txt')
-Modify File 'temp\Cursor tests Output.txt' nowait 
-
+Modify File 'temp\Cursor tests Output.txt' nowait
 
 ****************************************************************
 * create a cursor back from json:
@@ -143,7 +130,7 @@ Select * ;
 
 cJson = nfCursorToJson4vfp()
 
-close databases 
+close databases
 
 * create named cursor:
 
@@ -152,7 +139,6 @@ close databases
 go top
 browse nowait
 messagebox( 'Cursor back from Json!',64)
-
 
 * creates a temp cursor, return alias name:
 

@@ -21,10 +21,7 @@ Catch
 
 Endtry
 
-
-
 Clear
-
 
 oparent = CREATEOBJECT('empty')
 
@@ -44,15 +41,14 @@ Set Path To ..\
 
 declare arrayTest(2)
 
-
 * test 1: object with collection and collection as array items
 arrayTest(1) = m.oParent
 arrayTest(2) = m.oCollection
-cJson1 = nfJsonCreate(@arrayTest,.T.,.T.) 
+cJson1 = nfJsonCreate(@arrayTest,.T.,.T.)
 
 * test 2
-* myforms is the name we want to assign to the root element ( the collection ) of resulting object 
-cJson2 = nfJsonCreate(oCollection,.T.,.T.,'myForms') 
+* myforms is the name we want to assign to the root element ( the collection ) of resulting object
+cJson2 = nfJsonCreate(oCollection,.T.,.T.,'myForms')
 
 Strtofile( m.cJson2 ,'temp\colltest.json')
 
@@ -61,13 +57,13 @@ Modify File temp\colltest.json
 && reset the variable, open debugger may not show object changes if you don't do so.
 
 oCollectionFromJson1 = ''
-oDebugCollection1 = '' 
+oDebugCollection1 = ''
 
 oCollectionFromJson1 = nfJsonRead(m.cJson1,.T.) && <- this will parse json and create a vfp collection
 oDebugCollection1 = nfJsonRead(m.cJson1) && <- this will parse object as it is represented in json
 
 oCollectionFromJson2 = ''
-oDebugCollection2 = '' 
+oDebugCollection2 = ''
 
 oCollectionFromJson2 = nfJsonRead(m.cJson2,.T.) && <- this will parse json and create a vfp collection
 oDebugCollection2 = nfJsonRead(m.cJson2) && <- this will parse object as it is represented in json
@@ -86,11 +82,9 @@ oDebugCollection2 = nfJsonRead(m.cJson2) && <- this will parse object as it is r
 * messagebox( [ oCollectionFromJson.array(2).Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson.array(1).Item(5).item(3).item(4).item('Product'),0)
  messagebox( [ oCollectionFromJson1.array(1).collectiontest1.Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(1).collectionTest1.Item(5).item(3).item(4).item('Product'),0)
  messagebox( [ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product'),0)
- 
+
 * test 2: ( using root name for collection object )
 messagebox( [ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product')  = ]+ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product'),0)
-
-
 
 *---------------------------------------
 FUNCTION addcollection( oo )
@@ -115,7 +109,7 @@ WITH m.oo
 			.Add("CCC") && item 2
 			.Add(Createobject("session")) && item 3
 			.Add(Createobject("Collection")) && item 4
-			
+
 			with .Item(4)
 				.Add('VFP','Product')
 				.Add(Program(),'Executing program Name')
@@ -128,5 +122,3 @@ WITH m.oo
 	Endwith
 
 Endwith
-
-

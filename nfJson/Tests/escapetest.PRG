@@ -4,7 +4,7 @@ set path to ..\
 
 private all
 
-public pair 
+public pair
 
 pair = CREATEOBJECT("empty")
 
@@ -21,5 +21,3 @@ ee = nfJsonRead(m.json)
 
 ? ee.test
 ? pair.test
-
-

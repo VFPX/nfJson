@@ -1,7 +1,7 @@
 *************************************************************
 *  just for testing purposes.
-*  you can  add your sample json 
-* strings to  nfJsonPerfTest.txt 
+*  you can  add your sample json
+* strings to  nfJsonPerfTest.txt
 *
 * delimit your json file using 3 Double quotes <sample name> and a colon :
 *
@@ -19,7 +19,7 @@ IF  _vfp.StartMode # 4 and UPPER(RIGHT(CURDIR(),24)) # upper('\nfJson\performanc
 	RETURN
 ENDIF
 
-SET PATH TO ..\   && nfJson folder 
+SET PATH TO ..\   && nfJson folder
 
 m.testFile = JUSTPATH(SYS(16,0))+'\nfjsonperftestSamples.TXT'
 
@@ -29,7 +29,6 @@ IF !FILE(m.testFile)
 ELSE
 	cjson = FILETOSTR(m.testFile)
 ENDIF
-
 
 Dimension opt(1)
 N=1
@@ -62,7 +61,6 @@ Define Class sampletest As Form
 	Add Object deCliptext As CommandButton With Anchor=6,Left =10, Top = 560, Height=30, Width=160 , Caption='Json from clipboard',FontName='Consolas',FontSize=10
 	Add Object TRESULT As TextBox With Anchor=6,Left=200,Height=25,Width=550,Top=565,fontname='Consolas',FontSize=10
 
-
 	Procedure Init
 	This.Visible = .T.
 	This.samples.RowSource='opt'
@@ -81,12 +79,10 @@ Catch to oerr
 
 EndTry
 
-
 *-------------------------------------
 	Procedure samples.Click()
 *-------------------------------------
 	Thisform.procesarJson( Strextract(cjson,opt(This.ListIndex)+':','"""') )
-
 
 *------------------------------------------
 	Function procesarJson(jText)
@@ -107,7 +103,6 @@ EndTry
 			exit
 		endif
 	Endfor
-
 
 	TR=(Seconds()-TI)*millon
 

@@ -1,18 +1,18 @@
 *-------------------------------------------------------------------
 * Created by Marco Plaza @nfTools
-* ver 1.100 - 24/02/2016 
+* ver 1.100 - 24/02/2016
 * enabled collection processing
-* ver 1.101 - 24/02/2016 
+* ver 1.101 - 24/02/2016
 * solved indentation on nested collections
 * ver 1.110 -11/03/2016
 * -added support for collections inside arrays
-* -user can pass aMemembersFlag value 
+* -user can pass aMemembersFlag value
 *  ( since Json is intended for DTO creation default value is 'U' )
 *   check amembers topic on vfp help file for usage
 * changed cr to crlf
 * Added Json validation ; throws error for invalid Json.
 * ver 1.120
-* encode control characters ( chr(0) ~ chr(31) ) 
+* encode control characters ( chr(0) ~ chr(31) )
 *-----------------------------------------------------------------------
 parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag
 
@@ -43,7 +43,6 @@ case esarray
 	acopy(ovfp,ojson.array)
 	cjson = procobject(ojson,.f.,m.nonullarrayitem,m.amembersFlag)
 	cJson = substr( m.cJson,at('[',m.cJson))
-
 
 case type('oVfp.BaseClass')='C' and ovfp.baseclass = 'Collection'
 	cjson = procobject(ovfp,.t.,m.nonullarrayitem,m.amembersFlag)
@@ -81,10 +80,9 @@ xtabs = nivel(2)
 
 bc = iif(type('m.obt.baseclass')='C',m.obt.baseclass,'?')
 
-iscollection =  bc = 'Collection' 
+iscollection =  bc = 'Collection'
 
 if m.iscollection
-
 
 	este = m.este+'{ '+m.xtabs
 	xtabs = nivel(2)
@@ -98,23 +96,22 @@ if m.iscollection
 else
 
 	amembers(am,m.obt,0,m.amembersFlag)
-	
+
 	if vartype(m.am) = 'U'
 		xtabs=m.nivel(-2)
 		return ''
 	endif
-
 
 	nm = alen(am)
 
 	for x1 = 1 to m.nm
 
 		var = lower(am(m.x1))
-		
+
 		este = m.este+iif(m.x1>1,',','')+m.xtabs
 
 		este = m.este+["]+strtran(m.var,'_vfpsafe_','')+[":]
-		
+
 		esobjeto = type('m.obt.&Var')='O'
 
 		if type('m.obt.&var') = 'U'
@@ -136,7 +133,7 @@ else
 
 			bc = iif(type('m.thiso.baseclass')='C',m.thiso.baseclass,'?')
 
-			if bc = 'Collection' 
+			if bc = 'Collection'
 
 				este = rtrim(m.este,1,'":')+ collTagName( m.thiso )+'":'
 
@@ -150,22 +147,18 @@ else
 
 		otherwise
 
-
 			este = m.este+concatval(m.obt.&var)
 
 		endcase
 
 	endfor
 
-
 endif
 
 	xtabs = nivel(-2)
 	este  = m.este+m.xtabs
 
-
 return m.este
-
 
 *----------------------------------------------------
 procedure procarray(obt,arrayName,nonullarrayitem)
@@ -209,24 +202,23 @@ do while m.nelem <= m.titems
 
 		else
 
-
 			bc = iif(type('m.elem.baseclass')='C',m.elem.baseclass,'?')
 
-			if bc = 'Collection' 
+			if bc = 'Collection'
 
 				este = m.este+' { "collection'+ collTagName( m.elem )+'":'
-				
+
    				este =  m.este+procobject(m.elem ,.t.,m.nonullarrayitem,m.amembersFlag)
 
 				este = m.este + '}'+m.xTabs+'}'
-				
+
 			else
 
    				este =  m.este+[{]+procobject(m.elem ,.f.,m.nonullarrayitem,m.amembersFlag)+[}]
 
 			endif
 
-			
+
 		endif
 
 	endfor
@@ -240,14 +232,9 @@ do while m.nelem <= m.titems
 
 enddo
 
-
 xtabs=nivel(-2)
 
 este = m.este+m.xtabs+']'
-
-
-
-
 
 *-----------------------------
 function nivel(n)
@@ -270,7 +257,6 @@ if isnull(m.valor)
 	return 'null'
 
 else
-
 
 	tvar = vartype(m.valor)
 	** no cambiar el orden de ejecución!
@@ -296,7 +282,7 @@ endif
 *-----------------------------------
 FUNCTION mustEncode(valor)
 *-----------------------------------
-RETURN len(chrtran(m.valor,specialChars,'')) <> len(m.valor)  
+RETURN len(chrtran(m.valor,specialChars,'')) <> len(m.valor)
 
 *-------------------------------
 function escapeandencode(valun)
@@ -326,8 +312,6 @@ ENDFOR
 
 return RTRIM(m.valun)
 
-
-
 *---------------------------------------------------------------
 Function procCollection(obt,nonullArrayItems,amembersFlag )
 *---------------------------------------------------------------
@@ -353,7 +337,7 @@ With obt
 		este = m.este+Iif(m.x1>1,','+m.xtabs,'')
 
 		If Vartype(m.elem) # 'O'
-		
+
 			este = m.este+Concatval(m.elem)
 
 		else
@@ -368,9 +352,9 @@ With obt
 			endif
 
 			este = m.este+procObject(m.elem, m.isCollection , m.noNullArrayItem, m.aMembersFlag )
-		
+
 			este = m.este+'}'
-		
+
 			if m.isCollection
 				xTabs = nivel(-2)
 				este = m.este+m.xTabs+'}'
@@ -379,7 +363,7 @@ With obt
 		Endif
 
 	endfor
-	
+
 	este = rtrim(m.este,1,m.xTabs)
 
 Endwith
