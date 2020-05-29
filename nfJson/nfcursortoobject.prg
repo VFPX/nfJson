@@ -13,14 +13,13 @@ endif
 ovfp = createobject('empty')
 addproperty(ovfp,'arrayOfValues', m.copytoarray )
 
-
 if copytoarray
 
 	copy to array arows
 	recordcount = _tally
 
 	if _tally = 0
-		dimension arows(1) 
+		dimension arows(1)
 		arows(1)  = .null.
 	endif
 
@@ -52,7 +51,6 @@ endif
 addproperty(ovfp,'recordcount', m.recordCount)
 addarray(ovfp,'rows',@m.arows)
 
-
 if m.includestruct
 
 	ncols = afields(astruct)
@@ -64,12 +62,9 @@ if m.includestruct
 
 	addarray(m.ovfp,'aStruct',@m.astruct)
 
-
 endif
 
-
 RETURN m.oVfp
-
 
 ***************************************
 Function addArray(o2add2,aName,a2add)

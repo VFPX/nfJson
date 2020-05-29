@@ -3,7 +3,7 @@
 * usage sample see nfOpenJsonTest.prg
 * refer to https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
 *
-* ver 0.91 2019/04/03 - 
+* ver 0.91 2019/04/03 -
 *
 *---------------------------------------------
 parameters cjson, carraypath, cstruct
@@ -24,7 +24,6 @@ endif
 if pcount() < 3
 	return m.cres
 endif
-
 
 =alines( cc, cstruct,7,'-')
 
@@ -52,7 +51,6 @@ isql = rtrim(M.isql,1,',')+' from (cres) where vtooj() into cursor result'
 
 &isql
 
-
 *-------------------------------
 function vtooj()
 *-------------------------------
@@ -75,14 +73,13 @@ if 'as json' $ lower(m.path)
 
 else
 
-	return evaluate(' cast( oj.'+m.path+')') 
+	return evaluate(' cast( oj.'+m.path+')')
 
 endif
 
 *------------------------------------------------------
 function json2kvcursor(cjsonstr,cpropertypath)
 *------------------------------------------------------
-
 
 kk = nfjsonread(m.cjsonstr)
 
@@ -108,7 +105,6 @@ catch
 	lretval = .null.
 endtry
 
-
 do case
 
 case isnull(m.lretval)
@@ -132,7 +128,6 @@ otherwise
 
 	return m.cn
 
-
 endcase
 
 *---------------------------------------------
@@ -153,16 +148,13 @@ for each thisval in aa
 	nitem = m.nitem+1
 endfor
 
-
 *--------------------------------------------------
 function objecttokvtable( ox )
 *--------------------------------------------------
 
 amembers( op, m.ox )
 
-
 for each pname in op
-
 
 	if type('m.oX.&pName',1) = 'A'
 
@@ -187,4 +179,3 @@ for each pname in op
 		( m.pname ,iif(isnull(m.thisval),.null.,cast( m.thisval as m ) ) , vartype( m.thisval ) )
 
 endfor
-

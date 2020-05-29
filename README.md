@@ -1,4 +1,4 @@
-# nfJson 
+# nfJson
 
 **Provides a set of fast performance, reliable and easy to use Json functions using pure VFP.**
 
@@ -16,17 +16,15 @@ Project Manager: Marco Plaza
 
 * cJsonString = **nfCursorToJson4vfp()**  _&& converts current open table/cursor to Json suitable for later use of nfJsonToCursor()_
 
-* cJsonString = **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)**    converts current open table/cursor to Json 
+* cJsonString = **nfCursorToJson(**_lReturnArray, lArrayofValues, lIncludestruct, lFormattedOutput_**)**    converts current open table/cursor to Json
 
 * oJson = **nfCursorToObject(**_lCopyToArray, lIncludeStruct_**)**
 
-* cJsonString = **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions  
- 
+* cJsonString = **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions
 
 * **BETA PREVIEW: nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
 
-	Similar to SqlServer 2016 openJson function. Allows you to convert Json to cursor. Pass jsonString , optional array path using  $. as object root and cursor structure as string with following structure for each column: `-<fieldName> <castExpression> [<$.propertyPath>]` Object types must use JSON as cast type ( see example ). Please check nfOpenJsonTest and [https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql) for clear understanding. 
-
+	Similar to SqlServer 2016 openJson function. Allows you to convert Json to cursor. Pass jsonString , optional array path using  $. as object root and cursor structure as string with following structure for each column: `-<fieldName> <castExpression> [<$.propertyPath>]` Object types must use JSON as cast type ( see example ). Please check nfOpenJsonTest and [https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql) for clear understanding.
 
 		 text to mssample2 noshow
 		[
@@ -54,8 +52,7 @@ Project Manager: Marco Plaza
 		  }
 		]
 		ENDTEXT
-		
-		
+
 		nfOpenJson( m.mssample2,'$.array', ' ;
 		 - Number    v(200) $.Order.Number  ;
 		 - Date      t      $.Order.Date    ;
@@ -64,15 +61,14 @@ Project Manager: Marco Plaza
 		 - itemQuantity i   $.Item.Quantity ;
 		 - Order  JSON ;
 		 ' )
-		
-		browse
-		
-		nfOpenJson( m.msSample2 )
-		browse
-		
-		nfOpenJson( m.msSample2,'$.array')
+
 		browse
 
+		nfOpenJson( m.msSample2 )
+		browse
+
+		nfOpenJson( m.msSample2,'$.array')
+		browse
 
 ## Tests & Sample files
 
@@ -100,74 +96,73 @@ Project Manager: Marco Plaza
 2019/06/14
 
 * JsonFormat function by Carlos Alloati
- 
+
 2017/08/05
 
 * no matter wich strictdate setting you have set, a JsonDateTime "0000-00-00T00:00:00" will return an empty date.
 * valid JsonDates with time "T00:00:00" will return a date value ( ie: {"testDate":"2017-12-01T00:00:00"} )
-* invalid dates ( ie 2017/50/50 ) properly formatted as Json Date ( ie: 2017-50-50T00:00:00 ) will throw error; 
+* invalid dates ( ie 2017/50/50 ) properly formatted as Json Date ( ie: 2017-50-50T00:00:00 ) will throw error;
  ( previous behavior was to return .null. )
 
-
-2017/03/10  
+2017/03/10
 
 * fixed: proper support for 19 character strings with ISO basic date format & different strictdate settings.
 
-2017/02/05  
+2017/02/05
 
 * fixed: nfJsonRead bug fix: incorrect parsing for strings terminated with escaped double quotes; minor changes & code refactoring.
 
-2017/01/11  
+2017/01/11
 
 * fixed: nfJsonRead: incorrect unescaped output with "set exact = on"
 * escapetest.prg - removed "leftover" lines.
 
-2017/01/11  
+2017/01/11
 
 * fixed issue escaping values terminated with "
 * nfJsonRead: removed parameter "isFile" now you can just pass a file name or string
 * added test: escapeTest.prg
 
-2016/09/28  
+2016/09/28
 
-* minor bug fix: zero item collections created as 1 empty item collection 
+* minor bug fix: zero item collections created as 1 empty item collection
 * proper indent for raw/formatted collection objects
 
-2016/08/16  
+2016/08/16
 
-* nfJsonPerfTest: added compiled exe, samples file ships as a separate file for you to edit 
-* fixed bug on test prgs: clean installs would fail due to missing temp folder on distribution zip w/o tests\temp folder 
+* nfJsonPerfTest: added compiled exe, samples file ships as a separate file for you to edit
+* fixed bug on test prgs: clean installs would fail due to missing temp folder on distribution zip w/o tests\temp folder
 * fixed bug on collectionTest
 
-2016/07/22  
+2016/07/22
 
 * nfJsonRead: Improved error management
 * CollectionTest: added new test
 
-2016/07/20  
+2016/07/20
 
 * Fixed bug: missing closing curly brace on collections as object member
 * Updated collections program test
 
-2016/07/09  
+2016/07/09
 
 * Automatic cast for datetime properties ( ISO-8601 basic format & vfp compilant as described on [https://en.wikipedia.org/wiki/ISO_8601#Times](https://en.wikipedia.org/wiki/ISO_8601#Times). )
 * nfJsonToCursor Bug Fix: "Date/datetime evaluated to an invalid value" while running under "strictdate = 1" converting empty dates back from Json
 
-2016/07/04  
+2016/07/04
 
 * Added support for control characters encoding ( chr( 0) ~ chr(31) )
 
-2016/05/05  
+2016/05/05
 
 * invalid Json error shows calling program information
 
-2016/04/02  
+2016/04/02
 
 * complex nested objects/arrays validation
 * missing object/array closures validation
 
-2016/03/28  
+2016/03/28
 
 * nfJsonRead performs JSON validation: invalid Json throws error indicating reason.
 * nfJsonPerfTest: proper error management enabled for invalid Json input from clipboard

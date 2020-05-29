@@ -15,7 +15,6 @@ Else
 	calledfrom = ''
 Endif
 
-
 Try
 
 	cerror = ''
@@ -40,11 +39,9 @@ Endif
 
 Return Iif(Vartype(m.ojson)='O',m.ojson,.Null.)
 
-
 *-------------------------------------------------------------------------
 Function nfjsonread2(cjsonstr,revivecollection)
 *-------------------------------------------------------------------------
-
 
 Try
 
@@ -55,7 +52,6 @@ Try
 
 	cjson = Rtrim(Chrtran(m.cjsonstr,Chr(13)+Chr(9)+Chr(10),''))
 	pchar = Left(Ltrim(m.cjson),1)
-
 
 	nl = Alines(aj,m.cjson,20,'{','}','"',',',':','[',']','\\')
 
@@ -84,11 +80,9 @@ Try
 
 	Endcase
 
-
 	If m.revivecollection
 		ojson = revivecollection(m.ojson)
 	Endif
-
 
 Catch To oerr
 
@@ -179,7 +173,6 @@ Do While m.objectopen
 			expecting = Strtran(m.expecting,',','')
 		Endcase
 
-
 	Case m.expectingpropertyname
 
 		If aj(m.x) = '"'
@@ -187,7 +180,6 @@ Do While m.objectopen
 		Else
 			Error 'expecting "'+m.expecting+' got '+aj(m.x)
 		Endif
-
 
 	Case m.expectingvalue
 
@@ -197,17 +189,13 @@ Do While m.objectopen
 			procvalue(m.obj)
 		Endif
 
-
 	Endcase
 
-
 Enddo
-
 
 *-----------------------------------------------------------------------------
 Function anuevoel(obj,arrayname,valasig,bidim,colpos,rowpos)
 *-----------------------------------------------------------------------------
-
 
 If m.bidim
 
@@ -237,7 +225,6 @@ Else
 	Endif
 
 Endif
-
 
 *-----------------------------------------
 Function unescunicode( cstr )
@@ -287,7 +274,6 @@ Endif
 
 Private aa,elem,unesc
 
-
 Declare aa(1)
 =Alines(m.aa,m.value,18,'\\','\b','\f','\n','\r','\t','\"','\/')
 
@@ -336,7 +322,6 @@ expecting = ':'
 expectingvalue = .T.
 expectingpropertyname = .F.
 
-
 *-------------------------------------------------------------
 Procedure procvalue(obj)
 *-------------------------------------------------------------
@@ -364,7 +349,6 @@ Case aj(m.x) = '{'
 
 	Endif
 
-
 Case  aj(x) = '['
 
 	ostack.pusharray()
@@ -378,14 +362,12 @@ Case  aj(x) = '['
 		colpos = 0
 		bidim = .F.
 
-
 		Try
 			AddProperty(obj,(m.arrayname+'(1)'),.Null.)
 		Catch
 			m.arrayname = m.arrayname+'_vfpSafe_'
 			AddProperty(obj,(m.arrayname+'(1)'),.Null.)
 		Endtry
-
 
 	Case m.arraylevel = 1 And !m.bidim
 
@@ -443,8 +425,6 @@ Otherwise
 
 	Endcase
 
-
-
 	If m.isstring
 
 * don't change this lines sequence!:
@@ -489,12 +469,9 @@ Otherwise
 			Error 'expecting "|number|null|true|false|  got '+aj(m.x)
 		Endcase
 
-
 	Endif
 
-
 	If m.arraylevel = 0
-
 
 		AddProperty(obj,m.vari,m.value)
 
@@ -513,7 +490,6 @@ Otherwise
 
 	expecting = Iif(m.isstring,',','')+m.expecting
 
-
 	Do Case
 	Case m.closechar = ']'
 		closearray()
@@ -522,7 +498,6 @@ Otherwise
 	Endcase
 
 Endcase
-
 
 *------------------------------
 Function closearray()
@@ -563,8 +538,6 @@ Else
 
 Endif
 
-
-
 *-------------------------------------
 Procedure closeobject
 *-------------------------------------
@@ -583,7 +556,6 @@ Else
 	expectingvalue = .T.
 	expectingpropertyname = .F.
 Endif
-
 
 *----------------------------------------------
 Function revivecollection( o )
@@ -613,7 +585,6 @@ For x = 1 To m.nprop
 
 		If Not ( Alen(m.tv.collectionItems) = 1 And Isnull( m.tv.collectionItems ) )
 
-
 			For T = 1 To Alen(m.tv.collectionItems)
 
 				If m.keyvalcoll
@@ -621,7 +592,6 @@ For x = 1 To m.nprop
 				Else
 					esteval = m.tv.collectionItems(m.t)
 				Endif
-
 
 				If Vartype(m.esteval) = 'O' Or Type('esteVal',1) = 'A'
 					esteval = revivecollection(m.esteval)
@@ -661,7 +631,6 @@ For x = 1 To m.nprop
 
 	Endcase
 
-
 	estavar = Strtran( m.estavar,'_KV_COLLECTION', '' )
 	estavar = Strtran( m.estavar, '_KL_COLLECTION', '' )
 
@@ -689,7 +658,6 @@ Else
 	Return m.oconv
 Endif
 
-
 *----------------------------------
 Function isjsondt( cstr )
 *----------------------------------
@@ -706,7 +674,6 @@ Return Iif( Len(m.cstr) = 19 ;
 	and Occurs('T',m.cstr) = 1 ;
 	and Occurs('-',m.cstr) = 2 ;
 	and Occurs(':',m.cstr) = 2 ,.T.,.F. )
-
 
 *-----------------------------------------------------
 Procedure jsondatetodt( cjsondate )

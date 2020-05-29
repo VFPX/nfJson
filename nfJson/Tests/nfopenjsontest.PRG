@@ -15,16 +15,12 @@ text to mssample1 noshow
 }
 ENDTEXT
 
-
-
 nfopenjson( m.mssample1 )
 browse title 'object'
 ? nfopenjson( m.mssample1,'.stringvalue' )
 browse title 'string'
 ? nfopenjson( m.mssample1,'.arrayValue' )
 browse title 'Array:'
-
-
 
 text to mssample2 noshow
 [
@@ -58,7 +54,6 @@ browse
 
 nfOpenJson( m.msSample2,'$.array')
 browse
-
 
 nfOpenJson( m.mssample2,'$.array',';
  - Number   v(200) $.Order.Number  ;

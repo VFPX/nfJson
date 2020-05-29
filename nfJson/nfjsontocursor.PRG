@@ -5,19 +5,16 @@
 *-------------------------------------------------------------------
 Parameters  cJson, cName, forceImportFromArray
 
-
-
 cName = Evl(m.cName,Sys(2015))
 
 Private All
 
 oCursor = nfJsonRead(m.cJson)
 
-
 do case
  CASE VARTYPE(oCursor) # 'O'
- 	return 
- case Vartype(oCursor.aStruct) = 'U' 
+ 	return
+ case Vartype(oCursor.aStruct) = 'U'
 	Error  'missing structure data - must create json using nfCursor2Json4vfp() '
 	return
  case !m.forceImportFromArray and Vartype(oCursor.asarray) = 'L' and oCursor.asarray
@@ -25,7 +22,7 @@ do case
  	or use forceImportFromArray only if you are sure your data contains no memo or binary types'
 	return
 endcase
- 
+
 Create Cursor (m.cName) From Array oCursor.aStruct
 
 If oCursor.recordCount = 0
