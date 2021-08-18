@@ -62,13 +62,9 @@ Project Manager: Marco Plaza
 		 - Order  JSON ;
 		 ' )
 
-		browse
+		browse normal
 
-		nfOpenJson( m.msSample2 )
-		browse
-
-		nfOpenJson( m.msSample2,'$.array')
-		browse
+		
 
 ## Tests & Sample files
 
