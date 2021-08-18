@@ -1,26 +1,8 @@
 *----------------------------------------------------
-* nfOpenJson test:
+* nfOpenJson test 
 *----------------------------------------------------
 close tables all
 
-text to mssample1 noshow
-{
-  "StringValue":"John",
-  "IntValue":45,
-  "TrueValue":true,
-  "FalseValue":false,
-  "NullValue":null,
-  "ArrayValue":["a","r","r","a","y"],
-  "ObjectValue":{"obj":"ect"}
-}
-ENDTEXT
-
-nfopenjson( m.mssample1 )
-browse title 'object'
-? nfopenjson( m.mssample1,'.stringvalue' )
-browse title 'string'
-? nfopenjson( m.mssample1,'.arrayValue' )
-browse title 'Array:'
 
 text to mssample2 noshow
 [
@@ -49,18 +31,71 @@ text to mssample2 noshow
 ]
 ENDTEXT
 
-nfOpenJson( m.msSample2 )
-browse
 
-nfOpenJson( m.msSample2,'$.array')
-browse
+*---------- short structures < 255 characters
 
 nfOpenJson( m.mssample2,'$.array',';
- - Number   v(200) $.Order.Number  ;
+ - Number   c(10) $.Order.Number  ;
  - Date     t      $.Order.Date    ;
- - Customer v(200) $.AccountNumber  ;
+ - Customer c(10) $.AccountNumber  ;
  - itemPrice n(6,2) $.Item.Price ;
  - itemQuantity i   $.Item.Quantity ;
- - Order  JSON')
+ - Order  JSON ;
+ ')
 
 browse
+
+*-------- longer structures:
+
+text to cStruct pretext 8 noshow
+ - Number   c(10) $.Order.Number  
+ - Date     t      $.Order.Date    
+ - Customer c(10) $.AccountNumber  
+ - itemPrice n(6,2) $.Item.Price 
+ - itemQuantity i   $.Item.Quantity 
+ - Order  JSON
+endtext
+
+nfOpenJson( m.mssample2,'$.array',m.cStruct )
+
+
+*------ preferred way using just nfJsonRead and existing cursor:
+
+oSrc = nfJsonRead(m.mssample)
+
+
+Create Cursor curStruct2 ( Number v(10),Date d,Customer v(10),itemPrice N(10,2),itemQuantity i, Order m )
+
+For Each Row In oSrc.Array
+
+    Insert Into curStruct2 ;
+        ( Number,Date ,Customer ,itemPrice ,itemQuantity ,Order ) ;
+        VALUES ;
+        ( Row.Order.Number, Row.Order.Date, Row.accountNumber, Row.Item.price,Row.Item.quantity, nfJsonCreate(m.row) )
+
+Endfor
+
+Browse Normal Title 'sample 1'
+
+*------- or -----------------------
+
+Create Cursor curStruct3 ( Number v(10),Date d,accountNumber v(10),price N(10,2),quantity i, sourceDoc m )
+
+
+For Each oRow In oSrc.Array
+
+    Append Blank
+    Gather Name oRow
+    Gather Name oRow.Order
+    Gather Name oRow.Item
+
+    Replace sourceDoc With nfJsonCreate(m.oRow.Order)
+
+Endfor
+
+
+Browse Normal Title 'sample 2'
+
+
+
+
