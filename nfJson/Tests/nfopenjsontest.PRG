@@ -43,7 +43,7 @@ nfOpenJson( m.mssample2,'$.array',';
  - Order  JSON ;
  ')
 
-browse
+BROWSE TITLE 'sample 1'
 
 *-------- longer structures:
 
@@ -57,11 +57,11 @@ text to cStruct pretext 8 noshow
 endtext
 
 nfOpenJson( m.mssample2,'$.array',m.cStruct )
-
+BROWSE TITLE 'sample 2'
 
 *------ preferred way using just nfJsonRead and existing cursor:
 
-oSrc = nfJsonRead(m.mssample)
+oSrc = nfJsonRead(m.mssample2)
 
 
 Create Cursor curStruct2 ( Number v(10),Date d,Customer v(10),itemPrice N(10,2),itemQuantity i, Order m )
@@ -75,7 +75,7 @@ For Each Row In oSrc.Array
 
 Endfor
 
-Browse Normal Title 'sample 1'
+Browse Normal Title 'sample 3'
 
 *------- or -----------------------
 
@@ -94,7 +94,8 @@ For Each oRow In oSrc.Array
 Endfor
 
 
-Browse Normal Title 'sample 2'
+Browse Normal Title 'sample 4'
+
 
 
 
