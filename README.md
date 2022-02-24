@@ -8,7 +8,12 @@ Project Manager: Marco Plaza
 
 ( Each function is a single prg -  No additional dependencies / Requires VFP9 )
 
-* oJson = **nfJsonRead(**cJsonString , _isFileName_,_lReviveCollections_**)**
+* oJson = **nfJsonRead(**cJsonString , _isFileName_,_lReviveCollections_**)**  
+ Example :   
+ jsonstr = [{"name":"John", "age":30, "family":{"wife":"Susana","son":"Tom"}, "location":"texas"}]  
+ vfpobj = nfJsonRead(jsonstr)  
+ ? vfpobj.age         &&will show 30  
+ ? vfpobj.family.son  &&will show Tom  
 
 * cJsonString = **nfJsonCreate(**oVfp, _lFormattedOutput, lNoNullArrayItems,cRootName,aMembersFlag_**)**
 
