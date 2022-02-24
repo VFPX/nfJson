@@ -10,7 +10,7 @@ Project Manager: Marco Plaza
 
 * oJson = **nfJsonRead(**cJsonString , _isFileName_,_lReviveCollections_**)**  
  Example :   
- jsonstr = [{"name":"John", "age":30, "family":{"wife":"Susana","son":"Tom"}, "location":"texas"}]  
+ jsonstr = '{"name":"John", "age":30, "family":{"wife":"Susana","son":"Tom"}, "location":"texas"}'  
  vfpobj = nfJsonRead(jsonstr)  
  ? vfpobj.age         &&will show 30  
  ? vfpobj.family.son  &&will show Tom  
