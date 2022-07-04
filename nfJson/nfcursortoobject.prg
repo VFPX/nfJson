@@ -67,9 +67,9 @@ endif
 RETURN m.oVfp
 
 ***************************************
-Function addArray(_o2add2,_aName,_a2add)
+Function addArray(o2add2,aName,a2add)
 ***************************************
 
-AddProperty(_o2add2,(_aName+'(1)'))
+AddProperty(o2add2,(aName+'(1)'))
 
-Acopy(_a2add,_o2add2.&_aName)
+Acopy(a2add,o2add2.&aName)
