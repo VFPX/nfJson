@@ -94,6 +94,10 @@ Project Manager: Marco Plaza
 	* yahooweather.json
 
 ## Release Notes
+2022/07/04
+
+* PatrickvonDeetzen: Fixed nfcursortoobject.prg to handle table with field named "aname".
+
 2019/06/14
 
 * JsonFormat function by Carlos Alloati
