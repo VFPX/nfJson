@@ -267,10 +267,6 @@ else
 		vc = iif(m.valor,'true','false')
 	case m.tvar $ 'DT'
 		vc = ["]+ttoc(m.valor,3)+[Z"]
-		*** We don´t want an empty VFP date-value like "0000-00-00T00:00:00Z"
-		IF vc = '"0000-00-00T00:00:00Z"'
-			vc = 'null'
-		ENDIF 
 	case mustEncode(m.valor)
 		vc = ["]+escapeandencode(m.valor)+["]
 	case m.tvar $ 'CVM'
