@@ -12,7 +12,7 @@
 *************************************************************
 
 #define millon 1000000
-Public oJson
+Public oJson, nsamp
 
 IF  _vfp.StartMode # 4 and UPPER(RIGHT(CURDIR(),24)) # upper('\nfJson\performanceTest\')
 	MESSAGEBOX('Please run from nfJson\performanceTest',0)
@@ -32,7 +32,7 @@ ENDIF
 
 Dimension opt(1)
 N=1
-nsamp = 10
+nsamp = 75
 
 Do While .T.
 	op=Strextract(cjson,'"""',':',N)
@@ -49,17 +49,19 @@ Read Events
 
 Define Class sampletest As Form
 
-	Height = 600
-	Width= 800
-	ShowWindow = 2
+	Height=680
+	Width=900
+	ShowWindow=2
 	Left=300
 	Top=100
-	caption = 'nfJson 1.0000'
-
-	Add Object samples As ListBox With 	Anchor=7,Left=10,Top=5,Height = 550,Width = 190,RowSourceType=5,FontName='Consolas',FontSize=10
-	Add Object json As EditBox With 	Anchor=15,Left=195,Top=5,Height = 550,Width = 600,RowSourceType=5,FontName='Consolas',FontSize=10
-	Add Object deCliptext As CommandButton With Anchor=6,Left =10, Top = 560, Height=30, Width=160 , Caption='Json from clipboard',FontName='Consolas',FontSize=10
-	Add Object TRESULT As TextBox With Anchor=6,Left=200,Height=25,Width=550,Top=565,fontname='Consolas',FontSize=10
+	caption='nfJson 1.0000'
+	
+	Add Object lblsamplesize As Label With Left=10,Height=25,Width=235,Top=14,fontname='Consolas',FontSize=11,Caption="Number of Samples to be used:"
+	Add Object txtsamplesize As TextBox With Left=250,Height=25,Width=60,Top=10,fontname='Consolas',FontSize=11,Format="KZ",Inputmask="99999",Controlsource="nsamp"
+	Add Object samples As ListBox With Anchor=7,Left=10,Top=40,Height = 595,Width = 235,RowSourceType=5,FontName='Consolas',FontSize=10
+	Add Object json As EditBox With Anchor=15,Left=250,Top=40,Height = 595,Width = 640,RowSourceType=5,FontName='Consolas',FontSize=10
+	Add Object deCliptext As CommandButton With Anchor=6,Left =9, Top = 640, Height=30, Width=237 , Caption='Json from clipboard',FontName='Consolas',FontSize=11
+	Add Object TRESULT As TextBox With Anchor=6,Left=250,Height=28,Width=640,Top=641,fontname='Consolas',FontSize=11
 
 	Procedure Init
 	This.Visible = .T.
@@ -92,7 +94,10 @@ EndTry
 		Messagebox('No es Texto!',0)
 		Return .F.
 	Endif
-
+	
+* indicator that results are being recalculated
+	Thisform.TRESULT.ForeColor = RGB(255,0,0)
+	
 * transform sample json data into vfp Object:
 	TI=Seconds()
 
@@ -120,6 +125,7 @@ EndTry
 	TR2=(Seconds()-TI)*millon
 	TR2=round(TR2/nsamp,0)
 
+	Thisform.TRESULT.ForeColor = RGB(0,0,0)
 	Thisform.TRESULT.Value = ' Read: '+Transform(TR,'99,999')+'us  ( '+Transform(millon/TR,'99,999')+' op/sec )   Create: '+Transform(TR2,'99,999')+'us  ( '+Transform(millon/TR2,'99,999')+' op/sec )'
 
 	Thisform.json.SelStart=1
