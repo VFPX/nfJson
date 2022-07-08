@@ -310,39 +310,39 @@ valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
 																chr(127),'\b')
 valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
 																chr(0),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(1),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(2),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(3),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(4),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(5),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(6),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(7),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(8),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(9),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(10),'\u'+RIGHT(TRANSFORM(0,'@0'),4))
+																chr(1),'\u'+RIGHT(TRANSFORM(1,'@0'),4)),;
+																chr(2),'\u'+RIGHT(TRANSFORM(2,'@0'),4)),;
+																chr(3),'\u'+RIGHT(TRANSFORM(3,'@0'),4)),;
+																chr(4),'\u'+RIGHT(TRANSFORM(4,'@0'),4)),;
+																chr(5),'\u'+RIGHT(TRANSFORM(5,'@0'),4)),;
+																chr(6),'\u'+RIGHT(TRANSFORM(6,'@0'),4)),;
+																chr(7),'\u'+RIGHT(TRANSFORM(7,'@0'),4)),;
+																chr(8),'\u'+RIGHT(TRANSFORM(8,'@0'),4)),;
+																chr(9),'\u'+RIGHT(TRANSFORM(9,'@0'),4)),;
+																chr(10),'\u'+RIGHT(TRANSFORM(10,'@0'),4))
 valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																chr(11),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(12),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(13),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(14),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(15),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(16),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(17),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(18),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(19),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(20),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(21),'\u'+RIGHT(TRANSFORM(0,'@0'),4))
+																chr(11),'\u'+RIGHT(TRANSFORM(11,'@0'),4)),;
+																chr(12),'\u'+RIGHT(TRANSFORM(12,'@0'),4)),;
+																chr(13),'\u'+RIGHT(TRANSFORM(13,'@0'),4)),;
+																chr(14),'\u'+RIGHT(TRANSFORM(14,'@0'),4)),;
+																chr(15),'\u'+RIGHT(TRANSFORM(15,'@0'),4)),;
+																chr(16),'\u'+RIGHT(TRANSFORM(16,'@0'),4)),;
+																chr(17),'\u'+RIGHT(TRANSFORM(17,'@0'),4)),;
+																chr(18),'\u'+RIGHT(TRANSFORM(18,'@0'),4)),;
+																chr(19),'\u'+RIGHT(TRANSFORM(19,'@0'),4)),;
+																chr(20),'\u'+RIGHT(TRANSFORM(20,'@0'),4)),;
+																chr(21),'\u'+RIGHT(TRANSFORM(21,'@0'),4))
 valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																chr(22),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(23),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(24),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(25),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(26),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(27),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(28),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(29),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(30),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(31),'\u'+RIGHT(TRANSFORM(0,'@0'),4))
+																chr(22),'\u'+RIGHT(TRANSFORM(22,'@0'),4)),;
+																chr(23),'\u'+RIGHT(TRANSFORM(23,'@0'),4)),;
+																chr(24),'\u'+RIGHT(TRANSFORM(24,'@0'),4)),;
+																chr(25),'\u'+RIGHT(TRANSFORM(25,'@0'),4)),;
+																chr(26),'\u'+RIGHT(TRANSFORM(26,'@0'),4)),;
+																chr(27),'\u'+RIGHT(TRANSFORM(27,'@0'),4)),;
+																chr(28),'\u'+RIGHT(TRANSFORM(28,'@0'),4)),;
+																chr(29),'\u'+RIGHT(TRANSFORM(29,'@0'),4)),;
+																chr(30),'\u'+RIGHT(TRANSFORM(30,'@0'),4)),;
+																chr(31),'\u'+RIGHT(TRANSFORM(31,'@0'),4))
 
 return RTRIM(m.valun)
 
