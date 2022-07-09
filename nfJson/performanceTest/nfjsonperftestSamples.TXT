@@ -3180,4 +3180,105 @@
   }]
 }
 
+""" Child-Care Informations:
+
+[
+   {
+      "aid":1,
+      "aname":"DRK Kindertagesstätte \"Sprungweg\"",
+      "awebsite":"http://www.google.de/kita1",
+      "aemail":"Kindertagesstätte-Sprungweg@kita-demo-mail.de",
+      "atelefon1":"0441 / 394 - 175",
+      "atelefon2":"0441 / 394 - 9175",
+      "ainfo1_text":"Unser Team bietet jedem Kind einen verlässlichen Partner im strukturierten Tagesablauf und eine feste Bezugsperson, da jedes Kind einer Stammgruppe angehörig ist. Tägliche Angebote, z. B. der Morgenkreis in der Stammgruppe, bieten den Kindern Struktur und Orientierung innerhalb der Offenen Arbeit. \r\n\r\nPädagogische Schwerpunkte der einzelnen Fachkraft finden sich in verschiedenen Angeboten, wie z. B. Fußball/Turnen, Experimente oder Basteln, wieder und können von den Kindern ausgewählt werden. Ein täglich festes Angebot ist unsere Draußenzeit, sie findet mittags statt. Die Kinder werden täglich in ihrer Sprachentwicklung unterstützt. Durch gezielte Angebote in Kleingruppen können wir auf die Bedürfnisse und den Entwicklungsstand der Kinder eingehen.",
+      "ainfo1_type":"1/Verpflegung",
+      "ainfo2_text":"Der Tag beginnt in unserem Haus mit einem Frühstück, das die Küche morgens zubereitet. Unser Essraum ist elternfreie Zone, da die Kinder die Möglichkeit haben sollen, ihr Frühstück und die Menge selbst zu wählen. Ein pädagogischer Mitarbeiter steht ihnen dabei als Ansprechpartner zur Verfügung. \r\n\r\nDas Mittagessen findet in festen Gruppen statt und wird täglich von unseren Küchenkräften frisch gekocht. Wir animieren Kinder dazu, Gerichte zu probieren. Aber auch hier lernt das Kind selbst zu wählen und Mengen richtig einzuschätzen. Nach dem Essen geben die Kinder Feedback zum Gericht, das an die Küche weitergeleitet wird.",
+      "ainfo2_type":"2/Räumlichkeit",
+      "ainfo3_text":"Wer in unser Haus kommt geht zunächst am Büro vorbei und steht dann im Mittelpunkt des Hauses: dem Großraum. Er dient als Raum für Bewegungsangebote, für die Vollversammlung zu Geburtstagen oder gemeinsames Singen. \r\n\r\nUnsere Funktionsräume, z. B. die Baustelle, ABC Höhle oder die Spieleoase, werden auch als Gruppenräume genutzt.",
+      "ainfo3_type":"3/Außenanlagen",
+      "ainfo4_text":"Unser Außengelände verfügt über viel grüne Rasenspielfläche, einen kleinen Fußballplatz und einen Spielplatz. Die gepflasterten Wege werden gerne von den Kindern zum Dreiradfahren genutzt.\r\n",
+      "ainfo4_type":"4/Pädagogisches Konzept"
+   },
+   {
+      "aid":6,
+      "aname":"ev. Kindergarten \"Schlaumäuse\"",
+      "awebsite":"http://www.google.de/kita6",
+      "aemail":"Kindergarten-Schlaumaeuse@kiga-demo-mail.de",
+      "atelefon1":"0441 / 394 - 006",
+      "atelefon2":"0441 / 394 - 9006",
+      "ainfo1_text":"Unsere weitläufigen, sonnigen und hellen Räumlichkeiten laden zum Spielen, Forschen, Entdecken und Ruhen ein. Im Garten ist viel Platz zum Klettern, Fußballspielen, Buddeln und Toben. \r\n\r\nDer Gemüse- und Kräutergarten bietet die Möglichkeit zu pflanzen, ernten, riechen, schmecken und fühlen. Die überdachten Innenhöfe bieten auch bei \"Schmuddelwetter\" luftige Spielflächen. In geschütztem Rahmen entdecken und erobern sich die Kinder die Möglichkeiten unseres Hauses.",
+      "ainfo1_type":"1/Verpflegung",
+      "ainfo2_text":"In unserem Kindergarten bieten wir den Kindern täglich ein gesundes und leckeres Mittagessen an. Großen Wert legen wir dabei auf viel Selbstgekochtes sowie frisches Obst und Gemüse. Ergänzt wird unser Essensangebot durch einige Komponenten kindgerechter Tiefkühlkost. Wöchentlich gibt es dabei zweimal Fleisch, einmal Fisch und zweimal vegetarische Gerichte.\r\n",
+      "ainfo2_type":"2/Räumlichkeit",
+      "ainfo3_text":"Unser Kindergarten bietet viele unterschiedlich gestaltete Räume und anregende Materialien, die die Kinder täglich neu für ihr Spiel wählen können:    - Kreativraum  - Musik- und Rollenspielraum  - Bücher- und Spieleraum  - Natur- und Forscherraum  - Bauraum  - Werkraum  - Turnhalle  - Planschraum  - Hort- und Hausaufgabenräume  - Ruheraum  - Groß- und Bewegungsraum.\r\n\r\nDazu ein großes Außengelände, ein Gemüse- und Kräutergarten, ein Fußballplatz und eine Feuerstelle.",
+      "ainfo3_type":"3/Außenanlage",
+      "ainfo4_text":"Unser großflächiges und interessant gestaltetes Außengelände bietet den Kindern ein reichhaltiges Erlebnisangebot. Hier können sie klettern und schaukeln, im Sand spielen und sich auf unserem Fußballplatz austoben. Die Kinder forschen und entdecken, matschen und bauen. \r\n\r\nIn unserem anliegenden Kräuter- und Pflanzengarten können sie sähen, gießen und ernten. Gemeinsam verarbeiten wir anschließend die Ernte, z. B. zu Salaten, Marmeladen, Rohkost, Kuchen und und und…",
+      "ainfo4_type":"4/Pädagogisches Konzept"
+   },
+   {
+      "aid":17,
+      "aname":"Hort Grundschule \"Sausewind\"",
+      "awebsite":"http://www.google.de/kita17",
+      "aemail":"Hort-Grundschule-Sandweg@kiga-demo-mail.de",
+      "atelefon1":"0441 / 394 - 171",
+      "atelefon2":"0441 / 394 - 9171",
+      "ainfo1_text":"Bei der Planung des Alltags arbeiten wir nach einem ganzheitlichen Ansatz, der die tägliche Erlebniswaelt des Kindes in den Mittelpunkt stellt. Jedes Kind wird als eingeständige Persönlichkeit angenommen und in seinem sozialen, körperlichen, geistigen und seelischen Fähigkeiten unterstützt. \r\n\r\nEin Schwerpunkt unserer Arbeit ist, die Kinder an allen sie betreffenden Entscheidungen zu beteiligen. Gewählte Kinderabgeordnete treffen sich regelmäßig um die sie betreffenden Themen zu besprechen und Entscheidungen zu treffen.  Ein weiterer Schwerpunkt ist die Sprachentwicklung- und Förderung. Wir nehmen am Bundesprogramm \"Sprach-Kitas\" : Weil Sprache der Schlüssel zur Welt ist\", teil.",
+      "ainfo1_type":"1/Verpflegung",
+      "ainfo2_text":"Die gemeinsamen Mahlzeiten werden in angenehmer, ruhiger Atmosphäre eingenommen. Das Frühstück und die Zwischenmahlzeit am Nachmittag werden zusammen mit den Kindern geplant, die Zutaten gemeinsam eingekauft und zubereitet. Ein ansprechend gedeckter Tisch motiviert zu angeregten Gesprächen und zeigt auf, Essen als Genuss zu erleben. Die Kinder entscheiden selbst, ob, was und wieviel sie essen. \r\n\r\nIn unserer Küche wird täglich frisch gekocht. Dabei wird auf kindgerechte, ausgewogene und gesunde Ernährung, sowie auf regionale und saisonale Produkte geachtet. Nach dem Mittagessen stimmen die Kinder ab, wie es geschmeckt hat.   Zu besonderen Anlässen findet zwei bis drei Mal im Jahr in der großen Halle ein gemeinsames Frühstück mit Büffet statt.",
+      "ainfo2_type":"2/Räumlichkeit",
+      "ainfo3_text":"Die helle und großzügig angelegte Halle ist Mittelpunkt unseres Hauses. Sie bietet vielfältige Spiel- und Bewegungsangebote für die Kinder aller Gruppen.   Die sechs Gruppenräume sind individuell gestaltet und ausgestattet. Jede Gruppe hat einen direkten Zugang über die Terrasse zum Außengelände und einen eigenen Waschraum.   Die bunten Bälle im Bällebad locken zum Untertauchen und zum Hineinspringen. So wird auf einfache Weise die taktile und visuelle Wahrnehmung gefördert. \r\n\r\nFür eine gesunde körperliche Entwicklung brauchen Kinder ausreichend Bewegungserfahrung. In der Turnhalle finden die Kinder viele Möglichkeiten, ihren ganzen Körper zu spüren und wahrzunehmen.",
+      "ainfo3_type":"3/Außenanlagen",
+      "ainfo4_text":"Über Bewegung erleben Kinder sich und ihre Umwelt. Bewegung hilft ihnen, selbstständig zu werden und stärkt das Selbstbewusstsein. Sie entdecken Neues, erwerben körperliche, kognitive und soziale Kompetenzen und entwickeln sich weiter. Unser Außengelände bietet dafür vielfältige Möglichkeiten.\r\n",
+      "ainfo4_type":"4/Pädagogisches Konzept"
+   },
+   {
+      "aid":22,
+      "aname":"Kindergarten \"Die wilden Zwerge\"",
+      "awebsite":"http://www.google.de/kita22",
+      "aemail":"Kindergarten-Drosselgasse@kiga-demo-mail.de",
+      "atelefon1":"0441 / 394 - 002",
+      "atelefon2":"0441 / 394 - 9002",
+      "ainfo1_text":"Unsere Arbeit ist offene Arbeit, so entstehen pädagogische Schwerpunkte nicht nur durch unser pädagogisches Angebot sondern ebenso durch die Ideen und Wünsche Ihrer Kinder. \r\n\r\nWir selbst legen großen Wert auf die Bereiche Bewegung, Kreativität, Naturwissenschaften, Sprache und Konzentrationsförderung sowie auf gut gelungene Übergänge zwischen Kita und Schule.",
+      "ainfo1_type":"1/Verpflegung",
+      "ainfo2_text":"Wir legen großen Wert auf eine gesunde und ausgewogene Ernährung. Kinder bringen ihr Frühstück und einen Nachmittagsimbiss selbst mit. Mittags kochen wir täglich frisch in unserer eigenen Küche. \r\n\r\nEine Portion Obst sowie Gemüse ist immer da und einmal in der Woche machen wir ein Müslifrühstück. Sollte Ihr Kind eine spezielle Ernährung benötigen, so sprechen Sie uns bitte an.",
+      "ainfo2_type":"2/Räumlichkeit",
+      "ainfo3_text":"Die Räumlichkeiten haben durch die offene Arbeit klar strukturierte und feste Inhalte. So können Kinder ihre Fertigkeiten im Atelier, Wahrnehmungsraum, Puzzle- und Bilderbuchzimmer, Bauraum, Naturwissenschaftsraum, Bewegungsraum (Großraum) sowie in den Krippen- und Horträumen erweitern. \r\n",
+      "ainfo3_type":"3/Außenanlagen",
+      "ainfo4_text":"Unsere Außenanlagen sind sehr naturbelassen und ermöglichen Kindern viel Bewegung. Die Schwerpunkte liegen in Ball- und Bewegungsspielen, in unserem Niedrigseilgarten sowie in der Entdeckung der Elemente Wasser, Feuer und Luft.\r\n",
+      "ainfo4_type":"4/Pädagogisches Konzept"
+   },
+   {
+      "aid":24,
+      "aname":"Kindergarten \"Haus der bunten Träume\"",
+      "awebsite":"http://www.google.de/kita24",
+      "aemail":"Kindergarten-Sonnenblume@kiga-demo-mail.de",
+      "atelefon1":"0441 / 394 - 004",
+      "atelefon2":"0441 / 394 - 9004",
+      "ainfo1_text":"Durch Projekte und Aktivitäten, funktionsbezogene Raumgestaltungen sowie vielfältige Materialien machen wir Kindern in der offenen Arbeit interessante und spannende Angebote für eine ganzheitliche Entwicklung. \r\n\r\nDas Erlernen sozialer Kompetenzen und der Umgang miteinander in Gruppen sind dabei ebenso wichtig wie die Förderung kognitiver Fähigkeiten und die Auseinandersetzung mit Sachthemen.",
+      "ainfo1_type":"1/Verpflegung",
+      "ainfo2_text":"In unserer Küche wird täglich mit hochwertigen Zutaten abwechslungsreich und frisch gekocht. \r\n\r\nEs steht jederzeit frisches Obst und Gemüse zum Zugreifen bereit und einmal wöchentlich findet ein Müslifrühstück statt.",
+      "ainfo2_type":"2/Räumlichkeit",
+      "ainfo3_text":"Treff- und Mittelpunkt unseres Kinderhauses ist der Großraum. Von hier aus gelangt man in viele unterschiedlich gestaltete Räume mit Materialien, die die Kinder täglich neu für ihr Spiel wählen können.\r\n",
+      "ainfo3_type":"3/Außenanlagen",
+      "ainfo4_text":"Unser großzügig angelegtes Außengelände umringt das gesamte Kinderhaus. Es lädt zu vielfältigen Sinnes- und Bewegungserfahrungen ein und bietet den Kindern ein reiches Angebot an Körpererfahrungen sowie Raum für Spiel und Abenteuer. Das Wäldchen, die Büsche und die grünen Höhlen laden zur Exkursion ein und bieten den Kindern gute Verstecke und Rückzugsmöglichkeiten.\\",
+      "ainfo4_type":"4/Konzept"
+   },
+   {
+      "aid":73,
+      "aname":"Tagespflegebüro \"Familienhilfe\" Kösliner Weg",
+      "awebsite":"http://www.google.de/73",
+      "aemail":"Tagespflegebuero-Koesliner-Weg@kiga-demo-mail.de",
+      "atelefon1":"0441 / 394 - 173",
+      "atelefon2":"0441 / 394 - 9173",
+      "ainfo1_text":"Die Tagespflegepersonen leisteen mit Einfühlungsvermögen, Umsichtigkeit und Kreativität die Betreuungs-, Erziehungs- und Bildungsarbeit. Ihre Arbeit ist darauf ausgerichtet, die Fähigkeiten jedes Kindes zu erkennen, zu achten und seine Entwicklungsschritte zu begleiten und zu unterstützen. Dafür gibt sie den Kindern Zeit, Raum und Sicherheit.  Das Kind lernt durch den Umgang mit anderen Kindern viele neue Dinge kennen, die seinen Forscherdrang wecken und es zu neuen Experimenten ermuntern.   \r\n\r\nDie Räume in der Tagespflege sind so ausgestattet, dass sie den Kindern Vertrautheit und Wärme geben und ihre individuellen Bedürfnisse berücksichtigen.",
+      "ainfo1_type":"1/Allgemein",
+      "ainfo2_text":"Über Bewegung erleben Kinder sich und ihre Umwelt. Bewegung hilft ihnen, selbstständig zu werden und stärkt das Selbstbewusstsein. Sie entdecken Neues, erwerben körperliche, kognitive und soziale Kompetenzen und entwickeln sich weiter. Unser Außengelände bietet dafür vielfältige Möglichkeiten.\r\n",
+      "ainfo2_type":"2/Pädagogisches Konzept",
+      "ainfo3_text":"Die helle und großzügig angelegte Halle ist Mittelpunkt unseres Hauses. Sie bietet vielfältige Spiel- und Bewegungsangebote für die Kinder aller Gruppen.   Die sechs Gruppenräume sind individuell gestaltet und ausgestattet. Jede Gruppe hat einen direkten Zugang über die Terrasse zum Außengelände und einen eigenen Waschraum.   Die bunten Bälle im Bällebad locken zum Untertauchen und zum Hineinspringen. So wird auf einfache Weise die taktile und visuelle Wahrnehmung gefördert. \r\n\r\nFür eine gesunde körperliche Entwicklung brauchen Kinder ausreichend Bewegungserfahrung. In der Turnhalle finden die Kinder viele Möglichkeiten, ihren ganzen Körper zu spüren und wahrzunehmen.",
+      "ainfo3_type":"3/Räumlichkeiten",
+      "ainfo4_text":null,
+      "ainfo4_type":null
+   }
+]
+
 """
