@@ -94,6 +94,12 @@ Project Manager: Marco Plaza
 	* yahooweather.json
 
 ## Release Notes
+
+2022/07/09
+* PatrickvonDeetzen:
+•	create json with special characters is now significantly faster (changes made in function "escapeandencode")
+•	updated performance test & added new test sample
+
 2022/07/04
 
 * PatrickvonDeetzen: Fixed nfcursortoobject.prg to handle table with field named "aname".
