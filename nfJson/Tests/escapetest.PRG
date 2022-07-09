@@ -8,7 +8,7 @@ public pair
 
 pair = CREATEOBJECT("empty")
 
-addproperty(pair , [test], [\\"""he\"\\"""\///""\"\\"/"ll/\"o/"\"\\\\""\"] )
+addproperty(pair , [test], [\\"""he\"\\]+chr(13)+chr(20)+chr(22)+["""\///""\"\\"/"ll/\"o/"\"\\\\""\"] )
 
 json = nfjsoncreate(pair)
 
