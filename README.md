@@ -27,48 +27,9 @@ Project Manager: Marco Plaza
 
 * cJsonString = **jsonFormat( cJsonStr )\*** Format json string w/o validate or change element positions
 
-* **BETA PREVIEW: nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
+* nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
 
-	Similar to SqlServer 2016 openJson function. Allows you to convert Json to cursor. Pass jsonString , optional array path using  $. as object root and cursor structure as string with following structure for each column: `-<fieldName> <castExpression> [<$.propertyPath>]` Object types must use JSON as cast type ( see example ). Please check nfOpenJsonTest and [https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql) for clear understanding.
-
-		 text to mssample2 noshow
-		[
-		  {
-		    "Order": {
-		      "Number":"SO43659",
-		      "Date":"2011-05-31T00:00:00"
-		    },
-		    "AccountNumber":"AW29825",
-		    "Item": {
-		      "Price":2024.9940,
-		      "Quantity":1
-		    }
-		  },
-		  {
-		    "Order": {
-		      "Number":"SO43661",
-		      "Date":"2011-06-01T00:00:00"
-		    },
-		    "AccountNumber":"AW73565",
-		    "Item": {
-		      "Price":2024.9940,
-		      "Quantity":3
-		    }
-		  }
-		]
-		ENDTEXT
-
-		nfOpenJson( m.mssample2,'$.array', ' ;
-		 - Number    v(200) $.Order.Number  ;
-		 - Date      t      $.Order.Date    ;
-		 - Customer  v(200) $.AccountNumber  ;
-		 - itemPrice n(6,2) $.Item.Price ;
-		 - itemQuantity i   $.Item.Quantity ;
-		 - Order  JSON ;
-		 ' )
-
-		browse normal
-
+	Similar to SqlServer 2016 openJson function 
 		
 
 ## Tests & Sample files
@@ -95,14 +56,10 @@ Project Manager: Marco Plaza
 
 ## Release Notes
 
-2022/07/09
-* PatrickvonDeetzen:
-•	create json with special characters is now significantly faster (changes made in function "escapeandencode")
-•	updated performance test & added new test sample
-
-2022/07/04
-
-* PatrickvonDeetzen: Fixed nfcursortoobject.prg to handle table with field named "aname".
+2022/07/09 ( PatrickvonDeetzen )
+* create json with special characters is now significantly faster (changes made in function "escapeandencode")
+* updated performance test & added new test sample
+* bug fix: missing m. in nfcursortoobject.prg
 
 2019/06/14
 
