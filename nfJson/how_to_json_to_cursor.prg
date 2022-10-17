@@ -13,7 +13,7 @@ Endfor
 
 
 
-* or just will post a unnamed array:
+* from unnamed array:
 
 responseType2 = '[ { "id":1, "name":"John 2" , "secondName": "Doe 2" }, { "id":1, "name":"Jane 2" , "secondName": "Doe 2" } ] '
 
