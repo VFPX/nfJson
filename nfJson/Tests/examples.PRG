@@ -1,27 +1,26 @@
 ***********************************************
 * nfJsonRead & nfJsonCreate functions test
-* Written by Marco Plaza, 2016
+* Marco Plaza, 2016
 ************************************************
 
 Close Databases All
 Set Talk Off
 Set Safety Off
 
-IF UPPER(RIGHT(CURDIR(),14)) # upper('\nfJson\tests\')
-	MESSAGEBOX('Please run from nfJson\tests',0)
-	RETURN
-ENDIF
+samplesPath = JUSTPATH(SYS(16,0))+'\jsonSamples\'
+tempPath = JUSTPATH(SYS(16,0))+'\temp\'
 
-Set Path To ..\   && nfJson folder additive
+Set Path To '..\' additive   && nfJson folder additive
 
 Try
-	Erase temp\test_*.json
-	MD temp
+	Erase (m.tempPath+'test_*.json')
+	MD (m.tempPath)
 Catch
 
 Endtry
 
 Clear
+READ
 
 *************************************************************************
 * will read and parse all json files found in jsonSamples\
@@ -33,7 +32,7 @@ Public myObjectFromJson
 
 myObjectFromJson = Createobject('empty')
 
-nFiles = Adir(jsonfiles,'jsonSamples\*.json')
+nFiles = Adir(jsonfiles,m.samplesPath+'*.json')
 
 ? 'Processing:'
 
@@ -44,7 +43,7 @@ For x = 1 To m.nFiles
 
 	? m.thisFile
 
-	oJson = nfJsonRead( 'jsonSamples\'+m.thisFile)
+	oJson = nfJsonRead( FORCEPATH(m.thisfile,m.samplesPath))
 
 	AddProperty( myObjectFromJson, m.propName , m.oJson )
 
@@ -58,14 +57,11 @@ Endfor
 jsonRaw = nfJsonCreate( myObjectFromJson )
 jsonFormatted = nfJsonCreate( myObjectFromJson , .T. )
 
-IF !DIRECTORY('temp')
-	MD temp
-ENDIF
 
-Strtofile( m.jsonFormatted , 'temp\test_Formatted_'+Sys(2015)+'.Json' )
-Strtofile( m.jsonRaw , 'temp\test_Raw_'+Sys(2015)+'.Json' )
+Strtofile( m.jsonFormatted , m.tempPath+'test_Formatted_'+Sys(2015)+'.Json' )
+Strtofile( m.jsonRaw , m.tempPath+'test_Raw_'+Sys(2015)+'.Json' )
 
-Modify File temp\*.json Nowait
+Modify FILE (m.tempPath+'*.json') Nowait
 
 =Sys(1500,"_MWI_CASCADE","_MSM_WINDO")
 
@@ -115,8 +111,8 @@ TEXT to demoCursor textmerge
 
 ENDTEXT
 
-Strtofile( demoCursor, 'temp\Cursor tests Output.txt')
-Modify File 'temp\Cursor tests Output.txt' nowait
+Strtofile( demoCursor, m.tempPath+'Cursor tests Output.txt')
+Modify File m.tempPath+'Cursor tests Output.txt' nowait
 
 ****************************************************************
 * create a cursor back from json:

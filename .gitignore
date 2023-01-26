@@ -49,3 +49,8 @@ Temporary Items
 *.??k
 *.fxp
 
+*.log
+
+nfJson/Tests/temp/
+
+

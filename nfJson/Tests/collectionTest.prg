@@ -1,7 +1,6 @@
 **********************************************
 * collections to json and back to vfp
 **********************************************
-Public oCol,oDebugCollection
 
 Close Databases All
 Set Talk Off
@@ -25,9 +24,11 @@ Clear
 
 oparent = CREATEOBJECT('empty')
 
-ADDPROPERTY(oParent,'collectionTest1',Createobject("collection"))
-oCollection = Createobject("collection")
+PUBLIC oCollection
 
+ADDPROPERTY(oParent,'collectionTest1',Createobject("collection"))
+
+oCollection = Createobject("collection")
 addcollection( oParent.collectionTest1 )
 addcollection( oCollection )
 
@@ -56,17 +57,23 @@ Modify File temp\colltest.json
 
 && reset the variable, open debugger may not show object changes if you don't do so.
 
+PUBLIC oCollectionFromJson1
+PUBLIC oDebugCollection1
+
 oCollectionFromJson1 = ''
 oDebugCollection1 = ''
 
 oCollectionFromJson1 = nfJsonRead(m.cJson1,.T.) && <- this will parse json and create a vfp collection
 oDebugCollection1 = nfJsonRead(m.cJson1) && <- this will parse object as it is represented in json
 
+PUBLIC oCollectionFromJson2
+PUBLIC oDebugCollection2
+
 oCollectionFromJson2 = ''
 oDebugCollection2 = ''
 
-oCollectionFromJson2 = nfJsonRead(m.cJson2,.T.) && <- this will parse json and create a vfp collection
-oDebugCollection2 = nfJsonRead(m.cJson2) && <- this will parse object as it is represented in json
+oCollectionFromJson2	= nfJsonRead(m.cJson2,.T.) && <- this will parse json and create a vfp collection
+oDebugCollection2 		= nfJsonRead(m.cJson2,.F.) && <- this will parse object as it is represented in json
 
 *** test:
 * note: revived items of keyless collections may not appear on the original position
@@ -80,11 +87,12 @@ oDebugCollection2 = nfJsonRead(m.cJson2) && <- this will parse object as it is r
 *
 * test 1:
 * messagebox( [ oCollectionFromJson.array(2).Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson.array(1).Item(5).item(3).item(4).item('Product'),0)
- messagebox( [ oCollectionFromJson1.array(1).collectiontest1.Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(1).collectionTest1.Item(5).item(3).item(4).item('Product'),0)
- messagebox( [ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product'),0)
+ messagebox( [ oCollectionFromJson1.array(1).collectiontest1.Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(1).collectionTest1.Item(5).item(3).item(4).item('Product'),0,'Collection from Json created using nfJsonCreate')
+ messagebox( [ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product') = ]+ oCollectionFromJson1.array(2).Item(5).item(3).item(4).item('Product'),0,'Collection from Json created using nfJsonCreate')
 
 * test 2: ( using root name for collection object )
-messagebox( [ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product')  = ]+ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product'),0)
+messagebox( [ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product')  = ]+ oCollectionFromJson2.myforms.Item(5).item(3).item(4).item('Product'),0,'test 2: ( using root name "myForms" for collection object at nfJsonCreate )')
+
 
 *---------------------------------------
 FUNCTION addcollection( oo )

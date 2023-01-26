@@ -36,7 +36,10 @@ TEXT TO books noshow
 ENDTEXT
 
 
-* just for illustration purposes how to flatten objects using nfOpenJson
+* using nfOpenJson to iterates books,
+* somehow convenient, but
+* can create one record from Book array, 
+* so there's need for Book1Name .. Book2Name...
 
 nfOpenJson( m.books,'$.array',';
 - Library c(15) $.Library;
@@ -49,12 +52,22 @@ nfOpenJson( m.books,'$.array',';
 ')
 
 
-Browse
-
-* desired way:
+BROWSE TITLE 'Using openJson' 
 
 
-Create Cursor Library ( Library c(15), shelf N(6), Version c(10), hash c(10), Name c(20), category c(20))
+* Using nfJsonRead alone you can iterate and 
+* get one record for each book:
+
+
+Create Cursor Library ( ;
+Library c(15),;
+shelf N(6),;
+Version c(10),;
+Name c(20),;
+category c(20),;
+hash c(10);
+)
+
 
 jLibrary = nfJsonRead(m.books)
 
@@ -70,4 +83,6 @@ For Each oLibrary In jLibrary.Array
 
 Endfor
 
-Browse
+BROWSE TITLE 'Using nfJsonRead + for each '
+
+
