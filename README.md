@@ -8,12 +8,16 @@ Project Manager: Marco Plaza
 
 ( Each function is a single prg -  No additional dependencies / Requires VFP9 )
 
-* oJson = **nfJsonRead(**cJsonString , _isFileName_,_lReviveCollections_**)**  
+* oJson = **nfJsonRead(**cJsonString , _lReviveCollections_**)**  
  Example :   
  jsonstr = '{"name":"John", "age":30, "family":{"wife":"Susana","son":"Tom"}, "location":"texas"}'  
  vfpobj = nfJsonRead(jsonstr)  
  ? vfpobj.age         &&will show 30  
  ? vfpobj.family.son  &&will show Tom  
+
+*lReviveCollections: nfJsoncreate stringify key/keyless kcollections as arrays; set this flag if you are parsing json created with nfjsoncreate that
+you know had a vfp collection; this will  perform a extra step to get your collections back from the array representation ( revive it ) or set it to
+false to view your collections as arrays for debugging purposes  -check collectiontest.prg in test folder.
 
 * cJsonString = **nfJsonCreate(**oVfp, _lFormattedOutput, lNoNullArrayItems,cRootName,aMembersFlag_**)**
 
