@@ -71,7 +71,7 @@ BROWSE TITLE 'using nfJsonRead'
 
 
 ** Use nfOpenJson to flatten objects
-** with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
+ with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
 
 ```
 *** using nfOpenJson:
