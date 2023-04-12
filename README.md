@@ -66,14 +66,10 @@ For Each Row In ox.Array
 Endfor
 
 BROWSE TITLE 'using nfJsonRead'
-```
 
+** Use nfOpenJson to flatten related tables
+** with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
 
-
-Use nfOpenJson to flatten related tables
-with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
-
-```
 *** using nfOpenJson:
 
 TEXT TO curstruc NOSHOW TEXTMERGE PRETEXT 8
