@@ -67,19 +67,44 @@ Endfor
 
 BROWSE TITLE 'using nfJsonRead'
 
-** Use nfOpenJson to flatten related tables
+```
+
+
+** Use nfOpenJson to flatten objects
 ** with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
 
+```
 *** using nfOpenJson:
+
+TEXT to mssample3 noshow
+[
+{ "CorpCode": "KAKK01",
+"MobNo": "9447820950",
+"KitID": "2320007005",
+"EwireTxnNo": "2",
+"person":{"name":"Curt","age":54,"phone":["12345","5645466"]}
+},
+{ "CorpCode": "KAKK01",
+"MobNo": "9544727140",
+"KitID": "2320007006",
+"EwireTxnNo": "2",
+"person":{"name":"David","age":55,"phone":["142145","4665465"]}
+}
+]
+ENDTEXT
 
 TEXT TO curstruc NOSHOW TEXTMERGE PRETEXT 8
 - corpcode v(10) $.corpCode
 - mobno v(20) $.mobNo
 - kitid v(10) $.kitid
 - ewireTxnNo v(10) $.ewireTxnNo
+- name v(10) $.person.Name
+- age i $.person.age
+- phone1 v(10) $.person.phone[1]
+- phone2 v(10) $.person.phone[2]
 ENDTEXT
 
-nfOpenJson( m.mssample2,'array',m.curstruc)
+nfOpenJson( m.mssample3,'array',m.curstruc)
 
 BROWSE TITLE 'Using nfOpenJson'
 ```
