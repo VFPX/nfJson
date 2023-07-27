@@ -21,7 +21,8 @@ false to view your collections as arrays for debugging purposes  -check collecti
 
 * cJsonString = **nfJsonCreate(**oVfp, _lFormattedOutput, lNoNullArrayItems,cRootName,aMembersFlag_**)**
 
-* **nfJsonToCursor(**cJson, _cCursorName ,  lForceImportFromArray_**)** ( creates cursor back from Json created using nfCursorToJson4vfp )
+* **nfJsonToCursor(**cJson, _cCursorName ,  lForceImportFromArray_**)** ( creates cursor back from Json created using nfCursorToJson4vfp,
+ for any other case see nfOpenJson and notes below: )
 
 * cJsonString = **nfCursorToJson4vfp()**  _&& converts current open table/cursor to Json suitable for later use of nfJsonToCursor()_
 
@@ -34,7 +35,80 @@ false to view your collections as arrays for debugging purposes  -check collecti
 * nfOpenJson(** cJsonString , [ cArrayPath ], [cCursorStructure & object mappings ] )
 
 	Similar to SqlServer 2016 openJson function 
-		
+
+To convert json to cursor:
+
+For simple 1:1 conversion I recommend to
+simply use nfJsonRead and a existing
+destination cursor like this:
+
+```
+TEXT to mssample2 noshow
+[
+{ "CorpCode": "KAKK01",
+"MobNo": "9447820950",
+"KitID": "2320007005",
+"EwireTxnNo": "2"
+},
+{ "CorpCode": "KAKK01",
+"MobNo": "9544727140",
+"KitID": "2320007006",
+"EwireTxnNo": "2"
+}
+]
+ENDTEXT
+
+ox = nfJsonRead(m.mssample2)
+Create Cursor temp ( corpcode v(10), mobno v(20),kitid v(10), ewireTxnNo v(10) )
+
+For Each Row In ox.Array
+	Insert Into temp From Name Row
+Endfor
+
+BROWSE TITLE 'using nfJsonRead'
+
+```
+
+
+** Use nfOpenJson to flatten objects
+ with ease ( check a discussion here https://www.tek-tips.com/viewthread.cfm?qid=1796615 )
+
+```
+*** using nfOpenJson:
+
+TEXT to mssample3 noshow
+[
+{ "CorpCode": "KAKK01",
+"MobNo": "9447820950",
+"KitID": "2320007005",
+"EwireTxnNo": "2",
+"person":{"name":"Curt","age":54,"phone":["12345","5645466"]}
+},
+{ "CorpCode": "KAKK01",
+"MobNo": "9544727140",
+"KitID": "2320007006",
+"EwireTxnNo": "2",
+"person":{"name":"David","age":55,"phone":["142145","4665465"]}
+}
+]
+ENDTEXT
+
+TEXT TO curstruc NOSHOW TEXTMERGE PRETEXT 8
+- corpcode v(10) $.corpCode
+- mobno v(20) $.mobNo
+- kitid v(10) $.kitid
+- ewireTxnNo v(10) $.ewireTxnNo
+- name v(10) $.person.Name
+- age i $.person.age
+- phone1 v(10) $.person.phone[1]
+- phone2 v(10) $.person.phone[2]
+ENDTEXT
+
+nfOpenJson( m.mssample3,'array',m.curstruc)
+
+BROWSE TITLE 'Using nfOpenJson'
+```
+
 
 ## Tests & Sample files
 
