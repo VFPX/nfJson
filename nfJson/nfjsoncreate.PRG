@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------
-* Created by Marco Plaza @nfTools
+* Created by Marco Plaza @nfoxdev
 * ver 1.100 - 24/02/2016
 * enabled collection processing
 * ver 1.101 - 24/02/2016
@@ -13,6 +13,7 @@
 * Added Json validation ; throws error for invalid Json.
 * ver 1.120
 * encode control characters ( chr(0) ~ chr(31) )
+* ver 1.121 - 26/07/2023 - minor optimization ( escapeandencode() )
 *-----------------------------------------------------------------------
 parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag
 
@@ -287,64 +288,53 @@ RETURN len(chrtran(m.valor,specialChars,'')) <> len(m.valor)
 *-------------------------------
 function escapeandencode(valun)
 *-------------------------------
-*valun = strtran(m.valun,'\','\\')
-*valun = strtran(m.valun,'"','\"')
-*valun = strtran(m.valun,chr(9),'\t')
-*valun = strtran(m.valun,chr(10),'\n')
-*valun = strtran(m.valun,chr(12),'\f')
-*valun = strtran(m.valun,chr(13),'\r')
-*valun = strtran(m.valun,chr(127),'\b')
 
-*LOCAL x
-*FOR x = 0 TO 31
-*	valun = strtran(m.valun,chr(m.x),'\u'+RIGHT(TRANSFORM(m.x,'@0'),4))
-*ENDFOR
+valun = Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(m.valun,;
+	'\','\\'),;
+	'"','\"'),;
+	chr(9),'\t'),;
+	chr(10),'\n'),;
+	chr(12),'\f'),;
+	chr(13),'\r'),;
+	chr(127),'\b')
 
-valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																'\','\\'),;
-																'"','\"'),;
-																chr(9),'\t'),;
-																chr(10),'\n'),;
-																chr(12),'\f'),;
-																chr(13),'\r'),;
-																chr(127),'\b')
-valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																chr(0),'\u'+RIGHT(TRANSFORM(0,'@0'),4)),;
-																chr(1),'\u'+RIGHT(TRANSFORM(1,'@0'),4)),;
-																chr(2),'\u'+RIGHT(TRANSFORM(2,'@0'),4)),;
-																chr(3),'\u'+RIGHT(TRANSFORM(3,'@0'),4)),;
-																chr(4),'\u'+RIGHT(TRANSFORM(4,'@0'),4)),;
-																chr(5),'\u'+RIGHT(TRANSFORM(5,'@0'),4)),;
-																chr(6),'\u'+RIGHT(TRANSFORM(6,'@0'),4)),;
-																chr(7),'\u'+RIGHT(TRANSFORM(7,'@0'),4)),;
-																chr(8),'\u'+RIGHT(TRANSFORM(8,'@0'),4)),;
-																chr(9),'\u'+RIGHT(TRANSFORM(9,'@0'),4)),;
-																chr(10),'\u'+RIGHT(TRANSFORM(10,'@0'),4))
-valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																chr(11),'\u'+RIGHT(TRANSFORM(11,'@0'),4)),;
-																chr(12),'\u'+RIGHT(TRANSFORM(12,'@0'),4)),;
-																chr(13),'\u'+RIGHT(TRANSFORM(13,'@0'),4)),;
-																chr(14),'\u'+RIGHT(TRANSFORM(14,'@0'),4)),;
-																chr(15),'\u'+RIGHT(TRANSFORM(15,'@0'),4)),;
-																chr(16),'\u'+RIGHT(TRANSFORM(16,'@0'),4)),;
-																chr(17),'\u'+RIGHT(TRANSFORM(17,'@0'),4)),;
-																chr(18),'\u'+RIGHT(TRANSFORM(18,'@0'),4)),;
-																chr(19),'\u'+RIGHT(TRANSFORM(19,'@0'),4)),;
-																chr(20),'\u'+RIGHT(TRANSFORM(20,'@0'),4)),;
-																chr(21),'\u'+RIGHT(TRANSFORM(21,'@0'),4))
-valun = strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(strtran(m.valun,;
-																chr(22),'\u'+RIGHT(TRANSFORM(22,'@0'),4)),;
-																chr(23),'\u'+RIGHT(TRANSFORM(23,'@0'),4)),;
-																chr(24),'\u'+RIGHT(TRANSFORM(24,'@0'),4)),;
-																chr(25),'\u'+RIGHT(TRANSFORM(25,'@0'),4)),;
-																chr(26),'\u'+RIGHT(TRANSFORM(26,'@0'),4)),;
-																chr(27),'\u'+RIGHT(TRANSFORM(27,'@0'),4)),;
-																chr(28),'\u'+RIGHT(TRANSFORM(28,'@0'),4)),;
-																chr(29),'\u'+RIGHT(TRANSFORM(29,'@0'),4)),;
-																chr(30),'\u'+RIGHT(TRANSFORM(30,'@0'),4)),;
-																chr(31),'\u'+RIGHT(TRANSFORM(31,'@0'),4))
+valun = strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(m.valun,;
+	chr(0),'\u0000'),;
+	chr(1),'\u0001'),;
+	chr(2),'\u0002'),;
+	chr(3),'\u0003'),;
+	chr(4),'\u0004'),;
+	chr(5),'\u0005'),;
+	chr(6),'\u0006'),;
+	chr(7),'\u0007'),;
+	chr(8),'\u0008')
+	
 
-return RTRIM(m.valun)
+valun = Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(m.valun,;
+	chr(11),'\u0011'),;
+	chr(14),'\u0014'),;
+	chr(15),'\u0015'),;
+	chr(16),'\u0016'),;
+	chr(17),'\u0017'),;
+	chr(18),'\u0018'),;
+	chr(19),'\u0019'),;
+	chr(20),'\u0020'),;
+	chr(21),'\u0021')
+
+
+valun = Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(Strtran(m.valun,;
+	chr(22),'\u0022'),;
+	chr(23),'\u0023'),;
+	chr(24),'\u0024'),;
+	chr(25),'\u0025'),;
+	chr(26),'\u0026'),;
+	chr(27),'\u0027'),;
+	chr(28),'\u0028'),;
+	chr(29),'\u0029'),;
+	chr(30),'\u0030'),;
+	chr(31),'\u0031')
+
+Return m.valun
 
 *---------------------------------------------------------------
 Function procCollection(obt,nonullArrayItems,amembersFlag )

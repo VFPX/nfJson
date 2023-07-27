@@ -13,6 +13,8 @@ carraypath = '.'+ltrim(m.carraypath,1,'.','$')
 
 private all
 
+try
+
 oj = ''
 
 if pcount() < 2
@@ -50,6 +52,14 @@ endfor
 isql = rtrim(M.isql,1,',')+' from (cres) where vtooj() into cursor result'
 
 &isql
+
+catch to oerror
+
+endtry
+
+if vartype(m.oError) = 'O'
+	error oError.message
+endif
 
 *-------------------------------
 function vtooj()
