@@ -1,20 +1,20 @@
-*-------------------------------------------------------------------
+*-------------------------------------------------------------------------------------------
 * Created by Marco Plaza @nfoxdev
-* ver 1.100 - 24/02/2016
+* v. 1.100 - 2016/02/24
 * enabled collection processing
-* ver 1.101 - 24/02/2016
+* v. 1.101 - 2016/02/24
 * solved indentation on nested collections
-* ver 1.110 -11/03/2016
+* ver 1.110 -2016/03/11
 * -added support for collections inside arrays
 * -user can pass aMemembersFlag value
 *  ( since Json is intended for DTO creation default value is 'U' )
 *   check amembers topic on vfp help file for usage
 * changed cr to crlf
 * Added Json validation ; throws error for invalid Json.
-* ver 1.120
-* encode control characters ( chr(0) ~ chr(31) )
-* ver 1.121 - 26/07/2023 - minor optimization ( escapeandencode() )
-*-----------------------------------------------------------------------
+* v. 1.120 encode control characters ( chr(0) ~ chr(31) )
+* v. 1.121 - 2023/07/26 - minor optimization ( escapeandencode() )
+* v. 1.122 - 2024/06//18 - workaround for a minor issue with a bug in vfp9 09.00.0000.2412
+*-------------------------------------------------------------------------------------------
 parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag
 
 #define crlf chr(13)+Chr(10)
@@ -215,7 +215,8 @@ do while m.nelem <= m.titems
 
 			else
 
-   				este =  m.este+[{]+procobject(m.elem ,.f.,m.nonullarrayitem,m.amembersFlag)+[}]
+				thisChunk = +[{]+procobject(m.elem ,.f.,m.nonullarrayitem,m.amembersFlag)+[}]
+   				este =  m.este+m.thisChunk
 
 			endif
 
