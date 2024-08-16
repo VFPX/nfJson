@@ -1,6 +1,6 @@
 # nfJson
 
-**Provides a set of fast performance, reliable and easy to use Json functions using pure VFP.**
+**A set of fast performance, reliable and easy to use Json functions using pure VFP.**
 
 Project Manager: Marco Plaza
 
