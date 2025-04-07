@@ -1,8 +1,8 @@
 # nfJson
 
-**A set of fast performance, reliable and easy to use Json functions using pure VFP.**
+Project developer: Marco Plaza  [GitHub/nfoxdev](https://github.com/nfoxdev)
 
-Project Manager: Marco Plaza
+**A set of fast performance, reliable and easy to use Json functions using pure VFP.**
 
 ## Functions & Usage
 
