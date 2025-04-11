@@ -1,191 +1,192 @@
 *---------------------------------------------
 * Marco Plaza, 2017 @nfTools
-* usage sample see nfOpenJsonTest.prg
+* usage sample see json_to_cursor_test.prg
+* 
 * refer to https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql
 *
 * ver 0.91 2019/04/03 -
 *
 *---------------------------------------------
-parameters cjson, carraypath, cstruct
+Parameters cjson, carraypath, cstruct
 
-carraypath = evl(m.carraypath,'.array')
-carraypath = '.'+ltrim(m.carraypath,1,'.','$')
+carraypath = Evl(m.carraypath,'.array')
+carraypath = '.'+Ltrim(m.carraypath,1,'.','$')
 
-private all
+Private All
 
-try
+Try
 
-oj = ''
+  oj = ''
 
-if pcount() < 2
-	cres = json2kvcursor( m.cjson )
-else
-	cres = json2kvcursor( m.cjson, m.carraypath )
-endif
+  Do Case
+  Case Pcount() = 1
+    cres = json2kvcursor( m.cjson )
+  Case Pcount() = 3
+    cres = json2kvcursor( m.cjson, m.carraypath )
+  Otherwise
+    Error 'missing parameter'
+  Endcase
 
-if pcount() < 3
-	return m.cres
-endif
 
-=alines( cc, cstruct,7,'-')
+  =Alines( cc, cstruct,7,'-')
 
-isql = ' SELECT '
+  isql = ' SELECT '
 
-for each line in cc
+  For Each Line In cc
 
-	oproperty  = strextract(M.line,[$.],[ ],1,2)
-	castexp    = getwordnum(M.line,2,' ')
-	fieldalias = getwordnum(M.line,1,' ')
+    oproperty  = Strextract(M.line,[$.],[ ],1,2)
+    castexp    = Getwordnum(M.line,2,' ')
+    fieldalias = Getwordnum(M.line,1,' ')
 
-	cexp =  textmerge("ncast('<< evl(m.oProperty,m.fieldAlias) >> as <<m.castExp>>')")
+    cexp =  Textmerge("ncast('<< evl(m.oProperty,m.fieldAlias) >> as <<m.castExp>>')")
 
-	if m.castexp = 'JSON'
-		m.cexp = 'cast( '+m.cexp+' as m )'
-	endif
+    If m.castexp = 'JSON'
+      m.cexp = 'cast( '+m.cexp+' as m )'
+    Endif
 
-	m.cexp = m.cexp + ' as '+ m.fieldalias
+    m.cexp = m.cexp + ' as '+ m.fieldalias
 
-	isql = isql+' '+m.cexp+','
+    isql = isql+' '+m.cexp+','
 
-endfor
+  Endfor
 
-isql = rtrim(M.isql,1,',')+' from (cres) where vtooj() into cursor result'
+  isql = Rtrim(M.isql,1,',')+' from (cres) where vtooj() into cursor result'
 
-&isql
+  &isql
 
-catch to oerror
+Catch To oerror
 
-endtry
+Endtry
 
-if vartype(m.oError) = 'O'
-	error oError.message
-endif
+If Vartype(m.oerror) = 'O'
+  Error oerror.Message
+Endif
 
 *-------------------------------
-function vtooj()
+Function vtooj()
 *-------------------------------
-oj = nfjsonread( value )
+oj = nfjsonread( Value )
 
 *------------------------------------
-function ncast( path )
+Function ncast( Path )
 *-------------------------------------
-if 'as json' $ lower(m.path)
+If 'as json' $ Lower(m.path)
 
-	vname = 'oj.'+getwordnum(m.path,1)
+  vname = 'oj.'+Getwordnum(m.path,1)
 
-	if type(m.vname,1) = 'A'
-		ic = 'acopy('+m.vname+',tarray)'
-		&ic
-		return nfjsoncreate(@tarray)
-	else
-		return nfjsoncreate(eval(m.vname))
-	endif
+  If Type(m.vname,1) = 'A'
+    ic = 'acopy('+m.vname+',tarray)'
+    &ic
+    Return nfjsoncreate(@tarray)
+  Else
+    Return nfjsoncreate(Eval(m.vname))
+  Endif
 
-else
+Else
 
-	return evaluate(' cast( oj.'+m.path+')')
+  Return Evaluate(' cast( oj.'+m.path+')')
 
-endif
+Endif
 
 *------------------------------------------------------
-function json2kvcursor(cjsonstr,cpropertypath)
+Function json2kvcursor(cjsonstr,cpropertypath)
 *------------------------------------------------------
 
 kk = nfjsonread(m.cjsonstr)
 
-if isnull(m.kk)
-	return .null.
-endif
+If Isnull(m.kk)
+  Return .Null.
+Endif
 
-try
-	if pcount() > 1
+Try
+  If Pcount() > 1
 
-		cpropertypath = ltrim(m.cpropertypath,1,'$')
-		pname = substr(m.cpropertypath,rat('.',m.cpropertypath)+1)
+    cpropertypath = Ltrim(m.cpropertypath,1,'$')
+    pname = Substr(m.cpropertypath,Rat('.',m.cpropertypath)+1)
 
-		if	type('m.kk'+m.cpropertypath,1) = 'A'
-			acopy(m.kk&cpropertypath,lretval)
-		else
-			lretval = evaluate('kk'+m.cpropertypath)
-		endif
-	else
-		lretval = kk
-	endif
-catch
-	lretval = .null.
-endtry
+    If   Type('m.kk'+m.cpropertypath,1) = 'A'
+      Acopy(m.kk&cpropertypath,lretval)
+    Else
+      lretval = Evaluate('kk'+m.cpropertypath)
+    Endif
+  Else
+    lretval = kk
+  Endif
+Catch
+  lretval = .Null.
+Endtry
 
-do case
+Do Case
 
-case isnull(m.lretval)
-	return .null.
+Case Isnull(m.lretval)
+  Return .Null.
 
-otherwise
+Otherwise
 
-	cn = sys(2015)
+  cn = Sys(2015)
 
-	create cursor ( m.cn ) ( key c(40), value m null, type c(1) )
-	do case
-	case type('m.lretval',1) = 'A'
-		arraytokvtable( @m.lretval )
-	case vartype(m.lretval) # 'O'
-		tr = createobject('empty')
-		addproperty(m.tr,m.pname,m.lretval)
-		objecttokvtable( m.tr )
-	otherwise
-		objecttokvtable( m.lretval )
-	endcase
+  Create Cursor ( m.cn ) ( Key c(40), Value m Null, Type c(1) )
+  Do Case
+  Case Type('m.lretval',1) = 'A'
+    arraytokvtable( @m.lretval )
+  Case Vartype(m.lretval) # 'O'
+    tr = Createobject('empty')
+    AddProperty(m.tr,m.pname,m.lretval)
+    objecttokvtable( m.tr )
+  Otherwise
+    objecttokvtable( m.lretval )
+  Endcase
 
-	return m.cn
+  Return m.cn
 
-endcase
+Endcase
 
 *---------------------------------------------
-function arraytokvtable( aa )
+Function arraytokvtable( aa )
 *---------------------------------------------
 
 nitem = 1
-for each thisval in aa
+For Each thisval In aa
 
-	if vartype(m.thisval) = 'O'
-		thisval = nfjsoncreate( m.thisval)
-	endif
+  If Vartype(m.thisval) = 'O'
+    thisval = nfjsoncreate( m.thisval)
+  Endif
 
-	insert into (m.cn) ;
-		( key, value , type ) ;
-		values ;
-		( transform(nitem) ,iif(isnull(m.thisval),.null.,cast( m.thisval as m ) ) , vartype( m.thisval ) )
-	nitem = m.nitem+1
-endfor
+  Insert Into (m.cn) ;
+    ( Key, Value , Type ) ;
+    values ;
+    ( Transform(nitem) ,Iif(Isnull(m.thisval),.Null.,Cast( m.thisval As m ) ) , Vartype( m.thisval ) )
+  nitem = m.nitem+1
+Endfor
 
 *--------------------------------------------------
-function objecttokvtable( ox )
+Function objecttokvtable( ox )
 *--------------------------------------------------
 
-amembers( op, m.ox )
+Amembers( op, m.ox )
 
-for each pname in op
+For Each pname In op
 
-	if type('m.oX.&pName',1) = 'A'
+  If Type('m.oX.&pName',1) = 'A'
 
-		DIMENSION acc(1)
+    Dimension acc(1)
 
-		acopy(m.ox.&pname,acc)
-		thisval = nfjsoncreate( @m.acc )
+    Acopy(m.ox.&pname,acc)
+    thisval = nfjsoncreate( @m.acc )
 
-	else
+  Else
 
-		thisval = m.ox.&pname
+    thisval = m.ox.&pname
 
-		if vartype(m.thisval) = 'O'
-			thisval = nfjsoncreate( m.thisval)
-		endif
+    If Vartype(m.thisval) = 'O'
+      thisval = nfjsoncreate( m.thisval)
+    Endif
 
-	endif
+  Endif
 
-	insert into (m.cn) ;
-		( key, value , type ) ;
-		values ;
-		( m.pname ,iif(isnull(m.thisval),.null.,cast( m.thisval as m ) ) , vartype( m.thisval ) )
+  Insert Into (m.cn) ;
+    ( Key, Value , Type ) ;
+    values ;
+    ( m.pname ,Iif(Isnull(m.thisval),.Null.,Cast( m.thisval As m ) ) , Vartype( m.thisval ) )
 
-endfor
+Endfor

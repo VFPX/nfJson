@@ -1,6 +1,6 @@
-*----------------------------------------------------
-* nfOpenJson test 
-*----------------------------------------------------
+*------------------------------------------------------
+* different methods to flatten json objects to cursor:
+*------------------------------------------------------
 close tables all
 
 
@@ -13,7 +13,7 @@ text to mssample2 noshow
     },
     "AccountNumber":"AW29825",
     "Item": {
-      "Price":2024.9940,
+      "Price":136.95,
       "Quantity":1
     }
   },
@@ -24,7 +24,7 @@ text to mssample2 noshow
     },
     "AccountNumber":"AW73565",
     "Item": {
-      "Price":2024.9940,
+      "Price":866.35,
       "Quantity":3
     }
   }
@@ -32,34 +32,7 @@ text to mssample2 noshow
 ENDTEXT
 
 
-*---------- short structures < 255 characters
-
-nfOpenJson( m.mssample2,'$.array',';
- - Number   c(10) $.Order.Number  ;
- - Date     t      $.Order.Date    ;
- - Customer c(10) $.AccountNumber  ;
- - itemPrice n(6,2) $.Item.Price ;
- - itemQuantity i   $.Item.Quantity ;
- - Order  JSON ;
- ')
-
-BROWSE TITLE 'sample 1'
-
-*-------- longer structures:
-
-text to cStruct pretext 8 noshow
- - Number   c(10) $.Order.Number  
- - Date     t      $.Order.Date    
- - Customer c(10) $.AccountNumber  
- - itemPrice n(6,2) $.Item.Price 
- - itemQuantity i   $.Item.Quantity 
- - Order  JSON
-endtext
-
-nfOpenJson( m.mssample2,'$.array',m.cStruct )
-BROWSE TITLE 'sample 2'
-
-*------ preferred way using just nfJsonRead and existing cursor:
+*------ 1) using nfJsonRead and existing cursor ( preferred way  )
 
 oSrc = nfJsonRead(m.mssample2)
 
@@ -75,9 +48,9 @@ For Each Row In oSrc.Array
 
 Endfor
 
-Browse Normal Title 'sample 3'
+Browse Normal Title 'sample 1'
 
-*------- or -----------------------
+*------- 2) using gather name ( less code , works even if order or item object have missing keys ) 
 
 Create Cursor curStruct3 ( Number v(10),Date d,accountNumber v(10),price N(10,2),quantity i, sourceDoc m )
 
@@ -94,9 +67,36 @@ For Each oRow In oSrc.Array
 Endfor
 
 
-Browse Normal Title 'sample 4'
+Browse Normal Title 'sample 2'
 
 
+* USING NFOPENJSON 
+
+*----- map structure to object:
+
+text to cStruct pretext 8 noshow
+ - Number   c(10)   $.Order.Number  
+ - Date     t       $.Order.Date    
+ - Customer c(10)   $.AccountNumber  
+ - itemPrice n(10,2) $.Item.Price 
+ - itemQuantity i   $.Item.Quantity 
+ - Order  JSON
+endtext
+
+nfOpenJson( m.mssample2,'$.array',m.cStruct )
+BROWSE TITLE 'sample 3'
+
+*---------- skipping text-endtext if you like for short structures:
 
 
+nfOpenJson( m.mssample2,'$.array', ';
+ - Number   c(10)   $.Order.Number  ;
+ - Date     t       $.Order.Date    ;
+ - Customer c(10)   $.AccountNumber ;
+ - itemPrice n(10,2) $.Item.Price   ;
+ - itemQuantity i   $.Item.Quantity ;
+ - Order  JSON ;
+ ')
+
+BROWSE TITLE 'sample 4'
 
