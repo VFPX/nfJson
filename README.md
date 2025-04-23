@@ -2,6 +2,8 @@
 
 Project developer: Marco Plaza  [GitHub/nfoxdev](https://github.com/nfoxdev)
 
+[Issues?](https://github.com/VFPX/nfJson/issues) - [Discussions/Ideas](https://github.com/VFPX/nfJson/discussions)
+
 **A set of fast performance, reliable and easy to use Json functions using pure VFP.**
 
 ## Functions & Usage
