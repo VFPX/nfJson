@@ -27,6 +27,8 @@
 ***					using collTagName
 *parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag
 parameters ovfp,formattedOutput,nonullarrayitem,crootName,aMembersFlag, tlNoCollectionName, taProperties
+*** DH 2026-02-18: added EXTERNAL ARRAY to avoid Project Manager errors
+external array taProperties
 
 #define crlf chr(13)+Chr(10)
 
@@ -386,7 +388,7 @@ if isnull(m.valor)
 else
 
 	tvar = vartype(m.valor)
-	** no cambiar el orden de ejecución!
+	** no cambiar el orden de ejecuciÃ³n!
 	do case
 	case m.tvar $ 'FBYINQ'
 		vc = rtrim(cast( m.valor as c(32)))
