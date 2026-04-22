@@ -18,9 +18,7 @@ Try
 Catch
 
 Endtry
-
 Clear
-READ
 
 *************************************************************************
 * will read and parse all json files found in jsonSamples\

@@ -14,12 +14,7 @@
 #define millon 1000000
 Public oJson, nsamp
 
-IF  _vfp.StartMode # 4 and UPPER(RIGHT(CURDIR(),24)) # upper('\nfJson\performanceTest\')
-	MESSAGEBOX('Please run from nfJson\performanceTest',0)
-	RETURN
-ENDIF
-
-SET PATH TO ..\   && nfJson folder
+SET PATH TO "..\"  ADDITIVE 
 
 m.testFile = JUSTPATH(SYS(16,0))+'\nfjsonperftestSamples.TXT'
 
@@ -126,7 +121,7 @@ EndTry
 	TR2=round(TR2/nsamp,0)
 
 	Thisform.TRESULT.ForeColor = RGB(0,0,0)
-	Thisform.TRESULT.Value = ' Read: '+Transform(TR,'99,999')+'us  ( '+Transform(millon/TR,'99,999')+' op/sec )   Create: '+Transform(TR2,'99,999')+'us  ( '+Transform(millon/TR2,'99,999')+' op/sec )'
+	Thisform.TRESULT.Value = ' Read: '+Transform(TR,'99,999')+chr(181)+'s  ( '+Transform(millon/TR,'99,999')+' op/sec )   Create: '+Transform(TR2,'99,999')+chr(181)+'s  ( '+Transform(millon/TR2,'99,999')+' op/sec )'
 
 	Thisform.json.SelStart=1
 

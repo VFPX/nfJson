@@ -1,0 +1,19 @@
+{
+  "name": "nfjson",
+  "version": "1.1.2",
+  "description": "Fast Json parser & serializer with full support for two-dimensional arrays and collections",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nfoxdev/nfJson.git"
+  },
+  "author": "Marco Plaza",
+  "license": "see License.md",
+  "keywords": [
+    "Visual FoxPro",
+    "json",
+    "foxpro"
+  ],
+  "files": [
+    "dist/*.*"
+  ]
+}
